@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Tooplate">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+  <title>Absensi Karyawan</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/tooplate-main.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <div class="sequence">
+    <div class="seq-preloader">
+      <svg width="39" height="16" viewBox="0 0 39 16" xmlns="http://www.w3.org/2000/svg" class="seq-preload-indicator">
+        <g fill="#F96D38">
+          <path class="seq-preload-circle seq-preload-circle-1"
+            d="M3.999 12.012c2.209 0 3.999-1.791 3.999-3.999s-1.79-3.999-3.999-3.999-3.999 1.791-3.999 3.999 1.79 3.999 3.999 3.999z" />
+          <path class="seq-preload-circle seq-preload-circle-2"
+            d="M15.996 13.468c3.018 0 5.465-2.447 5.465-5.466 0-3.018-2.447-5.465-5.465-5.465-3.019 0-5.466 2.447-5.466 5.465 0 3.019 2.447 5.466 5.466 5.466z" />
+          <path class="seq-preload-circle seq-preload-circle-3"
+            d="M31.322 15.334c4.049 0 7.332-3.282 7.332-7.332 0-4.049-3.282-7.332-7.332-7.332s-7.332 3.283-7.332 7.332c0 4.05 3.283 7.332 7.332 7.332z" />
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="logo">
+    <h1>SMKN 4 Bogor <i class="fa fa-braille" style="font-size:30px;color:red"></i></h1>
+    <h2><i class="fa fa-braille" style="font-size:30px;color:red"></i></h2>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#1"><img src="assets/images/icon-1.png" alt=""> <em>Home</em></a></li>
+      <li><a href="#2"><img src="assets/images/icon-2.png" alt=""> <em>Laporan Saya</em></a></li>
+      <li><a href="#3"><img src="assets/images/icon-3.png" alt=""> <em>Lampiran Absensi</em></a></li>
+      <li><a href="#4"><img src="assets/images/icon-4.png" alt=""> <em>Bantuan</em></a></li>
+    </ul>
+  </nav>
+
+  <div class="slides">
+    <div class="slide" id="1">
+      <div id="slider-wrapper">
+        <div id="image-slider">
+          <ul>
+            <li class="active-img" id="c_profile">
+              <div class="slide-caption">
+                <h6>Jabatan</h6>
+                <h2>Nama Pegawai<br>Gelar</h2>
+              </div>
+            </li>
+            <li id="c_masuk">
+              <div class="slide-caption">
+                <div class="rounded embed-responsive embed-responsive-21by9">
+                  <iframe class="embed-responsive-item" src="clock.html"></iframe>
+                </div>
+                <h6>Absen Masuk</h6>
+                <h2 style="font-size: 30px;">Absen DI Buka <br>08.00</h2>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalmasuk">
+                  Isi Daftar Hadir
+                </button>
+              </div>
+            </li>
+            <li id="c_keluar">
+              <div class="slide-caption">
+                <div class="rounded embed-responsive embed-responsive-21by9">
+                  <iframe class="embed-responsive-item" src="clock.html"></iframe>
+                </div>
+                <h6>Absen Keluar</h6>
+                <h2 style="font-size: 30px;">Absen DI Buka <br>16.00</h2>
+                <a href="#" class="btn btn-primary" onclick="fas()">Isi Daftar Keluar</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div id="thumbnail">
+          <ul>
+            <li class="active"><img src="assets/images/thumb-01.jpg" alt="Earth" /></li>
+            <li><img src="assets/images/Masuk.png" alt="Meeting" /></li>
+            <li><img src="assets/images/Keluar.png" alt="Smart" /></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide" id="2">
+      <div class="content second-content">
+        <div id='tabs'>
+          <ul>
+            <li><a href='#tabs-1'><span class='fa fa-desktop'></span></a></li>
+            <li><a href='#tabs-2'><span class='fa fa-users'></span></a></li>
+            <li><a href='#tabs-3'><span class='fa fa-mobile'></span></a></li>
+          </ul>
+          <section class='tabs-content'>
+            <article id='tabs-1'>
+              <h2>Jam Pekerjaan</h2>
+              <span>8,25/4000 Jam</span>
+              <div class="text-center">
+                <div class="rounded embed-responsive embed-responsive-21by9">
+                  <iframe class="embed-responsive-item" src="chart.html"></iframe>
+                </div>
+              </div>
+            </article>
+            <article id='tabs-2'>
+              <h2>Laporan Absensi</h2>
+              <div class="text-center">
+                <div class="rounded embed-responsive embed-responsive-21by9">
+                  <iframe class="embed-responsive-item" src="log.html"></iframe>
+                </div>
+              </div>
+            </article>
+            <article id='tabs-3'>
+              belum tau mau di isi apa
+              <!-- <h2>Who We Are?</h2>
+              <span>Etiam tempus ex ut mi</span>
+              <p>Vivamus dictum odio at enim posuere, et dapibus nunc sagittis. Pellentesque habitant morbi tristique
+                senectus et netus et malesuada fames ac turpis egestas.</p>
+              <p>Integer a egestas tellus, id malesuada velit. Pellentesque tincidunt, libero eu rutrum volutpat, nisi
+                urna mollis felis, sed mollis sem libero at magna.</p> -->
+            </article>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="slide" id="3">
+      <div class="content third-content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="owl-carousel owl-theme">
+              <div class="col-md-12">
+                <div class="featured-item">
+                  <a href=""><img src="assets/images/item-01.jpg" alt=""></a>
+                  <div class="down-content">
+                    <h4>Dinas Mynmard</h4>
+                    <h6>03/08/2021 08.19</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="featured-item">
+                  <a href=""><img src="assets/images/item-02.jpg" alt=""></a>
+                  <div class="down-content">
+                    <h4>Dinas Mynmard</h4>
+                    <h6>03/08/2021 08.19</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="featured-item">
+                  <img src="assets/images/item-03.jpg" alt="">
+                  <div class="down-content">
+                    <h4>Dinas Mynmard</h4>
+                    <h6>03/08/2021 08.19</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="featured-item">
+                  <img src="assets/images/item-04.jpg" alt="">
+                  <div class="down-content">
+                    <h4>Vivamus vitae #4</h4>
+                    <h6>55.00</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="featured-item">
+                  <img src="assets/images/item-05.jpg" alt="">
+                  <div class="down-content">
+                    <h4>Vivamus vitae #6</h4>
+                    <h6>65.00</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="featured-item">
+                  <img src="assets/images/item-06.jpg" alt="">
+                  <div class="down-content">
+                    <h4>Vivamus vitae #8</h4>
+                    <h6>75.00</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="featured-item">
+                  <img src="assets/images/item-07.jpg" alt="">
+                  <div class="down-content">
+                    <h4>Donec non sagittis</h4>
+                    <h6>85.00</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="featured-item">
+                  <img src="assets/images/item-08.jpg" alt="">
+                  <div class="down-content">
+                    <h4>Curabitur sed 8</h4>
+                    <h6>95.00</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="featured-item">
+                  <img src="assets/images/item-09.jpg" alt="">
+                  <div class="down-content">
+                    <h4>Curabitur sed 10</h4>
+                    <h6>105.00</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="featured-item">
+                  <img src="assets/images/item-10.jpg" alt="">
+                  <div class="down-content">
+                    <h4>Curabitur sed 12</h4>
+                    <h6>115.00</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="featured-item">
+                  <img src="assets/images/item-11.jpg" alt="">
+                  <div class="down-content">
+                    <h4>Curabitur sed 14</h4>
+                    <h6>125.00</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="featured-item">
+                  <img src="assets/images/item-12.jpg" alt="">
+                  <div class="down-content">
+                    <h4>Curabitur sed 16</h4>
+                    <h6>135.00</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide" id="4">
+      <div class="content fourth-content">
+        <div class="container-fluid">
+          <form id="contact" action="" method="post">
+            <div class="row">
+              <div class="col-md-12">
+                <h2>Hallo</h2>
+                <p style="color: white;">Jika Pengguna Terdapat Masalah Ketika Menggunakan Aplikasi ini Harap Tekan
+                  Tombol Di Bawah ini</p>
+              </div>
+              <h2><a href="wa.me/6281221723861" class="btn btn-success">Hubungi Agus</a></h2>
+              <!-- <div class="col-md-6">
+                <fieldset>
+                  <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset>
+                  <input name="email" type="text" class="form-control" id="email" placeholder="Your email..."
+                    required="">
+                </fieldset>
+              </div>
+              <div class="col-md-12">
+                <fieldset>
+                  <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..."
+                    required=""></textarea>
+                </fieldset>
+              </div>
+              <div class="col-md-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="button">Send Now</button>
+                </fieldset>
+              </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal start -->
+ 
+  <!-- Modal masuk-->
+  <div class="modal fade" id="modalmasuk" tabindex="-1" role="dialog" aria-labelledby="modalmasukLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalmasukLabel">Harap Isi Data Masuk</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+            <div class="mb-3">
+              <label for="Waktu" class="form-label">Waktu Absen Masuk</label>
+              <input type="date" class="form-control" id="Waktu" readonly value="">
+            </div>
+            <div class="mb-3">
+              <label for="Status" class="form-label">Status</label>
+              <select name="" id="Status" required>
+                <option value="ONSITE">Onsite</option>
+                <option value="WFH">WFH</option>
+                <option value="Dinas">Dinas</option>
+                <option value="Sakit">Sakit</option>
+                <option value="Izin">Izin</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="file" class="form-label">Lampiran</label>
+              <input type="file" class="form-control" id="file" value="" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-primary" onclick="fus()">Kirim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Additional Scripts -->
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/accordations.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script type="text/javascript">
+  function fus(){
+    alert('anda sudah mengisi daftar hadir')
+  }
+  function fas(){
+    alert('anda sudah mengisi daftar keluar, anda sudah aman untuk pulang')
+  }
+  fun
+    $(document).ready(function () {
+
+      // navigation click actions 
+      $('.scroll-link').on('click', function (event) {
+        event.preventDefault();
+        var sectionID = $(this).attr("data-id");
+        scrollToID('#' + sectionID, 750);
+      });
+      // scroll to top action
+      $('.scroll-top').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+      });
+      // mobile nav toggle
+      $('#nav-toggle').on('click', function (event) {
+        event.preventDefault();
+        $('#main-nav').toggleClass("open");
+      });
+    });
+    // scroll function
+    function scrollToID(id, speed) {
+      var offSet = 0;
+      var targetOffset = $(id).offset().top - offSet;
+      var mainNav = $('#main-nav');
+      $('html,body').animate({ scrollTop: targetOffset }, speed);
+      if (mainNav.hasClass("open")) {
+        mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+        mainNav.removeClass("open");
+      }
+    }
+    if (typeof console === "undefined") {
+      console = {
+        log: function () { }
+      };
+    }
+  </script>
+
+</body>
+
+</html>
