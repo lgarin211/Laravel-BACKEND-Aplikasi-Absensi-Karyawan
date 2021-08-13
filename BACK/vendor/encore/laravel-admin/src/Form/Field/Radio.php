@@ -9,20 +9,10 @@ class Radio extends Field
 {
     use CanCascadeFields;
 
-    protected $inline = true;
-
-    protected static $css = [
-        '/vendor/laravel-admin/AdminLTE/plugins/iCheck/all.css',
-    ];
-
-    protected static $js = [
-        '/vendor/laravel-admin/AdminLTE/plugins/iCheck/icheck.min.js',
-    ];
-
     /**
-     * @var string
+     * @var bool
      */
-    protected $cascadeEvent = 'ifChecked';
+    protected $inline = true;
 
     /**
      * Set options.
@@ -102,11 +92,13 @@ class Radio extends Field
      */
     public function render()
     {
-        $this->script = "$('{$this->getElementClassSelector()}').iCheck({radioClass:'iradio_minimal-blue'});";
-
         $this->addCascadeScript();
 
-        $this->addVariables(['options' => $this->options, 'checked' => $this->checked, 'inline' => $this->inline]);
+        $this->addVariables([
+            'options' => $this->options,
+            'checked' => $this->checked,
+            'inline'  => $this->inline,
+        ]);
 
         return parent::render();
     }

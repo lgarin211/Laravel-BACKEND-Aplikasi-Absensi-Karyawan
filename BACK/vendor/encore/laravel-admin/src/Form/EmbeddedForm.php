@@ -3,7 +3,6 @@
 namespace Encore\Admin\Form;
 
 use Encore\Admin\Form;
-use Encore\Admin\Widgets\Form as WidgetForm;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 
@@ -20,7 +19,6 @@ use Illuminate\Support\Collection;
  * @method Field\Id             id($column, $label = '')
  * @method Field\Ip             ip($column, $label = '')
  * @method Field\Url            url($column, $label = '')
- * @method Field\Color          color($column, $label = '')
  * @method Field\Email          email($column, $label = '')
  * @method Field\Mobile         mobile($column, $label = '')
  * @method Field\Slider         slider($column, $label = '')
@@ -53,7 +51,7 @@ use Illuminate\Support\Collection;
 class EmbeddedForm
 {
     /**
-     * @var Form|WidgetForm
+     * @var Form
      */
     protected $parent = null;
 
@@ -108,20 +106,6 @@ class EmbeddedForm
      * @return $this
      */
     public function setParent(Form $parent)
-    {
-        $this->parent = $parent;
-
-        return $this;
-    }
-
-    /**
-     * Set parent form for this form.
-     *
-     * @param WidgetForm $parent
-     *
-     * @return $this
-     */
-    public function setParentWidgetForm(WidgetForm $parent)
     {
         $this->parent = $parent;
 
@@ -239,12 +223,12 @@ class EmbeddedForm
             foreach ($jsonKey as $index => $name) {
                 $elementName[$index] = "{$this->column}[$name]";
                 $errorKey[$index] = "{$this->column}.$name";
-                $elementClass[$index] = "{$this->column}_$name";
+                $elementClass[$index] = "field-{$this->column}-$name";
             }
         } else {
             $elementName = "{$this->column}[$jsonKey]";
             $errorKey = "{$this->column}.$jsonKey";
-            $elementClass = "{$this->column}_$jsonKey";
+            $elementClass = "field-{$this->column}-$jsonKey";
         }
 
         $field->setElementName($elementName)
@@ -286,11 +270,7 @@ class EmbeddedForm
             /** @var Field $field */
             $field = new $className($column, array_slice($arguments, 1));
 
-            if ($this->parent instanceof WidgetForm) {
-                $field->setWidgetForm($this->parent);
-            } else {
-                $field->setForm($this->parent);
-            }
+            $field->setForm($this->parent);
 
             $this->pushField($field);
 

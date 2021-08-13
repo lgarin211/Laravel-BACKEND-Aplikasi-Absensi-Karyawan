@@ -13,18 +13,11 @@
     <link rel="shortcut icon" href="{{$favicon}}">
     @endif
 
-    {!! Admin::css() !!}
-
-    <script src="{{ Admin::jQuery() }}"></script>
-    {!! Admin::headerJs() !!}
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <script src="{{ admin_asset('vendor/laravel-admin/require.js') }}"></script>
+    <script src="{{ admin_route('require-config') }}"></script>
 </head>
 
-<body class="hold-transition {{config('admin.skin')}} {{join(' ', config('admin.layout'))}}">
+<body class="hold-transition {{join(' ', config('admin.theme.layout'))}} {{ config('admin.theme.accent') ? 'accent-'.config('admin.theme.accent') : '' }}">
 
 @if($alert = config('admin.top_alert'))
     <div style="text-align: center;padding: 5px;font-size: 12px;background-color: #ffffd5;color: #ff0000;">
@@ -33,34 +26,16 @@
 @endif
 
 <div class="wrapper">
-
     @include('admin::partials.header')
-
     @include('admin::partials.sidebar')
-
     <div class="content-wrapper" id="pjax-container">
         {!! Admin::style() !!}
-        <div id="app">
         @yield('content')
-        </div>
-        {!! Admin::script() !!}
         {!! Admin::html() !!}
+        {!! Admin::script() !!}
     </div>
-
     @include('admin::partials.footer')
-
 </div>
-
-<button id="totop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up"></i></button>
-
-<script>
-    function LA() {}
-    LA.token = "{{ csrf_token() }}";
-    LA.user = @json($_user_);
-</script>
-
-<!-- REQUIRED JS SCRIPTS -->
-{!! Admin::js() !!}
 
 </body>
 </html>

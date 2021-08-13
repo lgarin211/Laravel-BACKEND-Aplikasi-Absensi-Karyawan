@@ -27,6 +27,10 @@ class Image extends File
      */
     public function prepare($image)
     {
+        if (is_string($image)) {
+            return $image;
+        }
+
         if ($this->picker) {
             return parent::prepare($image);
         }
@@ -44,20 +48,5 @@ class Image extends File
         $this->uploadAndDeleteOriginalThumbnail($image);
 
         return $path;
-    }
-
-    /**
-     * force file type to image.
-     *
-     * @param $file
-     *
-     * @return array|bool|int[]|string[]
-     */
-    public function guessPreviewType($file)
-    {
-        $extra = parent::guessPreviewType($file);
-        $extra['type'] = 'image';
-
-        return $extra;
     }
 }

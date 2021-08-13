@@ -4,10 +4,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Laravel-admin name
+    | The name of admin application
     |--------------------------------------------------------------------------
     |
-    | This value is the name of laravel-admin, This setting is displayed on the
+    | This value is the name of admin application, This setting is displayed on the
     | login page.
     |
     */
@@ -15,26 +15,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Laravel-admin logo
+    | Logo setting of admin application
     |--------------------------------------------------------------------------
     |
-    | The logo of all admin pages. You can also set it as an image by using a
-    | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
-    |
     */
-    'logo' => '<b>Laravel</b> admin',
+    'logo' => [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Laravel-admin mini logo
-    |--------------------------------------------------------------------------
-    |
-    | The logo of all admin pages when the sidebar menu is collapsed. You can
-    | also set it as an image by using a `img` tag, eg
-    | '<img src="http://logo-url" alt="Admin logo">'.
-    |
-    */
-    'logo-mini' => '<b>La</b>',
+        'image' => '/vendor/laravel-admin/AdminLTE/img/AdminLTELogo.png',
+
+        'text' => '<span class="font-weight-bolder">Laravel-admin</span>',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -63,6 +53,8 @@ return [
         'namespace' => 'App\\Admin\\Controllers',
 
         'middleware' => ['web', 'admin'],
+
+        'as' => 'admin.',
     ],
 
     /*
@@ -124,7 +116,7 @@ return [
         'providers' => [
             'admin' => [
                 'driver' => 'eloquent',
-                'model'  => Encore\Admin\Auth\Database\Administrator::class,
+                'model'  => Encore\Admin\Models\Administrator::class,
             ],
         ],
 
@@ -140,6 +132,17 @@ return [
             'auth/logout',
         ],
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Single device login / 单设备登录
+    |--------------------------------------------------------------------------
+    |
+    | Invalidating and "logging out" a user's sessions that are active on other
+    | devices without invalidating the session on their current device.
+    |
+    */
+    'single_device_login' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -177,69 +180,12 @@ return [
 
         // User tables and model.
         'users_table' => 'admin_users',
-        'users_model' => Encore\Admin\Auth\Database\Administrator::class,
-
-        // Role table and model.
-        'roles_table' => 'admin_roles',
-        'roles_model' => Encore\Admin\Auth\Database\Role::class,
-
-        // Permission table and model.
-        'permissions_table' => 'admin_permissions',
-        'permissions_model' => Encore\Admin\Auth\Database\Permission::class,
+        'users_model' => Encore\Admin\Models\Administrator::class,
 
         // Menu table and model.
         'menu_table' => 'admin_menu',
-        'menu_model' => Encore\Admin\Auth\Database\Menu::class,
-
-        // Pivot table for table above.
-        'operation_log_table'    => 'admin_operation_log',
-        'user_permissions_table' => 'admin_user_permissions',
-        'role_users_table'       => 'admin_role_users',
-        'role_permissions_table' => 'admin_role_permissions',
-        'role_menu_table'        => 'admin_role_menu',
+        'menu_model' => Encore\Admin\Models\Menu::class,
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | User operation log setting
-    |--------------------------------------------------------------------------
-    |
-    | By setting this option to open or close operation log in laravel-admin.
-    |
-    */
-    'operation_log' => [
-
-        'enable' => true,
-
-        /*
-         * Only logging allowed methods in the list
-         */
-        'allowed_methods' => ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'CONNECT', 'OPTIONS', 'TRACE', 'PATCH'],
-
-        /*
-         * Routes that will not log to database.
-         *
-         * All method to path like: admin/auth/logs
-         * or specific method to path like: get:admin/auth/logs.
-         */
-        'except' => [
-            env('ADMIN_ROUTE_PREFIX', 'admin').'/auth/logs*',
-        ],
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Indicates whether to check route permission.
-    |--------------------------------------------------------------------------
-    */
-    'check_route_permission' => true,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Indicates whether to check menu roles.
-    |--------------------------------------------------------------------------
-    */
-    'check_menu_roles'       => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -249,47 +195,96 @@ return [
     | Set a default avatar for newly created users.
     |
     */
-    'default_avatar' => '/vendor/laravel-admin/AdminLTE/dist/img/user2-160x160.jpg',
+    'default_avatar' => '/vendor/laravel-admin/AdminLTE/img/user2-160x160.jpg',
 
     /*
     |--------------------------------------------------------------------------
-    | Admin map field provider
+    | Application theme
     |--------------------------------------------------------------------------
     |
-    | Supported: "tencent", "google", "yandex".
+    | @see https://adminlte.io/docs/3.0/layout.html
     |
     */
-    'map_provider' => 'google',
+    'theme' => [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Application Skin
-    |--------------------------------------------------------------------------
-    |
-    | This value is the skin of admin pages.
-    | @see https://adminlte.io/docs/2.4/layout
-    |
-    | Supported:
-    |    "skin-blue", "skin-blue-light", "skin-yellow", "skin-yellow-light",
-    |    "skin-green", "skin-green-light", "skin-purple", "skin-purple-light",
-    |    "skin-red", "skin-red-light", "skin-black", "skin-black-light".
-    |
-    */
-    'skin' => 'skin-blue-light',
+        /*
+        |--------------------------------------------------------------------------
+        | Available layout options.
+        |--------------------------------------------------------------------------
+        | Fixed Sidebar: use the class `.layout-fixed` to get a fixed sidebar.
+        | Fixed Navbar: use the class `.layout-navbar-fixed` to get a fixed navbar.
+        | Fixed Footer: use the class `.layout-footer-fixed` to get a fixed footer.
+        | Collapsed Sidebar: use the class `.sidebar-collapse` to have a collapsed sidebar upon loading.
+        | Boxed Layout: use the class `.layout-boxed` to get a boxed layout that stretches only to 1250px.
+        | Top Navigation: use the class `.layout-top-nav` to remove the sidebar and have your links at the top navbar.
+        |
+        */
+        'layout' => ['sidebar-mini', 'sidebar-collapse', 'text-sm'],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Application layout
-    |--------------------------------------------------------------------------
-    |
-    | This value is the layout of admin pages.
-    | @see https://adminlte.io/docs/2.4/layout
-    |
-    | Supported: "fixed", "layout-boxed", "layout-top-nav", "sidebar-collapse",
-    | "sidebar-mini".
-    |
-    */
-    'layout' => ['sidebar-mini', 'sidebar-collapse'],
+        /*
+        |--------------------------------------------------------------------------
+        | Default color for all links.
+        |--------------------------------------------------------------------------
+        |
+        | navbar-light or navbar-dark for content color
+        |
+        | navbar-$color for backgroud color
+        |
+        | Available $color options:
+        |    primary secondary secondary info warning danger black gray-dark  gray
+        |    light indigo  navy purple fuchsia pink maroon orange lime teal olive
+        |
+        */
+        'navbar' => 'navbar-light navbar-white',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Default color for all links.
+        |--------------------------------------------------------------------------
+        |
+        | Available options:
+        |    primary secondary secondary info warning danger black gray-dark  gray
+        |    light indigo  navy purple fuchsia pink maroon orange lime teal olive
+        |
+        */
+        'accent' => 'info',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Default color for card form and buttons.
+        |--------------------------------------------------------------------------
+        |
+        | light-$color or dark-$color
+        |
+        | Available $color options:
+        |    primary secondary secondary info warning danger black gray-dark  gray
+        |    light indigo  navy purple fuchsia pink maroon orange lime teal olive
+        |
+        */
+        'sidebar' => 'light-info',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Default color for card, form and buttons.
+        |--------------------------------------------------------------------------
+        |
+        | Available options:
+        |    primary secondary secondary info warning danger
+        */
+        'color' => 'info',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Logo backgroud color.
+        |--------------------------------------------------------------------------
+        |
+        | Available color options:
+        |    primary secondary secondary info warning danger black gray-dark  gray
+        |    light indigo  navy purple fuchsia pink maroon orange lime teal olive
+        |
+        */
+        'logo' => 'light',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -324,15 +319,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Menu bind to permission
-    |--------------------------------------------------------------------------
-    |
-    | whether enable menu bind to a permission
-    */
-    'menu_bind_permission' => true,
-
-    /*
-    |--------------------------------------------------------------------------
     | Enable default breadcrumb
     |--------------------------------------------------------------------------
     |
@@ -356,23 +342,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Enable/Disable sidebar menu search
-    |--------------------------------------------------------------------------
-    */
-    'enable_menu_search' => true,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Exclude route from generate menu command
-    |--------------------------------------------------------------------------
-    */
-    'menu_exclude' => [
-        '_handle_selectable_',
-        '_handle_renderable_',
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
     | Alert message that will displayed on top of the page.
     |--------------------------------------------------------------------------
     */
@@ -380,10 +349,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | The global Grid action display class.
+    | The global Table action display class.
     |--------------------------------------------------------------------------
     */
-    'grid_action_class' => \Encore\Admin\Grid\Displayers\DropdownActions::class,
+    'table_action_class' => \Encore\Admin\Table\Displayers\DropdownActions::class,
 
     /*
     |--------------------------------------------------------------------------

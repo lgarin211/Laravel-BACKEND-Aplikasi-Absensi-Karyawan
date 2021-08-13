@@ -3,77 +3,107 @@
 namespace Encore\Admin\Form\Field;
 
 use Encore\Admin\Form\Field;
-use Illuminate\Support\Arr;
 
+/**
+ * Class SwitchField.
+ *
+ * @author songzou<zosong@126.com>
+ *
+ * @see https://gitbrent.github.io/bootstrap4-toggle/
+ */
 class SwitchField extends Field
 {
-    protected static $css = [
-        '/vendor/laravel-admin/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css',
+    use CanCascadeFields;
+
+    /**
+     * @var string
+     */
+    protected $size = 'sm';
+
+    /**
+     * @var array
+     */
+    protected $state = [
+        'on'  => ['value' => 1, 'text' => 'ON', 'style' => ''],
+        'off' => ['value' => 0, 'text' => 'OFF', 'style' => 'default'],
     ];
 
-    protected static $js = [
-        '/vendor/laravel-admin/bootstrap-switch/dist/js/bootstrap-switch.min.js',
-    ];
+    /**
+     * @param int    $value
+     * @param string $text
+     * @param string $style
+     *
+     * @return $this
+     */
+    public function on($value = 1, $text = '', $style = '')
+    {
+        $this->state['on'] = [
+            'value' => $value,
+            'text'  => $text ?: $this->state['on']['text'],
+            'style' => $style ?: admin_color(),
+        ];
 
-    protected $states = [
-        'on'  => ['value' => 1, 'text' => 'ON', 'color' => 'primary'],
-        'off' => ['value' => 0, 'text' => 'OFF', 'color' => 'default'],
-    ];
+        return $this;
+    }
 
-    protected $size = 'small';
+    /**
+     * @param int    $value
+     * @param string $text
+     * @param string $style
+     *
+     * @return $this
+     */
+    public function off($value = 0, $text = '', $style = '')
+    {
+        $this->state['off'] = [
+            'value' => $value,
+            'text'  => $text ?: $this->state['on']['text'],
+            'style' => $style ?: 'light',
+        ];
 
-    public function setSize($size)
+        return $this;
+    }
+
+    /**
+     * @param string $size lg, sm, xs
+     *
+     * @return $this
+     */
+    public function size($size)
     {
         $this->size = $size;
 
         return $this;
     }
 
-    public function states($states = [])
-    {
-        foreach (Arr::dot($states) as $key => $state) {
-            Arr::set($this->states, $key, $state);
-        }
-
-        return $this;
-    }
-
-    public function prepare($value)
-    {
-        if (isset($this->states[$value])) {
-            return $this->states[$value]['value'];
-        }
-
-        return $value;
-    }
-
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|string
+     */
     public function render()
     {
         if (!$this->shouldRender()) {
             return '';
         }
 
-        foreach ($this->states as $state => $option) {
-            if ($this->value() == $option['value']) {
-                $this->value = $state;
-                break;
-            }
-        }
+        $this->addCascadeScript();
 
-        $this->script = <<<EOT
+        $this->addVariables([
+            'state' => $this->state,
+            'size'  => $this->size,
+        ]);
 
-$('{$this->getElementClassSelector()}.la_checkbox').bootstrapSwitch({
-    size:'{$this->size}',
-    onText: '{$this->states['on']['text']}',
-    offText: '{$this->states['off']['text']}',
-    onColor: '{$this->states['on']['color']}',
-    offColor: '{$this->states['off']['color']}',
-    onSwitchChange: function(event, state) {
-        $(event.target).closest('.bootstrap-switch').next().val(state ? 'on' : 'off').change();
-    }
-});
+        $this->state['on']['style'] = $this->state['on']['style'] ?: admin_color();
 
-EOT;
+        $this->attribute([
+            'data-onstyle'  => $this->state['on']['style'],
+            'data-offstyle' => $this->state['off']['style'],
+            'data-on'       => $this->state['on']['text'],
+            'data-off'      => $this->state['off']['text'],
+            'data-onval'    => $this->state['on']['value'],
+            'data-offval'   => $this->state['off']['value'],
+            'data-size'     => $this->size,
+            'data-width'    => 80,
+        ]);
 
         return parent::render();
     }

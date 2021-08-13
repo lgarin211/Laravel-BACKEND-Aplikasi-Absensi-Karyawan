@@ -131,41 +131,18 @@ trait ImageField
         }
 
         foreach ($this->thumbnails as $name => $_) {
-            /*  Refactoring actual remove lofic to another method destroyThumbnailFile()
-            to make deleting thumbnails work with multiple as well as
-            single image upload. */
+            // We need to get extension type ( .jpeg , .png ...)
+            $ext = pathinfo($this->original, PATHINFO_EXTENSION);
 
-            if (is_array($this->original)) {
-                if (empty($this->original)) {
-                    continue;
-                }
+            // We remove extension from file name so we can append thumbnail type
+            $path = Str::replaceLast('.'.$ext, '', $this->original);
 
-                foreach ($this->original as $original) {
-                    $this->destroyThumbnailFile($original, $name);
-                }
-            } else {
-                $this->destroyThumbnailFile($this->original, $name);
+            // We merge original name + thumbnail name + extension
+            $path = $path.'-'.$name.'.'.$ext;
+
+            if ($this->storage->exists($path)) {
+                $this->storage->delete($path);
             }
-        }
-    }
-
-    /**
-     * Remove thumbnail file from disk.
-     *
-     * @return void.
-     */
-    public function destroyThumbnailFile($original, $name)
-    {
-        $ext = @pathinfo($original, PATHINFO_EXTENSION);
-
-        // We remove extension from file name so we can append thumbnail type
-        $path = @Str::replaceLast('.'.$ext, '', $original);
-
-        // We merge original name + thumbnail name + extension
-        $path = $path.'-'.$name.'.'.$ext;
-
-        if ($this->storage->exists($path)) {
-            $this->storage->delete($path);
         }
     }
 

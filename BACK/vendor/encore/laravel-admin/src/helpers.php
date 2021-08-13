@@ -1,5 +1,6 @@
 <?php
 
+use Encore\Admin\Admin;
 use Illuminate\Support\MessageBag;
 
 if (!function_exists('admin_path')) {
@@ -33,7 +34,7 @@ if (!function_exists('admin_url')) {
             return $path;
         }
 
-        $secure = $secure ?: (config('admin.https') || config('admin.secure'));
+        $secure = $secure ?: (config('admin.https'));
 
         return url(admin_base_path($path), $parameters, $secure);
     }
@@ -148,7 +149,37 @@ if (!function_exists('admin_asset')) {
      */
     function admin_asset($path)
     {
-        return (config('admin.https') || config('admin.secure')) ? secure_asset($path) : asset($path);
+        return (config('admin.https')) ? secure_asset($path) : asset($path);
+    }
+}
+
+if (!function_exists('admin_assets_require')) {
+
+    /**
+     * @param $path
+     *
+     * @return string
+     */
+    function admin_assets_require($assets)
+    {
+        \Encore\Admin\Assets::require($assets);
+    }
+}
+
+if (!function_exists('admin_color')) {
+
+    /**
+     * @param string $prefix
+     *
+     * @return string
+     */
+    function admin_color($tpl = '')
+    {
+        if ($tpl) {
+            return str_replace('%s', config('admin.theme.color'), $tpl);
+        }
+
+        return config('admin.theme.color');
     }
 }
 
@@ -185,10 +216,8 @@ if (!function_exists('array_delete')) {
      */
     function array_delete(&$array, $value)
     {
-        $value = \Illuminate\Support\Arr::wrap($value);
-
         foreach ($array as $index => $item) {
-            if (in_array($item, $value)) {
+            if ($value == $item) {
                 unset($array[$index]);
             }
         }
@@ -321,9 +350,76 @@ if (!function_exists('json_encode_options')) {
     }
 }
 
-if (!function_exists('admin_get_route')) {
-    function admin_get_route(string $name): string
+if (!function_exists('admin_attrs')) {
+    function admin_attrs(array $attributes = [])
     {
-        return config('admin.route.prefix').'.'.$name;
+        $str = [];
+
+        foreach ($attributes as $name => $value) {
+            $str[] = "$name=\"$value\"";
+        }
+
+        return implode(' ', $str);
+    }
+}
+
+function admin_login_page_backgroud()
+{
+    if (config('admin.login_background_image')) {
+        $image = config('admin.login_background_image');
+    } else {
+        $hour = date('H');
+
+        $index = 1;
+
+        if ($hour > 8 && $hour < 18) {
+            $index = 2;
+        } elseif ($hour >= 18 && $hour < 20) {
+            $index = 3;
+        } elseif ($hour >= 20 || $hour <= 8) {
+            $index = 4;
+        }
+
+        $image = "/vendor/laravel-admin/laravel-admin/images/login-bg{$index}.svg";
+    }
+
+    return "style=\"background: url({$image}) no-repeat;background-size: cover;\"";
+}
+
+if (!function_exists('admin_view')) {
+
+    /**
+     * @param string $view
+     * @param array  $data
+     *
+     * @throws Throwable
+     *
+     * @return string
+     */
+    function admin_view($view, $data = [])
+    {
+        return Admin::view($view, $data);
+    }
+}
+
+if (!function_exists('admin_user')) {
+    function admin_user()
+    {
+        return \Encore\Admin\Facades\Admin::user();
+    }
+}
+
+if (!function_exists('admin_route')) {
+    /**
+     * @param $name
+     * @param array $parameters
+     * @param bool $absolute
+     * @return mixed
+     */
+    function admin_route($name, $parameters = [], $absolute = true)
+    {
+        $name = config('admin.route.as', '').$name;
+
+        return app('url')->route($name, $parameters, $absolute);
     }
 }

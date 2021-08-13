@@ -2,7 +2,10 @@
 
 namespace Encore\Admin\Form;
 
-use Encore\Admin\Facades\Admin;
+use Encore\Admin\Form\Actions\_List;
+use Encore\Admin\Form\Actions\Action;
+use Encore\Admin\Form\Actions\Delete;
+use Encore\Admin\Form\Actions\View;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;
@@ -15,11 +18,14 @@ class Tools implements Renderable
     protected $form;
 
     /**
-     * Collection of tools.
-     *
+     * @var Collection
+     */
+    protected $default;
+
+    /**
      * @var array
      */
-    protected $tools = ['delete', 'view', 'list'];
+    protected $defaultTools = ['view', 'delete', 'list'];
 
     /**
      * Tools should be appends to default tools.
@@ -36,6 +42,11 @@ class Tools implements Renderable
     protected $prepends;
 
     /**
+     * @var bool
+     */
+    protected $disable = false;
+
+    /**
      * Create a new Tools instance.
      *
      * @param Builder $builder
@@ -43,6 +54,7 @@ class Tools implements Renderable
     public function __construct(Builder $builder)
     {
         $this->form = $builder;
+        $this->default = new Collection();
         $this->appends = new Collection();
         $this->prepends = new Collection();
     }
@@ -56,6 +68,10 @@ class Tools implements Renderable
      */
     public function append($tool)
     {
+        if ($tool instanceof Action) {
+            $tool->setModel($this->form->getModel());
+        }
+
         $this->appends->push($tool);
 
         return $this;
@@ -70,7 +86,61 @@ class Tools implements Renderable
      */
     public function prepend($tool)
     {
+        if ($tool instanceof Action) {
+            $tool->setModel($this->form->getModel());
+        }
+
         $this->prepends->push($tool);
+
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    protected function addView()
+    {
+        if (in_array('view', $this->defaultTools)) {
+            $this->default->put('view', new View($this->getViewPath()));
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    protected function addList()
+    {
+        if (in_array('list', $this->defaultTools)) {
+            $this->default->put('list', new _List($this->getListPath()));
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    protected function addDelete()
+    {
+        if (in_array('delete', $this->defaultTools)) {
+            $action = new Delete($this->getListPath());
+
+            $this->default->put('delete', $action->setModel($this->form->getModel()));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Disable all tools.
+     *
+     * @return $this
+     */
+    public function disable()
+    {
+        $this->disable = true;
 
         return $this;
     }
@@ -83,9 +153,9 @@ class Tools implements Renderable
     public function disableList(bool $disable = true)
     {
         if ($disable) {
-            array_delete($this->tools, 'list');
-        } elseif (!in_array('list', $this->tools)) {
-            array_push($this->tools, 'list');
+            array_delete($this->defaultTools, 'list');
+        } elseif (!$this->default->has('list')) {
+            $this->addList();
         }
 
         return $this;
@@ -99,9 +169,9 @@ class Tools implements Renderable
     public function disableDelete(bool $disable = true)
     {
         if ($disable) {
-            array_delete($this->tools, 'delete');
-        } elseif (!in_array('delete', $this->tools)) {
-            array_push($this->tools, 'delete');
+            array_delete($this->defaultTools, 'delete');
+        } elseif (!$this->default->has('delete')) {
+            $this->addDelete();
         }
 
         return $this;
@@ -115,9 +185,9 @@ class Tools implements Renderable
     public function disableView(bool $disable = true)
     {
         if ($disable) {
-            array_delete($this->tools, 'view');
-        } elseif (!in_array('view', $this->tools)) {
-            array_push($this->tools, 'view');
+            array_delete($this->defaultTools, 'view');
+        } elseif (!$this->default->has('view')) {
+            $this->addView();
         }
 
         return $this;
@@ -170,147 +240,6 @@ class Tools implements Renderable
     }
 
     /**
-     * Render list button.
-     *
-     * @return string
-     */
-    protected function renderList()
-    {
-        $text = trans('admin.list');
-
-        return <<<EOT
-<div class="btn-group pull-right" style="margin-right: 5px">
-    <a href="{$this->getListPath()}" class="btn btn-sm btn-default" title="$text"><i class="fa fa-list"></i><span class="hidden-xs">&nbsp;$text</span></a>
-</div>
-EOT;
-    }
-
-    /**
-     * Render list button.
-     *
-     * @return string
-     */
-    protected function renderView()
-    {
-        $view = trans('admin.view');
-
-        return <<<HTML
-<div class="btn-group pull-right" style="margin-right: 5px">
-    <a href="{$this->getViewPath()}" class="btn btn-sm btn-primary" title="{$view}">
-        <i class="fa fa-eye"></i><span class="hidden-xs"> {$view}</span>
-    </a>
-</div>
-HTML;
-    }
-
-    /**
-     * Render `delete` tool.
-     *
-     * @return string
-     */
-    protected function renderDelete()
-    {
-        $trans = [
-            'delete_confirm' => trans('admin.delete_confirm'),
-            'confirm'        => trans('admin.confirm'),
-            'cancel'         => trans('admin.cancel'),
-            'delete'         => trans('admin.delete'),
-        ];
-
-        $class = uniqid();
-
-        $script = <<<SCRIPT
-
-$('.{$class}-delete').unbind('click').click(function() {
-
-    swal({
-        title: "{$trans['delete_confirm']}",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#DD6B55",
-        confirmButtonText: "{$trans['confirm']}",
-        showLoaderOnConfirm: true,
-        cancelButtonText: "{$trans['cancel']}",
-        preConfirm: function() {
-            return new Promise(function(resolve) {
-                $.ajax({
-                    method: 'post',
-                    url: '{$this->getDeletePath()}',
-                    data: {
-                        _method:'delete',
-                        _token:LA.token,
-                    },
-                    success: function (data) {
-                        $.pjax({container:'#pjax-container', url: '{$this->getListPath()}' });
-
-                        resolve(data);
-                    }
-                });
-            });
-        }
-    }).then(function(result) {
-        var data = result.value;
-        if (typeof data === 'object') {
-            if (data.status) {
-                swal(data.message, '', 'success');
-            } else {
-                swal(data.message, '', 'error');
-            }
-        }
-    });
-});
-
-SCRIPT;
-
-        Admin::script($script);
-
-        return <<<HTML
-<div class="btn-group pull-right" style="margin-right: 5px">
-    <a href="javascript:void(0);" class="btn btn-sm btn-danger {$class}-delete" title="{$trans['delete']}">
-        <i class="fa fa-trash"></i><span class="hidden-xs">  {$trans['delete']}</span>
-    </a>
-</div>
-HTML;
-    }
-
-    /**
-     * Add a tool.
-     *
-     * @param string $tool
-     *
-     * @return $this
-     *
-     * @deprecated use append instead.
-     */
-    public function add($tool)
-    {
-        return $this->append($tool);
-    }
-
-    /**
-     * Disable back button.
-     *
-     * @return $this
-     *
-     * @deprecated
-     */
-    public function disableBackButton()
-    {
-    }
-
-    /**
-     * Disable list button.
-     *
-     * @return $this
-     *
-     * @deprecated Use disableList instead.
-     */
-    public function disableListButton()
-    {
-        return $this->disableList();
-    }
-
-    /**
      * Render custom tools.
      *
      * @param Collection $tools
@@ -348,11 +277,16 @@ HTML;
      */
     public function render()
     {
+        if ($this->disable) {
+            return '';
+        }
+
+        $this->addView()->addDelete()->addList();
+
         $output = $this->renderCustomTools($this->prepends);
 
-        foreach ($this->tools as $tool) {
-            $renderMethod = 'render'.ucfirst($tool);
-            $output .= $this->$renderMethod();
+        foreach ($this->default as $tool) {
+            $output .= $tool->render();
         }
 
         return $output.$this->renderCustomTools($this->appends);

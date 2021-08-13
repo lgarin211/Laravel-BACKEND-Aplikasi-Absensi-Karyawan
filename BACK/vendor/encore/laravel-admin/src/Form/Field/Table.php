@@ -3,7 +3,6 @@
 namespace Encore\Admin\Form\Field;
 
 use Encore\Admin\Form\NestedForm;
-use Encore\Admin\Widgets\Form as WidgetForm;
 
 class Table extends HasMany
 {
@@ -30,6 +29,8 @@ class Table extends HasMany
         if (count($arguments) == 2) {
             list($this->label, $this->builder) = $arguments;
         }
+
+        admin_assets_require('initialize');
     }
 
     /**
@@ -37,29 +38,13 @@ class Table extends HasMany
      */
     protected function buildRelatedForms()
     {
-//        if (is_null($this->form)) {
-//            return [];
-//        }
-
         $forms = [];
 
-        if ($values = old($this->column)) {
-            foreach ($values as $key => $data) {
-                if ($data[NestedForm::REMOVE_FLAG_NAME] == 1) {
-                    continue;
-                }
-
-                $forms[$key] = $this->buildNestedForm($this->column, $this->builder, $key)->fill($data);
+        foreach ($this->value ?? [] as $key => $data) {
+            if (isset($data['pivot'])) {
+                $data = array_merge($data, $data['pivot']);
             }
-        } else {
-            foreach ($this->value ?? [] as $key => $data) {
-                if (isset($data['pivot'])) {
-                    $data = array_merge($data, $data['pivot']);
-                }
-                if (is_array($data)) {
-                    $forms[$key] = $this->buildNestedForm($this->column, $this->builder, $key)->fill($data);
-                }
-            }
+            $forms[$key] = $this->buildNestedForm($this->column, $this->builder, $key)->fill($data);
         }
 
         return $forms;
@@ -93,13 +78,8 @@ class Table extends HasMany
     {
         $form = new NestedForm($column);
 
-        if ($this->form instanceof WidgetForm) {
-            $form->setWidgetForm($this->form);
-        } else {
-            $form->setForm($this->form);
-        }
-
-        $form->setKey($key);
+        $form->setForm($this->form)
+            ->setKey($key);
 
         call_user_func($builder, $form);
 

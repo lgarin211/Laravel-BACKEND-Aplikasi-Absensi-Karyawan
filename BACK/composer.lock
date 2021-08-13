@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91701ac7b6b4eace69d74c82879dcedf",
+    "content-hash": "2be5494ef9a897fc06c8b6408505aef3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -843,16 +843,16 @@
         },
         {
             "name": "encore/laravel-admin",
-            "version": "v1.8.13",
+            "version": "v2.0.0-beta5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "52c51ee3b7d7111e74a0f2f64a27539871126ac8"
+                "reference": "6f8c81bb46ea698cfb76c06166d74519c0a98217"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/52c51ee3b7d7111e74a0f2f64a27539871126ac8",
-                "reference": "52c51ee3b7d7111e74a0f2f64a27539871126ac8",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/6f8c81bb46ea698cfb76c06166d74519c0a98217",
+                "reference": "6f8c81bb46ea698cfb76c06166d74519c0a98217",
                 "shasum": ""
             },
             "require": {
@@ -865,8 +865,7 @@
                 "fzaninotto/faker": "~1.4",
                 "intervention/image": "~2.3",
                 "laravel/browser-kit-testing": "^6.0",
-                "laravel/laravel": ">=5.5",
-                "spatie/phpunit-watcher": "^1.22.0"
+                "laravel/laravel": ">=5.5"
             },
             "suggest": {
                 "intervention/image": "Required to handling and manipulation upload images (~2.3).",
@@ -906,72 +905,14 @@
             "keywords": [
                 "admin",
                 "form",
-                "grid",
-                "laravel"
+                "laravel",
+                "table"
             ],
             "support": {
                 "issues": "https://github.com/z-song/laravel-admin/issues",
-                "source": "https://github.com/z-song/laravel-admin/tree/v1.8.13"
+                "source": "https://github.com/z-song/laravel-admin/tree/v2.0.0-beta5"
             },
-            "time": "2021-07-15T03:43:30+00:00"
-        },
-        {
-            "name": "fideloper/proxy",
-            "version": "4.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fideloper/TrustedProxy.git",
-                "reference": "c073b2bd04d1c90e04dc1b787662b558dd65ade0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/c073b2bd04d1c90e04dc1b787662b558dd65ade0",
-                "reference": "c073b2bd04d1c90e04dc1b787662b558dd65ade0",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^5.0|^6.0|^7.0|^8.0|^9.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "illuminate/http": "^5.0|^6.0|^7.0|^8.0|^9.0",
-                "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "^6.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Fideloper\\Proxy\\TrustedProxyServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Fideloper\\Proxy\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Fidao",
-                    "email": "fideloper@gmail.com"
-                }
-            ],
-            "description": "Set trusted proxies for Laravel",
-            "keywords": [
-                "load balancing",
-                "proxy",
-                "trusted proxy"
-            ],
-            "support": {
-                "issues": "https://github.com/fideloper/TrustedProxy/issues",
-                "source": "https://github.com/fideloper/TrustedProxy/tree/4.4.1"
-            },
-            "time": "2020-10-22T13:48:01+00:00"
+            "time": "2020-11-02T13:23:26+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -1355,361 +1296,17 @@
             "time": "2021-06-30T20:03:07+00:00"
         },
         {
-            "name": "jxlwqq/json-editor",
-            "version": "v1.0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel-admin-extensions/json-editor.git",
-                "reference": "d260f4afa8cb1c8349653629fdd626e4f9ca4687"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel-admin-extensions/json-editor/zipball/d260f4afa8cb1c8349653629fdd626e4f9ca4687",
-                "reference": "d260f4afa8cb1c8349653629fdd626e4f9ca4687",
-                "shasum": ""
-            },
-            "require": {
-                "encore/laravel-admin": "~1.6",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Jxlwqq\\JsonEditor\\JsonEditorServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Jxlwqq\\JsonEditor\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "jxlwqq",
-                    "email": "jxlwqq@gmail.com"
-                }
-            ],
-            "description": "JSON Editor for Laravel-admin",
-            "homepage": "https://github.com/jxlwqq/json-editor",
-            "keywords": [
-                "extension",
-                "laravel-admin"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel-admin-extensions/json-editor/issues",
-                "source": "https://github.com/laravel-admin-extensions/json-editor/tree/v1.0.8"
-            },
-            "time": "2020-10-09T01:04:36+00:00"
-        },
-        {
-            "name": "laravel-admin-ext/api-tester",
-            "version": "v1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel-admin-extensions/api-tester.git",
-                "reference": "ef8501aa339b988d59ac76d57581f0613e753ffe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel-admin-extensions/api-tester/zipball/ef8501aa339b988d59ac76d57581f0613e753ffe",
-                "reference": "ef8501aa339b988d59ac76d57581f0613e753ffe",
-                "shasum": ""
-            },
-            "require": {
-                "encore/laravel-admin": ">=1.5",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "laravel/laravel": "~5.5",
-                "phpunit/phpunit": "~6.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Encore\\Admin\\ApiTester\\ApiTesterServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Encore\\Admin\\ApiTester\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "z-song",
-                    "email": "zosong@126.com"
-                }
-            ],
-            "description": "Api tester for laravel",
-            "homepage": "https://github.com/laravel-admin-extensions/api-tester",
-            "keywords": [
-                "api",
-                "laravel-admin",
-                "tester"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel-admin-extensions/api-tester/issues",
-                "source": "https://github.com/laravel-admin-extensions/api-tester/tree/v1.0.4"
-            },
-            "time": "2020-09-11T04:45:51+00:00"
-        },
-        {
-            "name": "laravel-admin-ext/backup",
-            "version": "v1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel-admin-extensions/backup.git",
-                "reference": "8a3eee6cfc4f636557d9b88a636630b44da260f6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel-admin-extensions/backup/zipball/8a3eee6cfc4f636557d9b88a636630b44da260f6",
-                "reference": "8a3eee6cfc4f636557d9b88a636630b44da260f6",
-                "shasum": ""
-            },
-            "require": {
-                "encore/laravel-admin": ">=1.5",
-                "php": ">=7.0.0",
-                "spatie/laravel-backup": ">=5.0"
-            },
-            "require-dev": {
-                "laravel/laravel": "~5.5",
-                "phpunit/phpunit": "~6.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Encore\\Admin\\Backup\\BackupServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Encore\\Admin\\Backup\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "z-song",
-                    "email": "zosong@126.com"
-                }
-            ],
-            "description": "Backup extension for laravel-admin",
-            "homepage": "https://github.com/laravel-admin-extensions/backup",
-            "keywords": [
-                "backup",
-                "laravel-admin"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel-admin-extensions/backup/issues",
-                "source": "https://github.com/laravel-admin-extensions/backup/tree/v1.1.1"
-            },
-            "time": "2020-09-11T04:42:29+00:00"
-        },
-        {
-            "name": "laravel-admin-ext/config",
-            "version": "v1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel-admin-extensions/config.git",
-                "reference": "5fe99f56758adfd8436ac5d02e83e72a6388dfc2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel-admin-extensions/config/zipball/5fe99f56758adfd8436ac5d02e83e72a6388dfc2",
-                "reference": "5fe99f56758adfd8436ac5d02e83e72a6388dfc2",
-                "shasum": ""
-            },
-            "require": {
-                "encore/laravel-admin": ">=1.6",
-                "laravel/framework": ">=5.5",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "laravel/laravel": "~5.5",
-                "phpunit/phpunit": "~6.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Encore\\Admin\\Config\\ConfigServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Encore\\Admin\\Config\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "z-song",
-                    "email": "zosong@126.com"
-                }
-            ],
-            "description": "Config extension for laravel-admin",
-            "homepage": "https://github.com/laravel-admin-extensions/config",
-            "keywords": [
-                "laravel-admin",
-                "setting"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel-admin-extensions/config/issues",
-                "source": "https://github.com/laravel-admin-extensions/config/tree/v1.1"
-            },
-            "time": "2019-12-11T02:31:22+00:00"
-        },
-        {
-            "name": "laravel-admin-ext/log-viewer",
-            "version": "v1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel-admin-extensions/log-viewer.git",
-                "reference": "742a2550746c9346d463249ba16b8fba9ac9cf97"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel-admin-extensions/log-viewer/zipball/742a2550746c9346d463249ba16b8fba9ac9cf97",
-                "reference": "742a2550746c9346d463249ba16b8fba9ac9cf97",
-                "shasum": ""
-            },
-            "require": {
-                "encore/laravel-admin": "~1.6",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Encore\\Admin\\LogViewer\\LogViewerServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Encore\\Admin\\LogViewer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "z-song",
-                    "email": "zosong@126.com"
-                }
-            ],
-            "description": "Log viewer for laravel",
-            "homepage": "https://github.com/laravel-admin-extensions/log-viewer",
-            "keywords": [
-                "Viewer",
-                "laravel-admin",
-                "log"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel-admin-extensions/log-viewer/issues",
-                "source": "https://github.com/laravel-admin-extensions/log-viewer/tree/master"
-            },
-            "time": "2018-11-13T17:17:36+00:00"
-        },
-        {
-            "name": "laravel-admin-ext/media-manager",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel-admin-extensions/media-manager.git",
-                "reference": "08ef816da82e543f7519d6b17aa34f1ef13adaab"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel-admin-extensions/media-manager/zipball/08ef816da82e543f7519d6b17aa34f1ef13adaab",
-                "reference": "08ef816da82e543f7519d6b17aa34f1ef13adaab",
-                "shasum": ""
-            },
-            "require": {
-                "encore/laravel-admin": "~1.6",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Encore\\Admin\\Media\\MediaServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Encore\\Admin\\Media\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "z-song",
-                    "email": "zosong@126.com"
-                }
-            ],
-            "description": "Media manager for laravel",
-            "homepage": "https://github.com/laravel-admin-extensions/media-manager",
-            "keywords": [
-                "laravel-admin",
-                "manager",
-                "media"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel-admin-extensions/media-manager/issues",
-                "source": "https://github.com/laravel-admin-extensions/media-manager/tree/master"
-            },
-            "time": "2019-10-14T09:05:25+00:00"
-        },
-        {
             "name": "laravel/framework",
-            "version": "v8.53.1",
+            "version": "v8.54.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5df423c2790f32b26baee90518bb659572aa404f"
+                "reference": "7b88554cd1aeb52b7f82689bf244182e7a81894b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5df423c2790f32b26baee90518bb659572aa404f",
-                "reference": "5df423c2790f32b26baee90518bb659572aa404f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7b88554cd1aeb52b7f82689bf244182e7a81894b",
+                "reference": "7b88554cd1aeb52b7f82689bf244182e7a81894b",
                 "shasum": ""
             },
             "require": {
@@ -1864,7 +1461,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-08-05T14:04:08+00:00"
+            "time": "2021-08-10T14:25:51+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3363,16 +2960,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "4.2.0",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "7231612a5221f5524d3575bebdce20eeef8547a1"
+                "reference": "fe665a03df4f056aa65af552a96e1976df8c8dae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/7231612a5221f5524d3575bebdce20eeef8547a1",
-                "reference": "7231612a5221f5524d3575bebdce20eeef8547a1",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/fe665a03df4f056aa65af552a96e1976df8c8dae",
+                "reference": "fe665a03df4f056aa65af552a96e1976df8c8dae",
                 "shasum": ""
             },
             "require": {
@@ -3444,7 +3041,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ramsey/uuid/issues",
-                "source": "https://github.com/ramsey/uuid/tree/4.2.0"
+                "source": "https://github.com/ramsey/uuid/tree/4.2.1"
             },
             "funding": [
                 {
@@ -3456,208 +3053,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-06T22:30:43+00:00"
-        },
-        {
-            "name": "spatie/db-dumper",
-            "version": "2.21.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/db-dumper.git",
-                "reference": "05e5955fb882008a8947c5a45146d86cfafa10d1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/05e5955fb882008a8947c5a45146d86cfafa10d1",
-                "reference": "05e5955fb882008a8947c5a45146d86cfafa10d1",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2|^8.0",
-                "symfony/process": "^4.2|^5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.0|^8.0|^9.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\DbDumper\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Dump databases",
-            "homepage": "https://github.com/spatie/db-dumper",
-            "keywords": [
-                "database",
-                "db-dumper",
-                "dump",
-                "mysqldump",
-                "spatie"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/db-dumper/issues",
-                "source": "https://github.com/spatie/db-dumper/tree/2.21.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-02-24T14:56:42+00:00"
-        },
-        {
-            "name": "spatie/laravel-backup",
-            "version": "6.16.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "11a3fdb6938566ba75f3dd9ab790319d5e90b0fc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/11a3fdb6938566ba75f3dd9ab790319d5e90b0fc",
-                "reference": "11a3fdb6938566ba75f3dd9ab790319d5e90b0fc",
-                "shasum": ""
-            },
-            "require": {
-                "ext-zip": "^1.14.0",
-                "illuminate/console": "^6.0|^7.0|^8.0",
-                "illuminate/contracts": "^6.0|^7.0|^8.0",
-                "illuminate/events": "^6.0|^7.0|^8.0",
-                "illuminate/filesystem": "^6.0|^7.0|^8.0",
-                "illuminate/notifications": "^6.0|^7.0|^8.0",
-                "illuminate/support": "^6.0|^7.0|^8.0",
-                "league/flysystem": "^1.0.49",
-                "php": "^7.3|^8.0",
-                "spatie/db-dumper": "^2.12",
-                "spatie/temporary-directory": "^1.1",
-                "symfony/finder": "^4.2|^5.0"
-            },
-            "require-dev": {
-                "laravel/slack-notification-channel": "^2.3",
-                "league/flysystem-aws-s3-v3": "^1.0",
-                "mockery/mockery": "^1.4.2",
-                "orchestra/testbench": "4.*|5.*|6.*",
-                "phpunit/phpunit": "^8.4|^9.0"
-            },
-            "suggest": {
-                "laravel/slack-notification-channel": "Required for sending notifications via Slack"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\Backup\\BackupServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Backup\\": "src"
-                },
-                "files": [
-                    "src/Helpers/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A Laravel package to backup your application",
-            "homepage": "https://github.com/spatie/laravel-backup",
-            "keywords": [
-                "backup",
-                "database",
-                "laravel-backup",
-                "spatie"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/laravel-backup/issues",
-                "source": "https://github.com/spatie/laravel-backup/tree/6.16.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/spatie",
-                    "type": "github"
-                },
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "other"
-                }
-            ],
-            "time": "2021-07-10T14:54:21+00:00"
-        },
-        {
-            "name": "spatie/temporary-directory",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/temporary-directory.git",
-                "reference": "f517729b3793bca58f847c5fd383ec16f03ffec6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/f517729b3793bca58f847c5fd383ec16f03ffec6",
-                "reference": "f517729b3793bca58f847c5fd383ec16f03ffec6",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2|^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^8.0|^9.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\TemporaryDirectory\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Vanderbist",
-                    "email": "alex@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Easily create, use and destroy temporary directories",
-            "homepage": "https://github.com/spatie/temporary-directory",
-            "keywords": [
-                "php",
-                "spatie",
-                "temporary-directory"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/temporary-directory/issues",
-                "source": "https://github.com/spatie/temporary-directory/tree/1.3.0"
-            },
-            "time": "2020-11-09T15:54:21+00:00"
+            "time": "2021-08-11T01:06:55+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

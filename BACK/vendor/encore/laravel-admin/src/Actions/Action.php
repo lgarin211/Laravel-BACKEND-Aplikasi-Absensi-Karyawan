@@ -130,7 +130,7 @@ abstract class Action implements Renderable
     public function selector($prefix)
     {
         if (is_null($this->selector)) {
-            return static::makeSelector(get_called_class().spl_object_id($this), $prefix);
+            return static::makeSelector(get_called_class(), $prefix);
         }
 
         return $this->selector;
@@ -171,19 +171,13 @@ abstract class Action implements Renderable
      */
     protected function formatAttributes()
     {
-        $html = [];
-
-        foreach ($this->attributes as $name => $value) {
-            $html[] = $name.'="'.e($value).'"';
-        }
-
-        return implode(' ', $html);
+        return admin_attrs($this->attributes);
     }
 
     /**
      * @return string
      */
-    protected function getElementClass()
+    public function getElementClass()
     {
         return ltrim($this->selector($this->selectorPrefix), '.');
     }
@@ -225,7 +219,7 @@ abstract class Action implements Renderable
     /**
      * @return string
      */
-    public function getHandleRoute()
+    public function getHandleUrl()
     {
         return admin_url('_handle_action_');
     }
@@ -265,28 +259,21 @@ abstract class Action implements Renderable
      */
     protected function addScript()
     {
-        if (!is_null($this->interactor)) {
-            return $this->interactor->addScript();
+        $data = [
+            'title'         => $this->name(),
+            'event'         => $this->event,
+            'selector'      => $this->selector($this->selectorPrefix),
+            'parameters'    => array_merge($this->parameters(), ['_action' => $this->getCalledClass()]),
+            'action_script' => $this->actionScript(),
+            'method'        => $this->getMethod(),
+            'url'           => $this->getHandleUrl(),
+        ];
+
+        if ($this->interactor) {
+            return $this->interactor->addScript($data);
         }
 
-        $parameters = json_encode($this->parameters());
-
-        $script = <<<SCRIPT
-
-(function ($) {
-    $('{$this->selector($this->selectorPrefix)}').off('{$this->event}').on('{$this->event}', function() {
-        var data = $(this).data();
-        var target = $(this);
-        Object.assign(data, {$parameters});
-        {$this->actionScript()}
-        {$this->buildActionPromise()}
-        {$this->handleActionPromise()}
-    });
-})(jQuery);
-
-SCRIPT;
-
-        Admin::script($script);
+        return Admin::view('admin::actions.action', $data);
     }
 
     /**
@@ -295,103 +282,6 @@ SCRIPT;
     public function actionScript()
     {
         return '';
-    }
-
-    /**
-     * @return string
-     */
-    protected function buildActionPromise()
-    {
-        return <<<SCRIPT
-        var process = new Promise(function (resolve,reject) {
-
-            Object.assign(data, {
-                _token: $.admin.token,
-                _action: '{$this->getCalledClass()}',
-            });
-
-            $.ajax({
-                method: '{$this->method}',
-                url: '{$this->getHandleRoute()}',
-                data: data,
-                success: function (data) {
-                    resolve([data, target]);
-                },
-                error:function(request){
-                    reject(request);
-                }
-            });
-        });
-
-SCRIPT;
-    }
-
-    /**
-     * @return string
-     */
-    public function handleActionPromise()
-    {
-        $resolve = <<<'SCRIPT'
-var actionResolver = function (data) {
-
-            var response = data[0];
-            var target   = data[1];
-
-            if (typeof response !== 'object') {
-                return $.admin.swal({type: 'error', title: 'Oops!'});
-            }
-
-            var then = function (then) {
-                if (then.action == 'refresh') {
-                    $.admin.reload();
-                }
-
-                if (then.action == 'download') {
-                    window.open(then.value, '_blank');
-                }
-
-                if (then.action == 'redirect') {
-                    $.admin.redirect(then.value);
-                }
-
-                if (then.action == 'location') {
-                    window.location = then.value;
-                }
-
-                if (then.action == 'open') {
-                    window.open(then.value, '_blank');
-                }
-            };
-
-            if (typeof response.html === 'string') {
-                target.html(response.html);
-            }
-
-            if (typeof response.swal === 'object') {
-                $.admin.swal(response.swal);
-            }
-
-            if (typeof response.toastr === 'object' && response.toastr.type) {
-                $.admin.toastr[response.toastr.type](response.toastr.content, '', response.toastr.options);
-            }
-
-            if (response.then) {
-              then(response.then);
-            }
-        };
-
-        var actionCatcher = function (request) {
-            if (request && typeof request.responseJSON === 'object') {
-                $.admin.toastr.error(request.responseJSON.message, '', {positionClass:"toast-bottom-center", timeOut: 10000}).css("width","500px")
-            }
-        };
-SCRIPT;
-
-        Admin::script($resolve);
-
-        return <<<'SCRIPT'
-process.then(actionResolver).catch(actionCatcher);
-SCRIPT;
     }
 
     /**
@@ -431,6 +321,6 @@ SCRIPT;
             return $this->interactor->addElementAttr($content, $this->selector);
         }
 
-        return $this->html();
+        return $content;
     }
 }

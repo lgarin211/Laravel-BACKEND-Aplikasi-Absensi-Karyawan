@@ -4,12 +4,12 @@ namespace Encore\Admin\Actions;
 
 use Illuminate\Http\Request;
 
-abstract class BatchAction extends GridAction
+abstract class BatchAction extends TableAction
 {
     /**
      * @var string
      */
-    public $selectorPrefix = '.grid-batch-action-';
+    public $selectorPrefix = '.table-batch-action-';
 
     /**
      * {@inheritdoc}
@@ -19,14 +19,12 @@ abstract class BatchAction extends GridAction
         $warning = __('No data selected!');
 
         return <<<SCRIPT
-        var key = $.admin.grid.selected();
-        
-        if (key.length === 0) {
-            $.admin.toastr.warning('{$warning}', '', {positionClass: 'toast-top-center'});
-            return ;
-        }
-        
-        Object.assign(data, {_key:key});
+var key = $.admin.table.selected();
+    if (key.length === 0) {
+        $.admin.toastr.warning('{$warning}');
+        return ;
+    }
+    Object.assign(data, {_key:key});
 SCRIPT;
     }
 
@@ -52,6 +50,14 @@ SCRIPT;
         }
 
         return $modelClass::findOrFail($key);
+    }
+
+    /**
+     * @return string
+     */
+    public function getElementClass()
+    {
+        return ltrim($this->selector($this->selectorPrefix), '.').' dropdown-item';
     }
 
     /**
