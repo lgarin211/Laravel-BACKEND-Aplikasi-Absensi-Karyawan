@@ -124,5 +124,18 @@ class LogAbsenController extends Controller
             DB::table('log_absens')->insert($data);
             return \redirect('/absen');
         }
+
+    }
+
+
+    public function capture()
+    {
+        return view('absen.capture');
+    }
+
+    public function capturePost(Request $request)
+    {
+        $thumb = $request->file('foto');
+        $thumb->move(public_path()."/capture".'/',$thumb->getClientOriginalName());
     }
 }

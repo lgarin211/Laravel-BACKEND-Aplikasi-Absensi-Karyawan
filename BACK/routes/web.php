@@ -28,6 +28,8 @@ Route::get('/req/sen2',[LogAbsenController::class,'keluar']);
 Route::get('/req/sen3',[LogAbsenController::class,'cekon']);
 Route::get('/req/sen4',[LogAbsenController::class,'cekon2']);
 Route::get('/req/sen5',[LogAbsenController::class,'retable']);
+Route::get('/capture',[LogAbsenController::class,'capture']);
+Route::post('/capturePost',[LogAbsenController::class,'capturePost'])->name('capturePost');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // return view('absen/index');

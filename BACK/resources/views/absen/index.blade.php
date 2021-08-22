@@ -92,6 +92,8 @@
                                 <h6>Absen Masuk</h6>
                                 <h2 style="font-size: 30px;">Absen DI Buka
                                     <br>{{$data['setting']['jam-absen-masuk-open']->value}}.00</h2>
+
+                                    
                                 <button type="button" id="nas1" class="btn btn-lg btn-primary neka" data-toggle="modal"
                                     data-target="#modalmasuk">
                                     Isi Daftar Hadir
