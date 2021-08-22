@@ -130,7 +130,7 @@ class LogAbsenController extends Controller
 
     public function capture()
     {
-        return view('absen.capture');
+        return view('absen/capture');
     }
 
     public function capturePost(Request $request)
