@@ -15,7 +15,7 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="nip" value="{{ __('nip') }}" />
+                <x-jet-label for="nip" value="{{ __('NIP atau NIK') }}" />
                 <x-jet-input id="nip" class="block mt-1 w-full" type="text" name="nip" :value="old('nip')" required />
             </div>
 
@@ -30,7 +30,7 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="jenis_kelamin" value="{{ __('jenis_kelamin') }}" />
+                <x-jet-label for="jenis_kelamin" value="{{ __('Jenis Kelamin') }}" />
                 <!-- <x-jet-input id="jenis_kelamin" class="block mt-1 w-full" type="text" name="jenis_kelamin" :value="old('jenis_kelamin')" required autofocus autocomplete="jenis_kelamin" /> -->
                 <select name="jenis_kelamin" id="jenis_kelamin" class="block mt-1 w-full form-select" aria-label="Default select example">
                     <option value="Laki-Laki">Laki-Laki</option>
@@ -38,17 +38,17 @@
                 </select>
             </div>
             <div class="mt-4">
-                <x-jet-label for="tempat_l" value="{{ __('tempat_l') }}" />
+                <x-jet-label for="tempat_l" value="{{ __('Tempat Lahir') }}" />
                 <x-jet-input id="tempat_l" class="block mt-1 w-full" type="text" name="tempat_l" :value="old('tempat_l')" required />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="tgl_l" value="{{ __('tgl_l') }}" />
+                <x-jet-label for="tgl_l" value="{{ __('Tanggal Lahir') }}" />
                 <x-jet-input id="tgl_l" class="block mt-1 w-full" type="date" name="tgl_l" :value="old('tgl_l')" required />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="notel" value="{{ __('notel') }}" />
+                <x-jet-label for="notel" value="{{ __('Nomor Whatapps atau Telpon yang dapat di hubungi') }}" />
                 <x-jet-input id="notel" class="block mt-1 w-full" type="number" name="notel" :value="old('notel')" required value="62"/>
             </div>
 
@@ -56,7 +56,7 @@
                 <x-jet-input id="jumlah_jam_kerja" class="block mt-1 w-full" type="hidden" name="jumlah_jam_kerja" :value="old('jumlah_jam_kerja')" required value="0"/>
             </div>
             <div class="mt-4">
-                <x-jet-input id="profile_photo_path" class="block mt-1 w-full" type="hidden" name="profile_photo_path" :value="old('jumlah_jam_kerja')" required value="https://cdn4.buysellads.net/uu/1/3386/1525189943-38523.png"/>
+                <x-jet-input id="profile_photo_path" class="block mt-1 w-full" type="hidden" name="profile_photo_path" :value="old('jumlah_jam_kerja')" required value="{{url('/')}}/SoftLand/assets/img/undraw_svg_2.svg"/>
             </div>
 
             <hr class="mt-5">
@@ -72,7 +72,7 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-jet-label for="password_confirmation" value="{{ __('Ulangi Password') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 

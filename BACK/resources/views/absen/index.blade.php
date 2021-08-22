@@ -92,10 +92,8 @@
                                 <h6>Absen Masuk</h6>
                                 <h2 style="font-size: 30px;">Absen DI Buka
                                     <br>{{$data['setting']['jam-absen-masuk-open']->value}}.00</h2>
-
-                                    
-                                <button type="button" id="nas1" class="btn btn-lg btn-primary neka" data-toggle="modal"
-                                    data-target="#modalmasuk">
+                                <button type="button" id="nas1" class="btn btn-lg btn-primary neka" onclick="
+                                window.location.replace('{{url("/dam")}}');">
                                     Isi Daftar Hadir
                                 </button>
                             </div>
@@ -235,48 +233,6 @@
     <!-- modal start -->
 
     <!-- Modal masuk-->
-    <div class="modal fade" id="modalmasuk" tabindex="-1" role="dialog" aria-labelledby="modalmasukLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalmasukLabel">Harap Isi Data Masuk</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{url('/req/sen1/')}}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="Waktu" class="form-label">Waktu Absen Masuk</label>
-                            <input type="date" name="waktu" class="form-control" id="Waktu" value="">
-                        </div>
-                        <div class="mb-3">
-                            <label for="Status" class="form-label">Status</label>
-                            <select name="keterangan" class="custom-select" id="Status" required>
-                                <option value="ONSITE">Onsite</option>
-                                <option value="WFH">WFH</option>
-                                <option value="Dinas">Dinas</option>
-                                <option value="Sakit">Sakit</option>
-                                <option value="Izin">Izin</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="file" class="form-label">Lampiran</label>
-                            <input type="file" class="form-control" name="image" id="file" value="" required>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <a type="a" class="btn btn-secondary" data-dismiss="modal">Batal</a>
-                    <button type="submit" class="btn btn-primary">Kirim</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
     <!-- Bootstrap core JavaScript -->
     <script src="{{url('/Base/')}}/vendor/jquery/jquery.min.js"></script>
     <script src="{{url('/Base/')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
