@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\homepage;
 use App\Http\Controllers\LogAbsenController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/maintance', function () {
     return view('welcome');
 });
+
+Route::get('/',[homepage::class,'index']);
 Route::get('/absen',[LogAbsenController::class,'read']);
 
 Route::get('/dashboard2', function () {

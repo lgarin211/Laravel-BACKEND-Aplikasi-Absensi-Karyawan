@@ -105,13 +105,14 @@ class LogAbsenController extends Controller
         $info = Auth::user();
         date_default_timezone_set('Asia/Jakarta');
         $date = date('m-d-Y H:i:s');
-        $date2 = strtotime($date);
+        $date2 = md5(uniqid($date, true));
+        // dd($date2);
         if (!empty($_POST)) {
             $bukti = '';
             if ($bukti == '') {
-                $request->file('image');
-                $imageName = $date2 . '_' . Auth::user()->nip . '.' . $request->image->extension();
-                $request->image->move(public_path('img/' . Auth::user()->nip . '/'), $imageName);
+                $request->file('foto');
+                $imageName = $date2. '.png';
+                $request->foto->move(public_path('img/' . Auth::user()->nip . '/'), $imageName);
                 $bukti = 'img/' . Auth::user()->nip . '/' . $imageName;
             }
             $data = [
@@ -124,10 +125,7 @@ class LogAbsenController extends Controller
             DB::table('log_absens')->insert($data);
             return \redirect('/absen');
         }
-
     }
-
-
     public function capture()
     {
         return view('absen/capture');
@@ -136,6 +134,6 @@ class LogAbsenController extends Controller
     public function capturePost(Request $request)
     {
         $thumb = $request->file('foto');
-        $thumb->move(public_path()."/capture".'/',$thumb->getClientOriginalName());
+        $thumb->move(public_path() . "/capture" . '/', $thumb->getClientOriginalName());
     }
 }
