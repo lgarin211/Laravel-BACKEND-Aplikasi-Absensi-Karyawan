@@ -10,17 +10,17 @@
 <link rel="stylesheet" type="text/css" href="{{url('/azure')}}/styles/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="{{url('/azure')}}/styles/style.css">
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="{{url('/azure')}}/fonts/css/fontawesome-all.min.css">    
+<link rel="stylesheet" type="text/css" href="{{url('/azure')}}/fonts/css/fontawesome-all.min.css">
 <!-- <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js"> -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{url('/azure')}}/app/icons/icon-192x192.png">
 </head>
-    
+
 <body class="theme-light" data-highlight="blue2">
-    
+
 <div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
-    
+
 <div id="page">
-    
+
     <!-- header and footer bar go here-->
     <div class="header header-fixed header-auto-show header-logo-app">
         <!-- <a href="#" data-back-button class="header-title header-subtitle">Back to Pages</a>
@@ -37,9 +37,9 @@
         <a href="index-pages.html" class="active-nav"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown1-dark" data-feather-bg="brown1-fade-light"></i><span>Pages</span></a>
         <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="gray2-dark" data-feather-bg="gray2-fade-light"></i><span>Settings</span></a>
     </div>
-    
+
     <div class="page-content">
-        
+
         <div class="page-title page-title-small">
             <!-- <h2>
                 <a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>
@@ -53,7 +53,7 @@
             <div class="card-overlay dark-mode-tint"></div>
             <div class="card-bg preload-img" data-src="{{$data['user']->profile_photo_path}}"></div>
         </div>
-        
+
         <div class="card card-style">
         <div class="container mt-5 card">
         <div class="row text-center">
@@ -87,6 +87,26 @@
 
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
+
+        </div>
+
+        <!-- footer and footer card-->
+        <!-- <div class="footer" data-menu-load="menu-footer.html"></div>   -->
+    </div>
+    <!-- end of page content-->
+
+</div>
+
+
+
+
+
+<script type="text/javascript" src="{{url('/azure')}}/scripts/jquery.js"></script>
+<script type="text/javascript" src="{{url('/azure')}}/scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{url('/azure')}}/scripts/custom.js"></script>
+
+
+
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -207,24 +227,5 @@
             a.click();
         }
     </script>
-
-
-
-        </div>
-       
-        <!-- footer and footer card-->
-        <!-- <div class="footer" data-menu-load="menu-footer.html"></div>   -->
-    </div>    
-    <!-- end of page content-->
-        
-</div>    
-
-
-
-
-
-<script type="text/javascript" src="{{url('/azure')}}/scripts/jquery.js"></script>
-<script type="text/javascript" src="{{url('/azure')}}/scripts/bootstrap.min.js"></script>
-<script type="text/javascript" src="{{url('/azure')}}/scripts/custom.js"></script>
 </body>
 
