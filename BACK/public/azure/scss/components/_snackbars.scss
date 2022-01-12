@@ -1,0 +1,19 @@
+/*Snackbars*/
+.snackbar-toast {
+	bottom: 70px !important;
+	bottom: calc(70px + (constant(safe-area-inset-bottom))*1.1) !important;
+	bottom: calc(70px + (env(safe-area-inset-bottom))*1.1) !important;
+	position: fixed;
+	left: 10px !important;
+	right: 10px !important;
+	padding: 0px 18px;
+	line-height: 50px;
+	border-radius: 8px;
+	overflow: hidden;
+	z-index: 95;
+	transform: translateY(100px);
+	transition: $globalTransitions;
+}
+.snackbar-toast.show {
+	transform: translateY(0px);
+}

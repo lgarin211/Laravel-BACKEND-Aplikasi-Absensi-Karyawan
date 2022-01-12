@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">    
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+    
+<body class="theme-light" data-highlight="blue2">
+    
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+    
+<div id="page">
+    
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Components</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html" class="active-nav"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red2-dark" data-feather-bg="red2-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green1-dark" data-feather-bg="green1-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown1-dark" data-feather-bg="brown1-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="gray2-dark" data-feather-bg="gray2-fade-light"></i><span>Settings</span></a>
+    </div>
+    
+    <div class="page-content" style="min-height:60vh!important">
+        <div class="page-title page-title-small">
+            <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Working Hours</h2>
+            <a href="#" data-menu="menu-main" class="bg-fade-gray1-dark shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+        
+        <div class="card card-style">
+            <p class="content">
+                Set your working hours and our system will automatically show when you are open or closed, and add a Call Button when you are open and a Mail button when you are closed. We've included multiple, easy to customize styles!
+            </p>
+        </div>
+
+        <div class="show-business-opened mb-4">
+            <div class="ml-3 mr-3 alert alert-small rounded-s shadow-xl bg-green1-dark" role="alert">
+                <span><i class="fa fa-check"></i></span>
+                <strong>Our offices are Open. How may we help?</strong>
+                <button type="button" class="close color-white opacity-60 font-16" data-dismiss="alert" aria-label="Close">&times;</button>
+            </div>    
+        </div>    
+        <div class="show-business-closed mb-4">
+            <div class="ml-3 mr-3 alert alert-small rounded-s shadow-xl bg-red2-dark" role="alert">
+                <span><i class="fa fa-times-circle"></i></span>
+                <strong> Sorry! Our Offices are Currently Closed</strong>
+                <button type="button" class="close color-white opacity-60 font-16" data-dismiss="alert" aria-label="Close">&times;</button>
+            </div>    
+        </div>    
+
+        <div class="card card-style">
+            <div data-card-height="120" 
+                 data-closed-message="Sorry! We're closed!"
+                 data-closed-message-under="We'll be back very soon!"
+                 data-opened-message="Welcome! We're open!"
+                 data-opened-message-under="Call us Now! Let's have a chat!"
+                 class="business-hours caption shadow-xl">
+
+                <div class="card-top">
+                    <a id="business-hours-call" href="tel:+1 234 567 890" class="float-right btn btn-xs rounded-xl text-uppercase font-900 mt-5 mr-3 bg-white color-black">Call Now</a>
+                    <a id="business-hours-mail" href="page-contact.html" class="float-right btn btn-xs rounded-xl text-uppercase font-900 mt-5 mr-3 bg-white color-black">Email Us</a>
+                </div>
+                <div class="card-top mt-4 ml-3 pl-1">
+                    <h1 class="color-white mt-1 font-20 font-700"><!-- Automatic Text set by data opened/closed message--></h1>
+                    <p class="color-white opacity-90 mt-n2 mb-0"><!-- Automatic Text set by data opened/closed message under--></p>
+                </div>
+                <div class="caption-overlay show-business-opened bg-green1-dark"></div>
+                <div class="caption-overlay show-business-closed bg-red2-dark"></div>
+            </div> 
+            <div class="content">
+
+                <!-- To set open and Close Hours Open custom.js and search for "SET OPENING HOURS BELOW" -->
+                <!-- Only setting the code below will not make the system work automatically-->
+
+                <div class="working-hours day-monday">          <p>Monday</p>    <p>09:00 AM</p> <p>05:00 PM</p></div>
+                <div class="working-hours day-tuesday">         <p>Tuesday</p>   <p>09:00 AM</p> <p>05:00 PM</p></div>
+                <div class="working-hours day-wednesday">       <p>Wednesday</p> <p>09:00 AM</p> <p>05:00 PM</p></div>
+                <div class="working-hours day-thursday">        <p>Thursday</p>  <p>09:00 AM</p> <p>05:00 PM</p></div>
+                <div class="working-hours day-friday">          <p>Friday</p>    <p>09:00 AM</p> <p>05:00 PM</p></div>
+                <div class="working-hours day-saturday">        <p>Saturday</p>  <p>09:00 AM</p> <p>01:00 PM</p></div>
+                <div class="working-hours day-sunday">          <p>Sunday</p>    <p class="opacity-00">-</p> <p>We're Closed</p></div>
+
+            </div>
+        </div>
+
+        <div class="divider divider-margins"></div>
+
+        <div class="show-business-closed">
+            <div class="ml-3 mr-3 mb-4 alert alert-small rounded-s shadow-xl bg-red2-dark" role="alert">
+                <span><i class="fa fa-cog"></i></span>
+                <strong>Sorry! Our Offices are Currently Closed</strong>
+                <button type="button" class="close color-white opacity-60 font-16" data-dismiss="alert" aria-label="Close">&times;</button>
+            </div>
+        </div>
+
+        
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>  
+    </div>    
+    <!-- end of page content-->
+                
+    <div id="menu-share" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-share.html"
+         data-menu-height="420" 
+         data-menu-effect="menu-over">
+    </div>    
+    
+    <div id="menu-highlights" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-colors.html"
+         data-menu-height="510" 
+         data-menu-effect="menu-over">        
+    </div>
+    
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-features"
+         data-menu-effect="menu-over">  
+    </div>
+        
+    
+</div>    
+
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>

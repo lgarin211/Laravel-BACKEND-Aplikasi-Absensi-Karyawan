@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">    
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+    
+<body class="theme-light" data-highlight="blue2">
+    
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+    
+<div id="page">
+    
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Components</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html" class="active-nav"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red2-dark" data-feather-bg="red2-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green1-dark" data-feather-bg="green1-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown1-dark" data-feather-bg="brown1-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="gray2-dark" data-feather-bg="gray2-fade-light"></i><span>Settings</span></a>
+    </div>
+    
+    <div class="page-content">
+        <div class="page-title page-title-small">
+            <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Timed Ads</h2>
+            <a href="#" data-menu="menu-main" class="bg-fade-gray1-dark shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+        
+
+        <div class="card card-style">
+            <div class="card-body">
+                <p class="mb-1">
+                    These ads are great when you want a user to see an advertisement for a specific amount of time. You can easily customize the following parameters directly from HTML code.
+                </p>
+                <ul class="list-group icon-list mt-3">
+                    <li><i class="fa fa-check color-green1-dark"></i>Ad Duration on Screen</li>
+                    <li><i class="fa fa-check color-green1-dark"></i>Ad Size Full or Modal</li>
+                    <li><i class="fa fa-check color-green1-dark"></i>Ad Close Button Timeout</li>
+                    <li><i class="fa fa-check color-green1-dark"></i>Infinite Ads Be Shown</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card card-style">
+            <div class="content">
+                <h3>Tap or Programatic</h3>
+                <p>
+                    Yes. Ads can be programatically triggered as they are based on the menu system. All you have to do is
+                </p>
+                <code>
+                    $('#your-ad-id').showMenu(); <br>
+                    $('#your-ad-id').hideMenu();
+                </code>
+            </div>
+        </div>
+
+        <a href="#" data-menu="ad-timed-2" data-timed-ad="10" class="btn btn-l btn-full rounded-s shadow-xl text-uppercase font-900 bg-highlight mr-3 ml-3 mb-2">Show Full Ad</a>
+        <a href="#" data-menu="ad-timed-1" data-timed-ad="5"  class="btn btn-l btn-full rounded-s shadow-xl text-uppercase font-900 bg-highlight mr-3 ml-3 mb-4">Show Modal</a>
+        <a href="#" data-menu="ad-timed-3" data-timed-ad="5" data-auto-show-ad="10" class="btn btn-l btn-full rounded-s shadow-xl text-uppercase font-900 bg-highlight mr-3 ml-3 mb-4">Shows Automatically in 10 Seconds</a>
+    
+       
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>  
+    </div>    
+    <!-- end of page content-->
+    
+    <div id="ad-timed-1" class="menu menu-box-modal menu-box-detached round-large" data-menu-width="340" data-menu-height="450" data-menu-effect="menu-over">
+        <div class="card bg-17" data-card-height="450">
+            <div class="card-top">
+                <a href="#" class="close-menu ad-time-close color-highlight"><i class="fa fa-times disabled"></i><span></span></a>
+            </div>
+            <div class="card-top">
+                <span class="color-white bg-black font-10 opacity-70 pb-1 pt-1 pl-2 pr-2 ml-1">Sponsored Content</span>
+            </div>
+            <div class="card-center ml-2 mr-2">
+                <h1 class="color-white text-center mb-3">Modal Ad</h1>
+                <p class="color-white text-center opacity-50 mt-n1 mb-0">Timed ads show for the amount of time you want. During this time, users cannot click the close button. After the time has elapsed, the ad can be closed.</p>
+                <a href="#" class="close-menu mr-3 ml-3 mt-5 btn btn-m btn-full rounded-s shadow-xl text-uppercase font-900 bg-red2-dark">Demo Close Button</a>
+            </div>
+            <div class="card-overlay bg-black opacity-90"></div>
+        </div>        
+    </div>    
+    <div id="ad-timed-2" class="menu menu-box-modal menu-box-detached round-large" data-menu-width="100vw" data-menu-height="100vh" data-menu-effect="menu-over">
+        <div class="card bg-17" data-card-height="100vh">
+            <div class="card-top">
+                <a href="#" class="close-menu ad-time-close color-highlight"><i class="fa fa-times disabled"></i><span></span></a>
+            </div>
+            <div class="card-top">
+                <span class="color-white bg-black font-10 opacity-70 pb-1 pt-1 pl-2 pr-2 ml-1">Sponsored Content</span>
+            </div>
+            <div class="card-center ml-5 mr-5">
+                <h1 class="color-white text-center mb-3 font-40">Full Ad</h1>
+                <p class="color-white text-center opacity-50 mt-n1 mb-0">Timed ads show for the amount of time you want. During this time, users cannot click the close button. After the time has elapsed, the ad can be closed.</p>
+                <a href="#" class="close-menu mr-3 ml-3 mt-5 btn btn-m btn-full rounded-s shadow-xl text-uppercase font-900 bg-red2-dark">Demo Close Button</a>
+            </div>
+            <div class="card-overlay bg-black opacity-90"></div>
+        </div>        
+    </div>  
+    
+    <div id="ad-timed-3" class="menu menu-box-modal menu-box-detached round-large" data-menu-width="100vw" data-menu-height="100vh" data-menu-effect="menu-over">
+        <div class="card bg-17" data-card-height="100vh">
+            <div class="card-top">
+                <a href="#" class="close-menu ad-time-close color-highlight"><i class="fa fa-times disabled"></i><span></span></a>
+            </div>
+            <div class="card-top">
+                <span class="color-white bg-black font-10 opacity-70 pb-1 pt-1 pl-2 pr-2 ml-1">Sponsored Content</span>
+            </div>
+            <div class="card-center ml-5 mr-5">
+                <h1 class="color-white text-center mb-3 font-40">Automatic Show</h1>
+                <p class="color-white text-center opacity-50 mt-n1 mb-0">This ad apears on it's own, and can only be closed after 5 seconds. In the demo, you can use the red close button, in real life, you can remove that button.</p>
+                <a href="#" class="close-menu mr-3 ml-3 mt-5 btn btn-m btn-full rounded-s shadow-xl text-uppercase font-900 bg-red2-dark">Demo Close Button</a>
+            </div>
+            <div class="card-overlay bg-black opacity-90"></div>
+        </div>        
+    </div>
+
+    
+    <!-- end of page content-->
+    <div id="menu-share" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-share.html"
+         data-menu-height="420" 
+         data-menu-effect="menu-over">
+    </div>    
+    
+    <div id="menu-highlights" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-colors.html"
+         data-menu-height="510" 
+         data-menu-effect="menu-over">        
+    </div>
+    
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-features"
+         data-menu-effect="menu-over">  
+    </div>
+    
+    
+</div>    
+
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>

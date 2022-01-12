@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">    
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+    
+<body class="theme-light" data-highlight="blue2">
+    
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+    
+<div id="page">
+    
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Components</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html" class="active-nav"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red2-dark" data-feather-bg="red2-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green1-dark" data-feather-bg="green1-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown1-dark" data-feather-bg="brown1-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="gray2-dark" data-feather-bg="gray2-fade-light"></i><span>Settings</span></a>
+    </div>
+    
+    <div class="page-content" style="min-height:60vh!important">
+        <div class="page-title page-title-small">
+            <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Sharing</h2>
+            <a href="#" data-menu="menu-main" class="bg-fade-gray1-dark shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+        
+        
+        <div class="card card-style">
+            <p class="content">
+                We've created an awesome system that allows our page to automatically grab and share the current link it's on. No need to manually add links. You can attatch it to absolutely any link, button or icon.
+            </p>
+        </div>
+
+        <div class="card card-style bg-blue2-dark">
+            <div class="content">
+                <img width="150" class="generate-qr-auto mx-auto polaroid-effect shadow-xl mb-4 mt-3" src="">
+                <h1 class="color-white text-center">Tip: Use your Mobile</h1>
+                <p class="color-white opacity-50 text-center pr-3 pl-3">
+                    Please check this page on your mobile device in order for the sharing links to actually share the page you're on! These do not work in the demo iframe we have on ThemeForest.
+                </p>
+            </div>
+        </div>
+
+        <div class="card card-style">
+            <div class="content mb-2">
+                <h3>Large Icons</h3>
+                <p>
+                    Add social icons after any content block or element, after tapping it, the page will automatically generate the share link. 
+                </p>
+                <a href="#" class="shareToFacebook mb-3 btn btn-m bg-facebook btn-icon text-uppercase font-900"><i class="fab fa-facebook-f font-16"></i> Share to Facebook</a><br>
+                <a href="#" class="shareToTwitter mb-3 btn btn-m bg-twitter btn-icon text-uppercase font-900"><i class="fab fa-twitter font-16"></i>Share to Twitter</a><br>
+                <a href="#" class="shareToPinterest mb-3 btn btn-m bg-pinterest btn-icon text-uppercase font-900"><i class="fab fa-pinterest font-16"></i>Share to Pinterest</a><br>
+                <a href="#" class="shareToLinkedin mb-3 btn btn-m bg-linkedin btn-icon text-uppercase font-900"><i class="fab fa-linkedin-in font-16"></i>Share to Linkedin</a><br>
+                <a href="#" class="shareToWhatsApp mb-3 btn btn-m bg-whatsapp btn-icon text-uppercase font-900"><i class="fab fa-whatsapp font-16"></i>Share via  WhatsApp</a><br>
+                <a href="#" class="shareToMail mb-3 btn btn-m bg-blue2-dark btn-icon text-uppercase font-900"><i class="fa fa-envelope font-16"></i>Share via Email</a><br>
+            </div>
+        </div>
+
+        <div class="card card-style">
+            <div class="content mb-2">
+                <h3>Small Icons</h3>
+                <p>
+                    Add social icons after any content block or element, after tapping it, the page will automatically generate the share link.
+                </p>
+                <a href="#" class="shareToFacebook mb-3 icon icon-s bg-facebook rounded-xs text-uppercase font-900"><i class="fab fa-facebook-f font-14"></i></a>
+                <a href="#" class="shareToTwitter mb-3 icon icon-s bg-twitter rounded-xs text-uppercase font-900"><i class="fab fa-twitter font-14"></i></a>
+                <a href="#" class="shareToPinterest mb-3 icon icon-s bg-pinterest rounded-xs text-uppercase font-900"><i class="fab fa-pinterest font-14"></i></a>
+                <a href="#" class="shareToLinkedin mb-3 icon icon-s bg-linkedin rounded-xs text-uppercase font-900"><i class="fab fa-linkedin-in font-14"></i></a>
+                <a href="#" class="shareToWhatsApp mb-3 icon icon-s bg-whatsapp rounded-xs text-uppercase font-900"><i class="fab fa-whatsapp font-14"></i></a>
+                <a href="#" class="shareToMail mb-3 icon icon-s bg-blue2-dark rounded-xs text-uppercase font-900"><i class="fa fa-envelope font-14"></i></a>
+            </div>
+        </div>    
+
+        <div class="card card-style">
+            <div class="content">
+                <h3>Text Links</h3>
+                <p>
+                    Any link can have the option to automatically pick up the page link and share on click.
+                </p>
+                <a href="#" class="shareToFacebook">Share To Facebook</a><br>
+                <a href="#" class="shareToTwitter">Share To Twitter</a><br>
+                <a href="#" class="shareToLinkedIn">Share To LinkedIn</a><br>
+                <a href="#" class="shareToPinterest">Share To Pinterest</a><br>
+                <a href="#" class="shareToWhatsApp">Share To WhatsApp</a><br>
+                <a href="#" class="shareToMail">Share To Mail</a>
+            </div>
+        </div>
+        
+        <div class="card card-style">
+            <div class="content">
+                <h4>Action Sheet</h4>
+                <p>
+                    You can also share via action sheets. These are non-intrusive and provide a gorgeous
+                    user experience
+                </p>
+                <a href="#" data-menu="menu-share" class="btn rounded-sm btn-m btn-full bg-highlight font-900 text-uppercase">Open Share Menu</a>
+            </div>
+        </div>
+        
+        
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>  
+    </div>    
+    <!-- end of page content-->
+                   
+
+    <div id="menu-share" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-share.html"
+         data-menu-height="420" 
+         data-menu-effect="menu-over">
+    </div>    
+    
+    <div id="menu-highlights" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-colors.html"
+         data-menu-height="510" 
+         data-menu-effect="menu-over">        
+    </div>
+    
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-features"
+         data-menu-effect="menu-over">  
+    </div>
+        
+    
+</div>    
+
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>

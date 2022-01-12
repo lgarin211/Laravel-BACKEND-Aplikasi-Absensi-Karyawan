@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">    
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+    
+<body class="theme-light" data-highlight="blue2">
+    
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+    
+<div id="page">
+    
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Components</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html" class="active-nav"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red2-dark" data-feather-bg="red2-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green1-dark" data-feather-bg="green1-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown1-dark" data-feather-bg="brown1-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="gray2-dark" data-feather-bg="gray2-fade-light"></i><span>Settings</span></a>
+    </div>
+    
+    <div class="page-content" style="min-height:60vh!important">
+        <div class="page-title page-title-small">
+            <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Headers</h2>
+            <a href="#" data-menu="menu-main" class="bg-fade-gray1-dark shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+        
+        <div class="card card-style mt-5 mb-5">
+            <div class="content">
+                <p>
+                    These headers support left, right and center logos or text and even the app styled version
+                    where the back button is on the maximum left or right near the logo depending on the RTL or LTR version you're using
+                </p>
+            </div>
+            <div class="row pl-3 mb-0">
+                <div class="col-6">
+                    <ul class="icon-list">
+                        <li><i class="fa fa-check color-green1-dark"></i> Header App</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Header Left</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Header Right</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Header Center</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Show on Scroll</li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="icon-list">
+                        <li><i class="fa fa-check color-green1-dark"></i> Logo Text</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Logo Image</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Up to 5 Icons</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Badge Support</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Light / Dark & Colors</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- demo styles. this code can be deleted and should not be used in production code -->
+        <style>
+            .header.header-demo{height:55px!important;}
+            .header.header-demo .header-icon{margin-top:0px!important;}
+            .header.header-demo .header-title{margin-top:0px!important;}
+            .header.header-demo .header-logo{margin-top:0px!important;}
+        </style>
+        
+
+        <div class="header header-demo header-logo-left mb-3">
+            <a href="index.html" class="header-logo">Enabled<span class="color-highlight"> Mobile</span></a>
+            <a href="#" class="header-icon header-icon-1"><i class="fas fa-envelope"></i><span class="badge bg-green1-dark">5</span></a>
+            <a href="#" class="header-icon header-icon-2"><i class="fas fa-bars"></i></a>
+            <a href="#" class="header-icon header-icon-3"><i class="fas fa-heart color-red2-light"></i></a>
+            <a href="#" class="header-icon header-icon-4"><i class="fas fa-share-alt"></i></a>
+        </div>
+
+        <div class="header header-demo header-logo-center mb-4">
+            <a href="index.html" class="header-logo">Enabled<span class="color-highlight"> Mobile</span></a>
+            <a href="#" class="header-icon header-icon-1"><i class="fas fa-envelope"></i><span class="badge bg-blue2-dark">5</span></a>
+            <a href="#" class="header-icon header-icon-2"><i class="fas fa-bars"></i></a>
+            <a href="#" class="header-icon header-icon-3"><i class="fas fa-heart color-red2-light"></i></a>
+            <a href="#" class="header-icon header-icon-4"><i class="fas fa-share-alt"></i></a>
+        </div>
+ 
+        <div class="header header-demo header-logo-right mb-4">
+            <a href="index.html" class="header-logo">Enabled<span class="color-highlight"> Mobile</span></a>
+            <a href="#" class="header-icon header-icon-1"><i class="fas fa-envelope"></i><span class="badge bg-highlight">5</span></a>
+            <a href="#" class="header-icon header-icon-2"><i class="fas fa-bars"></i></a>
+            <a href="#" class="header-icon header-icon-3"><i class="fas fa-heart color-red2-light"></i></a>
+            <a href="#" class="header-icon header-icon-4"><i class="fas fa-share-alt"></i></a>
+        </div>
+        
+        
+        <div class="card card-style mt-5 mb-5">
+            <div class="content">
+                <h3>Menus in Headers</h3>
+                <p>
+                    These headers fully support the Boostrap 4.4 dropdown system, allowing you to have a dropdown menu for each icon of the menu.
+                </p>
+            </div>
+            <div class="row pl-3 mb-0">
+                <div class="col-6">
+                    <ul class="icon-list">
+                        <li><i class="fa fa-check color-green1-dark"></i> Header App</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Header Left</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Header Right</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Header Center</li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="icon-list">
+                        <li><i class="fa fa-check color-green1-dark"></i> Logo Text</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Logo Image</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Up to 4 Icons</li>
+                        <li><i class="fa fa-check color-green1-dark"></i> Light & Dark</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="header header-demo header-logo-app mb-3">
+            <a href="index.html" class="header-title header-subtitle">Tap the Right Icons</a>
+            <a href="#" class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+            
+            <div id="header-icon-2-group">
+                <button type="button" id="header-2" data-toggle="dropdown" class="header-icon header-icon-2"><i class="fas fa-share-alt"></i><span class="badge bg-green1-dark">3</span></button>    
+                <div class="dropdown-menu bg-theme border-0 shadow-l rounded-s mr-2 mt-2" aria-labelledby="header-2">
+                    <p class="font-10 pl-3 pr-3 font-500 mb-0">Tap to Share - Off in Demo</p>
+                    <div class="divider mb-0"></div>
+                    <div class="list-group list-custom-small pl-2 pr-3">
+                        <a href="#">
+                            <i class="fab font-18 fa-facebook-square color-facebook"></i>
+                            <span>Facebook</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>        
+                        <a href="#">
+                            <i class="fab font-18 fa-twitter-square color-twitter"></i>
+                            <span>Twitter</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>        
+                        <a href="#" class="border-0">
+                            <i class="fab font-18 fa-whatsapp-square color-whatsapp"></i>
+                            <span>WhatsApp</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>        
+                    </div>
+                </div>        
+            </div>
+            <div id="header-icon-3-group">
+                <button type="button" id="header-3" data-toggle="dropdown" class="header-icon header-icon-3"><i class="fas fa-bars"></i><span class="badge bg-highlight">7</span></button>
+                <div class="dropdown-menu bg-theme border-0 shadow-l rounded-s mr-2 mt-2" aria-labelledby="header-3">
+                    <p class="font-10 pl-3 pr-3 font-500 mb-0">Mini Menu</p>
+                    <div class="divider mb-0"></div>
+                    <div class="list-group list-custom-small pl-2 pr-3">
+                        <a href="#">
+                            <i class="fa font-14 fa-home color-blue2-dark"></i>
+                            <span>Home</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>        
+                        <a href="#">
+                            <i class="fa font-14 fa-cog color-gray2-dark"></i>
+                            <span>Features</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>        
+                        <a href="#">
+                            <i class="fa font-14 fa-file color-green1-dark"></i>
+                            <span>Pages</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>        
+                        <a href="#">
+                            <i class="fa font-14 fa-mobile color-dark1-dark"></i>
+                            <span>Appstyle</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>        
+                        <a href="#">
+                            <i class="fa font-14 fa-camera color-brown1-dark"></i>
+                            <span>Galleries</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>        
+                        <a href="#">
+                            <i class="fa font-14 fa-image color-red2-dark"></i>
+                            <span>Portfolios</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>        
+                        <a href="#" class="border-0">
+                            <i class="fa font-14 fa-envelope color-blue2-dark"></i>
+                            <span>Contact Us</span>
+                            <i class="fa fa-angle-right"></i>
+                        </a>        
+                    </div>
+                </div>
+            </div>
+        </div>   
+        
+    
+        
+        <div class="card card-style mt-5 mb-5">
+            <div class="content">
+                <h3>Colorful Headers</h3>
+                <p class="pb-0">
+                    Classic full colors or even gradients. It's super easy to use. All the above features and colors work togheter to obtain perfectly powerful headers.
+                </p>
+            </div>
+            <div class="row pl-3 mb-0">
+                <div class="col-6">
+                    <ul class="icon-list">
+                        <li><i class="fa fa-check color-green1-dark"></i> Solid Colors</li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="icon-list">
+                        <li><i class="fa fa-check color-green1-dark"></i> Gradients</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+            
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>  
+    </div>    
+    <!-- end of page content-->
+    
+    <div id="menu-share" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-share.html"
+         data-menu-height="420" 
+         data-menu-effect="menu-over">
+    </div>    
+    
+    <div id="menu-highlights" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-colors.html"
+         data-menu-height="510" 
+         data-menu-effect="menu-over">        
+    </div>
+    
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-features"
+         data-menu-effect="menu-over">  
+    </div>
+    
+    <div id="menu-cookie-bottom" class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-height="230"
+         data-menu-effect="menu-over"
+         data-menu-select="page-components">
+        <!-- add data-cookie-activate above to auto-activate the menu on cookie detection -->
+        <div class="boxed-text-xl">
+            <h2 class="text-center mt-3 pt-1">We're using cookies</h2>
+            <p class="text-center mt-n2 mb-3 color-highlight">To make your experience awesome!</p>
+            <p>
+                Our page uses cookies to make your overall experience better, faster and smoother. It's awesome.
+            </p>
+            <!-- add hide-cookie to the class to delete the cookie-->
+            <a href="#" class="close-menu btn btn-sm btn-center-xl rounded-xs shadow-m bg-highlight text-uppercase font-900">Accept</a>
+        </div>
+    </div>     
+    
+    
+</div>    
+
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>

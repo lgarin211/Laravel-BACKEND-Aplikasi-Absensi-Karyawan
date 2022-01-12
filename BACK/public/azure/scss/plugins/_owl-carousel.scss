@@ -1,0 +1,346 @@
+/* Owl Carousel v2.2.1 Copyright 2013-2017 David Deutsch  Licensed under  ()*/
+@keyframes "fadeOut" {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+.owl-carousel {
+	.owl-item {
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
+		-webkit-tap-highlight-color: transparent;
+		position: relative;
+		-webkit-transform: translate3d(0,0,0);
+		-moz-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+		min-height: 1px;
+		float: left;
+		-webkit-backface-visibility: hidden;
+		-webkit-touch-callout: none;
+		img {
+			display: block;
+			transform-style: preserve-3d;
+		}
+		.owl-lazy {
+			opacity: 0;
+			transition: opacity .4s ease;
+		}
+		img.owl-lazy {
+			transform-style: preserve-3d;
+		}
+	}
+	.owl-wrapper {
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
+		-webkit-transform: translate3d(0,0,0);
+		-moz-transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+	}
+	-webkit-tap-highlight-color: transparent;
+	position: relative;
+	display: none;
+	width: 100%;
+	z-index: 1;
+	.owl-stage {
+		position: relative;
+		-ms-touch-action: pan-Y;
+		-moz-backface-visibility: hidden;
+		&:after {
+			content: ".";
+			display: block;
+			clear: both;
+			visibility: hidden;
+			line-height: 0;
+			height: 0;
+		}
+	}
+	.owl-stage-outer {
+		position: relative;
+		overflow: hidden;
+		-webkit-transform: translate3d(0,0,0);
+	}
+	.owl-dots.disabled {
+		display: none;
+	}
+	.owl-nav.disabled {
+		display: none;
+	}
+	.owl-dot {
+		cursor: pointer;
+		cursor: hand;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	.owl-nav {
+		.owl-next {
+			cursor: pointer;
+			cursor: hand;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		.owl-prev {
+			cursor: pointer;
+			cursor: hand;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+	}
+	.animated {
+		animation-duration: 1s;
+		animation-fill-mode: both;
+	}
+	.owl-animated-in {
+		z-index: 0;
+	}
+	.owl-animated-out {
+		z-index: 1;
+	}
+	.fadeOut {
+		animation-name: fadeOut;
+	}
+	.owl-video-wrapper {
+		position: relative;
+		height: 100%;
+		background: #000;
+	}
+	.owl-video-play-icon {
+		position: absolute;
+		height: 80px;
+		width: 80px;
+		left: 50%;
+		top: 50%;
+		margin-left: -40px;
+		margin-top: -40px;
+		background: url(owl.video.play.png) no-repeat;
+		cursor: pointer;
+		z-index: 1;
+		-webkit-backface-visibility: hidden;
+		transition: transform .1s ease;
+		&:hover {
+			-ms-transform: scale(1.3,1.3);
+			transform: scale(1.3,1.3);
+		}
+	}
+	.owl-video-playing {
+		.owl-video-play-icon {
+			display: none;
+		}
+		.owl-video-tn {
+			display: none;
+		}
+	}
+	.owl-video-tn {
+		opacity: 0;
+		height: 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		transition: opacity .4s ease;
+	}
+	.owl-video-frame {
+		position: relative;
+		z-index: 1;
+		height: 100%;
+		width: 100%;
+	}
+	.card {
+		overflow: hidden !important;
+	}
+}
+.owl-dots {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	text-align: center;
+	bottom: 5px;
+	width: 100%;
+	backface-visibility: hidden;
+}
+.no-js {
+	.owl-carousel {
+		display: block;
+	}
+}
+.owl-carousel.owl-loaded {
+	display: block;
+}
+.owl-carousel.owl-loading {
+	opacity: 0;
+	display: block;
+}
+.owl-carousel.owl-hidden {
+	opacity: 0;
+}
+.owl-carousel.owl-refresh {
+	.owl-item {
+		visibility: hidden;
+	}
+}
+.owl-carousel.owl-drag {
+	.owl-item {
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+}
+.owl-carousel.owl-grab {
+	cursor: move;
+	cursor: grab;
+}
+.owl-carousel.owl-rtl {
+	direction: rtl;
+	.owl-item {
+		float: right;
+	}
+}
+.owl-height {
+	transition: all 250ms ease !important;
+	min-height: 500px;
+	height: auto !important;
+	height: 500px;
+}
+.owl-auto-height {
+	.owl-height {
+		transition: all 250ms ease-in-out !important;
+	}
+}
+.owl-dot {
+	transition: all 250ms ease;
+	border-radius: 50px;
+	height: 8px;
+	width: 8px;
+	display: inline-block;
+	background: rgba(139,139,139,.9);
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.owl-dot.active {
+	transition: all 250ms ease;
+	background: #cacaca;
+}
+.owl-no-dots {
+	.owl-dots {
+		display: none !important;
+	}
+	.cover-content-bottom {
+		bottom: 0;
+		padding-bottom: 0;
+	}
+}
+.content1-full-height {
+	.owl-dot {
+		bottom: 20px !important;
+	}
+}
+.owl-nav {
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	left: 0;
+	right: 0;
+}
+.owl-next {
+	width: 40px;
+	height: 50px;
+	position: absolute;
+	color: $color_white;
+	line-height: 50px;
+	text-align: center;
+	font-size: 16px;
+	margin-top: -25px;
+	right: 0;
+}
+.owl-prev {
+	width: 40px;
+	height: 50px;
+	position: absolute;
+	color: $color_white;
+	line-height: 50px;
+	text-align: center;
+	font-size: 16px;
+	margin-top: -25px;
+	left: 0;
+}
+.owl-has-dots {
+	.owl-dots {
+		margin-top: 20px;
+		margin-bottom: 0;
+	}
+}
+.owl-has-dots-over {
+	.owl-dots {
+		margin-top: -40px;
+		margin-bottom: 10px;
+	}
+}
+.cover-slider {
+    touch-action: pan-x!important;
+	margin-bottom: 0;
+	.owl-dots {
+		z-index: 99;
+		margin-top: -27px;
+		transform: translateY(-20px)!important;
+	}
+	[data-height=cover] {
+		margin-bottom: 0 !important;
+	}
+}
+.next-slide {
+	color: $color_white;
+	width: 35px;
+	line-height: 35px;
+	text-align: center;
+	position: absolute;
+	margin-top: -10px;
+	top: 50%;
+	transform: translateY(-70%);
+	z-index: 99;
+	right: 15px;
+}
+.prev-slide {
+	color: $color_white;
+	width: 35px;
+	line-height: 35px;
+	text-align: center;
+	position: absolute;
+	margin-top: -10px;
+	top: 50%;
+	transform: translateY(-70%);
+	z-index: 99;
+	left: 15px;
+}
+.owl-dots-over {
+	.owl-dots {
+		transform: translateY(-60px);
+		margin-bottom: -10px;
+	}
+}
+.owl-dots-no-footer .owl-dots{
+    transform: translateY(-18px)!important;
+}
+
+
+.double-slider{
+    margin-left:-20px!important;
+    padding-left:15px!important;
+    padding-right:15px!important;
+}
+
+.item{
+    overflow:hidden;
+}

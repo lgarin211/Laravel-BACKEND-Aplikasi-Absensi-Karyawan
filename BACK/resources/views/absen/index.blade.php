@@ -1,343 +1,194 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Tooplate">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-    <title>Absensi Karyawan</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{url('/Base/')}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{url('/Base/')}}/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="{{url('/Base/')}}/assets/css/tooplate-main.css">
-    <link rel="stylesheet" href="{{url('/Base/')}}/assets/css/owl.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        .neka {
-            display: none;
-        }
-
-        .neka2 {
-            display: none;
-        }
-
-        .neka3 {
-            display: none;
-        }
-
-        .domi {
-            display: none;
-        }
-    </style>
-    <script>
-    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>PRESENSI</title>
+<link rel="stylesheet" type="text/css" href="{{url('/azure')}}/styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="{{url('/azure')}}/styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{url('/azure')}}/fonts/css/fontawesome-all.min.css">    
+<!-- <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js"> -->
+<link rel="apple-touch-icon" sizes="180x180" href="{{url('/azure')}}/app/icons/icon-192x192.png">
 </head>
-
-<body>
-    <div class="sequence">
-        <div class="seq-preloader">
-            <svg width="39" height="16" viewBox="0 0 39 16" xmlns="http://www.w3.org/2000/svg"
-                class="seq-preload-indicator">
-                <g fill="#F96D38">
-                    <path class="seq-preload-circle seq-preload-circle-1"
-                        d="M3.999 12.012c2.209 0 3.999-1.791 3.999-3.999s-1.79-3.999-3.999-3.999-3.999 1.791-3.999 3.999 1.79 3.999 3.999 3.999z" />
-                    <path class="seq-preload-circle seq-preload-circle-2"
-                        d="M15.996 13.468c3.018 0 5.465-2.447 5.465-5.466 0-3.018-2.447-5.465-5.465-5.465-3.019 0-5.466 2.447-5.466 5.465 0 3.019 2.447 5.466 5.466 5.466z" />
-                    <path class="seq-preload-circle seq-preload-circle-3"
-                        d="M31.322 15.334c4.049 0 7.332-3.282 7.332-7.332 0-4.049-3.282-7.332-7.332-7.332s-7.332 3.283-7.332 7.332c0 4.05 3.283 7.332 7.332 7.332z" />
-                </g>
-            </svg>
-        </div>
+    
+<body class="theme-light" data-highlight="blue2">
+    
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+    
+<div id="page">
+    
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <!-- <a href="#" data-back-button class="header-title header-subtitle">Back to Pages</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a> -->
     </div>
-    <div class="logo">
-        <h1>SMKN 4 Bogor <i class="fa fa-braille" style="font-size:30px;color:red"></i></h1>
-        <h2><i class="fa fa-braille" style="font-size:30px;color:red"></i></h2>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red2-dark" data-feather-bg="red2-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green1-dark" data-feather-bg="green1-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html" class="active-nav"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown1-dark" data-feather-bg="brown1-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="gray2-dark" data-feather-bg="gray2-fade-light"></i><span>Settings</span></a>
     </div>
-    <nav>
-        <ul>
-            <li><a href="#1"><img src="{{url('/Base/')}}/assets/images/icon-1.png" alt=""> <em>Home</em></a></li>
-            <li><a href="#2"><img src="{{url('/Base/')}}/assets/images/icon-2.png" alt="" id="onl2"> <em>Laporan
-                        Saya</em></a>
-            </li>
-            <li><a href="#3"><img src="{{url('/Base/')}}/assets/images/icon-3.png" alt=""> <em>Lampiran Absensi</em></a>
-            </li>
-            <li><a href="#4"><img src="{{url('/Base/')}}/assets/images/icon-4.png" alt=""> <em>Bantuan</em></a></li>
-        </ul>
-    </nav>
-
-    <div class="slides">
-        <div class="slide" id="1">
-            <div id="slider-wrapper">
-                <div id="image-slider">
-                    <ul>
-                        <li class="active-img" id="c_profile">
-                            <div class="slide-caption">
-                                <h6>{{ Auth::user()->jabatan }}</h6>
-                                <h2><span style="font-size: 30px;">{{ Auth::user()->name }}</span><br>Gelar</h2>
-                            </div>
-                        </li>
-                        <li id="c_masuk">
-                            <div class="slide-caption">
-                                <div class="rounded embed-responsive embed-responsive-21by9">
-                                    <iframe class="embed-responsive-item" src="{{url('/Base/')}}/clock.html"></iframe>
-                                </div>
-                                <h6>Absen Masuk</h6>
-                                <h2 style="font-size: 30px;">Absen DI Buka
-                                    <br>{{$data['setting']['jam-absen-masuk-open']->value}}.00</h2>
-                                <button type="button" id="nas1" class="btn btn-lg btn-primary neka" onclick="
-                                window.location.replace('{{url("/dam")}}');">
-                                    Isi Daftar Hadir
-                                </button>
-                            </div>
-                        </li>
-                        <li id="c_keluar">
-                            <div class="slide-caption">
-                                <div class="rounded embed-responsive embed-responsive-21by9">
-                                    <iframe class="embed-responsive-item" src="{{url('/Base/')}}/clock.html"></iframe>
-                                </div>
-                                <h6>Absen Keluar</h6>
-                                <h2 style="font-size: 30px;">Absen DI Buka
-                                    <br>{{$data['setting']['jam-absen-keluar-open']->value}}.00</h2>
-                                <a href="#" id="nas2" class="btn btn-primary btn-lg neka" onclick="fas()">Isi Daftar
-                                    Keluar</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div id="thumbnail">
-                    <ul>
-                        <li class="active"><img id="ocuka" class="rounded" src="{{ Auth::user()->profile_photo_path }}"
-                                alt="Earth" /></li>
-                        <li><img id="mosku" class="rounded domi" src="{{url('/Base/')}}/assets/images/Masuk.png"
-                                alt="Meeting" /></li>
-                        <li><img id="moska" class="rounded domi neka" src="{{url('/Base/')}}/assets/images/Keluar.png"
-                                alt="Smart" /></li>
-                    </ul>
-                </div>
-            </div>
+    
+    <div class="page-content">
+        
+        <div class="page-title page-title-small">
+            <!-- <h2>
+                <a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>
+                Selamat Pagi
+            </h2> -->
+            <iframe class="embed-responsive-item" style="border: none;margin-top: -15px;margin-bottom: -30px;" src="{{url('/Base/')}}/clock.html"></iframe>
+            <!-- <a href="#" data-menu="menu-main" class="bg-fade-gray1-dark shadow-xl preload-img" data-src="{{url('/azure')}}/images/avatars/5s.png"></a> -->
         </div>
-        <div class="slide" id="2">
-            <div class="content second-content">
-                <div id='tabs'>
-                    <ul>
-                        <li><a href='#tabs-1'><span class='fa fa-desktop'></span></a></li>
-                        <li><a href='#tabs-2'><span class='fa fa-users'></span></a></li>
-                        <li><a href='#tabs-3'><span class='fa fa-mobile'></span></a></li>
-                    </ul>
-                    <section class='tabs-content'>
-                        <article id='tabs-1'>
-                            <h2>Jam Pekerjaan</h2>
-                            <span>8,25/4000 Jam</span>
-                            <div class="text-center">
-                                <div class="rounded embed-responsive embed-responsive-21by9">
-                                    <iframe class="embed-responsive-item" src="{{url('/Base/')}}/chart.html"></iframe>
-                                </div>
-                            </div>
-                        </article>
-                        <article id='tabs-2'>
-                            <h2>Laporan Absensi</h2>
-                            <div class="text-center">
-                                <div class="rounded embed-responsive embed-responsive-21by9">
-                                    <iframe class="embed-responsive-item" src="{{url('/')}}/req/sen5"></iframe>
-                                </div>
-                            </div>
-                        </article>
-                        <article id='tabs-3'>
-                            belum tau mau di isi apa
-                            <!-- <h2>Who We Are?</h2>
-              <span>Etiam tempus ex ut mi</span>
-              <p>Vivamus dictum odio at enim posuere, et dapibus nunc sagittis. Pellentesque habitant morbi tristique
-                senectus et netus et malesuada fames ac turpis egestas.</p>
-              <p>Integer a egestas tellus, id malesuada velit. Pellentesque tincidunt, libero eu rutrum volutpat, nisi
-                urna mollis felis, sed mollis sem libero at magna.</p> -->
-                        </article>
-                    </section>
-                </div>
-            </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="{{$data['user']->profile_photo_path}}"></div>
         </div>
-        <div class="slide" id="3">
-            <div class="content third-content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="owl-carousel owl-theme">
-                            <!-- here -->
-                            @foreach ($data['dam'] as $key=>$vel )
-                            <div class="col-md-12">
-                                <div class="featured-item">
-                                    <a href=""><img src="{{url('/')}}/{{$vel->bukti_masuk}}" alt=""></a>
-                                    <div class="down-content">
-                                        <h4>{{$vel->keterangan}}</h4>
-                                        <h6>{{$vel->jam_masuk}}</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                            <!-- end -->
-                        </div>
-
+        
+        <div class="card card-style">
+            <div class="d-flex content mb-1">
+                <!-- left side of profile -->
+                <div class="flex-grow-1">
+                    <h1 class="font-700">{{$data['user']->name}}<i class="fa fa-check-circle color-blue2-dark float-right font-13 mt-2 mr-3"></i></h1>
+                    <p class="mb-2">
+                    {{$data['user']->jabatan}}
+                    </p>
+                    <p class="font-10">
+                        <strong class="color-theme pr-1">NIP</strong>{{$data['user']->nip}}
+                        <strong class="color-theme pl-3 pr-1">email</strong>{{$data['user']->email}}
+                    </p>
+                </div>
+                <!-- right side of profile. increase image width to increase column size-->
+                <img src="{{$data['user']->profile_photo_path}}" data-src="{{$data['user']->profile_photo_path}}" width="115" class="bg-highlight rounded-circle mt-3 shadow-xl preload-img">
+            </div>
+            <!-- follow buttons-->
+            <style>
+                .hie{
+                    display: none !important;
+                }
+                .hila{
+                    display: none !important;
+                }
+            </style>
+            <div class="content">
+                <div class="row mb-0">
+                    <div class="col-12 " id="tmasuk">
+                        <button href="#" class="btn btn-full btn-sm rounded-s text-uppercase font-900 bg-blue2-dark"  onclick="window.location.replace('{{url("/dam")}}');">Presensi Masuk</button>
+                    </div>
+                    <div class="col-12 hie" id="tpulang">
+                        <a href="#" class="btn btn-full btn-sm btn-border rounded-s text-uppercase font-900 color-highlight border-blue2-dark" onclick="fas()">Presensi pulang</a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="slide" id="4">
-            <div class="content fourth-content">
-                <div class="container-fluid">
-                    <form id="contact" action="" method="post">
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <h2>{{$data['setting']['help-contak']->value}}</h2>
-                                <p style="color: white;">{{$data['setting']['help-contak']->value1}}</p>
-                            </div>
-                            <h2 class="text-center">
-                                <a href="https://wa.me/{{$data['setting']['help-contak']->value2}}"
-                                    class="btn btn-success" target="blank">Hubungi
-                                    {{$data['setting']['help-contak']->value3}}</a>
-                            </h2>
-                            <!-- <div class="col-md-6">
-                <fieldset>
-                  <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
-                </fieldset>
-              </div>
-              <div class="col-md-6">
-                <fieldset>
-                  <input name="email" type="text" class="form-control" id="email" placeholder="Your email..."
-                    required="">
-                </fieldset>
-              </div>
-              <div class="col-md-12">
-                <fieldset>
-                  <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..."
-                    required=""></textarea>
-                </fieldset>
-              </div>
-              <div class="col-md-12">
-                <fieldset>
-                  <button type="submit" id="form-submit" class="button">Send Now</button>
-                </fieldset>
-              </div> -->
-                    </form>
+            <div class="divider mb-3 mt-1">aass</div>
+            <script>
+                function los(params) {
+                            Tanggal = new Date().getDate();
+                            Bulan = new Date().getMonth()+1;
+                            Tahun = new Date().getFullYear();
+                            cadi='0'+Bulan+'-0'+Tanggal+'-'+Tahun
+                            fetch("{{url('/req/sen3?vas=')}}"+cadi, {
+                                method: 'GET',
+                            }).then((response) => response.json())
+                            .then((data) => {
+                                if (data.status==true) {
+                                    document.getElementById('tmasuk').classList.toggle('hie');
+                                    // document.getElementById('moska').classList.toggle('neka2');
+                                }else{
+                                    document.getElementById('tpulang').classList.toggle('hie');
+                                }
+                            });
+                            fetch("{{url('/req/sen4?vas=')}}"+cadi, {
+                                method: 'GET',
+                            }).then((response) => response.json())
+                            .then((data) => {
+                                // alert(data.status)
+                                if (!data.status==true) {
+                                    document.getElementById('tpulang').classList.toggle('hie');
+                                    // document.getElementById('moska').classList.toggle('neka3');
+
+                                }
+                            });
+
+                    menit = new Date().getMinutes();
+                    jam = new Date().getHours();
+                    set_open="{{$data['setting']['jam-absen-masuk-open']->value}}"
+                    set_close="{{$data['setting']['jam-absen-masuk-close']->value}}"
+                    das_open="{{$data['setting']['jam-absen-keluar-open']->value}}"
+                    das_close="{{$data['setting']['jam-absen-keluar-close']->value}}"
+                        console.log(jam+'.'+menit,set_open,set_close,das_open,das_close)
+                        if ((jam+'.'+menit>=set_open)&&(set_close<=jam+'.'+menit)) {
+                            document.getElementById('tmasuk').classList.toggle('hila');
+                        }else{
+                            console.log('saty gagal',jam+'.'+menit>=set_open,jam+'.'+menit<=set_close,jam+'.'+menit,set_close)
+                        }
+
+                        if ((jam+'.'+menit>=das_open)&&(das_close<=jam+'.'+menit)) {
+                            document.getElementById('tpulang').classList.toggle('hila');
+                        }else{
+                            console.log('dua gagal',jam+'.'+menit>=das_open,jam+'.'+menit<=das_close)
+                        }
+                }
+
+                los();
+
+                function fas() {
+                    fetch("{{url('/req/sen2')}}", {
+                        method: 'GET',
+                    }).then((response) => response.json())
+                    .then((data) => {
+                        // document.getElementById('ocuka').click()
+                        // document.getElementById('onl2').click()
+                        document.getElementById('tpulang').classList.toggle('hila');
+                    });
+                }
+            </script>
+            <div class="p-3">
+                <div class="row text-center row-cols-3 mb-n4">
+                            @foreach ($data['dam'] as $key=>$vel )
+                            
+                            <a class="col mb-4" data-lightbox="gallery-1" href="{{$vel->bukti_masuk}}" title="{{$vel->keterangan}},{{$vel->jam_masuk}}">
+                                <img data-src="{{$vel->bukti_masuk}}" class="img-fluid rounded-xs preload-img" alt="{{$vel->keterangan}},{{$vel->jam_masuk}}">
+                            </a>
+           
+                            @endforeach
                 </div>
             </div>
         </div>
-    </div>
+        <div class="card card-style">
+            <div data-card-height="500" class="card shadow-l mb-0 bg-18">
+                <div class="card-bottom ml-3">
+                    <p class="color-white font-10 opacity-80 mb-n1"><i class="far fa-calendar"></i> August 28 <i class="ml-3 far fa-clock"></i> 09:00 PM</p>
+                    <p class="color-white font-10 opacity-80 mb-2"><i class="fa fa-map-marker-alt"></i> Melbourne, Victoria, Australia Collins Street</p>
+                </div>
+                <div class="card-overlay bg-gradient opacity-90"></div>
+            </div>  
+            <div class="content mb-0">
+                <div class="float-left">
+                    <h1 class="mb-n1">Classic Event Card</h1>
+                    <p class="font-10 mb-2 pb-1"><i class="fa fa-map-marker-alt mr-2"></i>Melbourne Victoria, Collins Street</p>
+                </div>
+                <a href="#" class="float-right btn btn-s bg-highlight rounded-xl shadow-xl text-uppercase font-900 font-11 mt-2 mb-2">View on Map</a>
+            </div>
+        </div>
+       
+        <!-- footer and footer card-->
+        <!-- <div class="footer" data-menu-load="menu-footer.html"></div>   -->
+    </div>    
+    <!-- end of page content-->
+        
+</div>    
 
 
-    <!-- modal start -->
-
-    <!-- Modal masuk-->
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{url('/Base/')}}/vendor/jquery/jquery.min.js"></script>
-    <script src="{{url('/Base/')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-    <!-- Additional Scripts -->
-    <script src="{{url('/Base/')}}/assets/js/owl.js"></script>
-    <script src="{{url('/Base/')}}/assets/js/accordations.js"></script>
-    <script src="{{url('/Base/')}}/assets/js/main.js"></script>
-
-    <script type="text/javascript">
-        function los(params) {
-
-            Tanggal = new Date().getDate();
-            Bulan = new Date().getMonth()+1;
-            Tahun = new Date().getFullYear();
-            cadi=Bulan+'-'+Tanggal+'-'+Tahun
-            fetch("{{url('/req/sen3?vas=')}}"+cadi, {
-                method: 'GET',
-            }).then((response) => response.json())
-            .then((data) => {
-                if (data.status==true) {
-                    document.getElementById('moska').classList.toggle('domi');
-                    // document.getElementById('moska').classList.toggle('neka2');
-                }else{
-                    document.getElementById('mosku').classList.toggle('domi');
-                }
-            });
-            fetch("{{url('/req/sen4?vas=')}}"+cadi, {
-                method: 'GET',
-            }).then((response) => response.json())
-            .then((data) => {
-                // alert(data.status)
-                if (!data.status==true) {
-                    document.getElementById('moska').classList.toggle('neka');
-                    // document.getElementById('moska').classList.toggle('neka3');
-
-                }
-            });
-            menit = new Date().getMinutes();
-        jam = new Date().getHours();
-        set_open="{{$data['setting']['jam-absen-masuk-open']->value}}"
-        set_close="{{$data['setting']['jam-absen-masuk-close']->value}}"
-        das_open="{{$data['setting']['jam-absen-keluar-open']->value}}"
-        das_close="{{$data['setting']['jam-absen-keluar-close']->value}}"
-
-        if ((jam>=set_open)&&(jam<=set_close)) {
-            document.getElementById('nas1').classList.toggle('neka');
-        }
-        if ((jam>=das_open)&&(jam<=das_close)) {
-            document.getElementById('nas2').classList.toggle('neka');
-        }
-
-        }
-        los();
-        function fas() {
-            fetch("{{url('/req/sen2')}}", {
-                method: 'GET',
-            }).then((response) => response.json())
-            .then((data) => {
-                document.getElementById('ocuka').click()
-                document.getElementById('onl2').click()
-                document.getElementById('moska').classList.toggle('neka');
-            });
-        }
-
-        $(document).ready(function() {
-            // navigation click actions
-            $('.scroll-link').on('click', function(event) {
-                event.preventDefault();
-                var sectionID = $(this).attr("data-id");
-                scrollToID('#' + sectionID, 750);
-            });
-            // scroll to top action
-            $('.scroll-top').on('click', function(event) {
-                event.preventDefault();
-                $('html, body').animate({
-                    scrollTop: 0
-                }, 'slow');
-            });
-            // mobile nav toggle
-            $('#nav-toggle').on('click', function(event) {
-                event.preventDefault();
-                $('#main-nav').toggleClass("open");
-            });
-        });
-        function scrollToID(id, speed) {
-            var offSet = 0;
-            var targetOffset = $(id).offset().top - offSet;
-            var mainNav = $('#main-nav');
-            $('html,body').animate({
-                scrollTop: targetOffset
-            }, speed);
-            if (mainNav.hasClass("open")) {
-                mainNav.css("height", "1px").removeClass("in").addClass("collapse");
-                mainNav.removeClass("open");
-            }
-        }
-        if (typeof console === "undefined") {
-            console = {
-                log: function() {}
-            };
-        }
-    </script>
-
+<script type="text/javascript" src="{{url('/azure')}}/scripts/jquery.js"></script>
+<script type="text/javascript" src="{{url('/azure')}}/scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{url('/azure')}}/scripts/custom.js"></script>
 </body>
-
-</html>

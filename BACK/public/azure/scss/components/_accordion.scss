@@ -1,0 +1,35 @@
+/*Accordion Settings*/
+.accordion {
+	* {
+		outline: 0 !important;
+		box-shadow: 0px !important;
+		box-shadow: none !important;
+	}
+	.btn {
+		&:first-child {
+			width: 100%;
+		}
+	}
+	.card {
+		transition: all 0ms ease !important;
+	}
+	button {
+		transition: all 0ms ease !important;
+	}
+	[data-card-height] {
+		button {
+			width: 100%;
+		}
+	}
+}
+.btn.accordion-btn {
+	text-align: left !important;
+	padding: 15px 17px;
+	font-size: 13px;
+	font-weight: 700;
+}
+.accordion-icon {
+	float: right;
+	transition: all 250ms ease;
+	margin-top: 5px;
+}

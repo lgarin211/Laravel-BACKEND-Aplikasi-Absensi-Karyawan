@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">    
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+    
+<body class="theme-light" data-highlight="blue2">
+    
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+    
+<div id="page">
+    
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Pages</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red2-dark" data-feather-bg="red2-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green1-dark" data-feather-bg="green1-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html" class="active-nav"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown1-dark" data-feather-bg="brown1-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="gray2-dark" data-feather-bg="gray2-fade-light"></i><span>Settings</span></a>
+    </div>
+    
+    <div class="page-content">
+        
+        <div class="page-title page-title-small">
+            <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Task Progress</h2>
+            <a href="#" data-menu="menu-main" class="bg-fade-gray1-dark shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+        
+        <div class="card card-style mt-4">
+            <div class="content">
+                <h4 class="font-600">Current Task completion</h4>
+                <p class="mt-n2 color-highlight">You nearly achieved your visitor goal</p>
+                <div class="progress rounded-l" style="height:28px">
+                    <div class="progress-bar bg-green1-dark text-left pl-3 color-white" 
+                         role="progressbar" style="width: 83%" 
+                         aria-valuenow="10" aria-valuemin="0" 
+                         aria-valuemax="100">
+                         83% Complete
+                    </div>
+                </div>
+                <p class="pt-3">
+                    We use a custom coded progress system to generate progress bars with great ease. No need for complicated JS. Just data- your parameters and our code will generate the progress bar for you.
+                </p>
+            </div>
+        </div>
+
+        <div data-card-height="200" class="card card-style preload-img" data-src="images/pictures/17w.jpg">
+            <div class="card-top pt-4 ml-3 mr-3">
+                <h2 class="color-white font-600">Task Completion</h2>
+                <p class="mt-n2 color-white">You nearly achieved your visitor goal</p>
+            </div>
+            <div class="card-bottom ml-3 mr-3 mb-4">
+                <div class="progress" style="height:26px;">
+                    <div class="progress-bar border-0 bg-white color-black text-left pl-2" 
+                         role="progressbar" style="width: 50%" 
+                         aria-valuenow="10" aria-valuemin="0" 
+                         aria-valuemax="100">
+                         50% Complete
+                    </div>
+                </div>
+            </div>
+            <div class="card-overlay bg-highlight opacity-80"></div>
+        </div>
+
+        <div class="row mb-0">
+            <div class="col-6 pr-0">
+                <div data-card-height="200" class="card card-style preload-img" data-src="images/pictures/7w.jpg">
+                    <div class="card-top mt-3 ml-3 mr-3">
+                        <h3 class="color-white">Backup</h3>
+                        <p class="color-white opacity-80">Backing up server now.<br> Please wait.</p>
+                    </div>
+                    <div class="card-bottom ml-3 mr-3 mb-3">
+                        <div class="progress rounded-xl" style="height:26px;">
+                            <div class="progress-bar rounded-xl border-0 bg-white color-black text-left pl-2" 
+                                 role="progressbar" style="width: 30%" 
+                                 aria-valuenow="10" aria-valuemin="0" 
+                                 aria-valuemax="100">
+                                 30%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-overlay bg-red2-dark opacity-85"></div>
+                </div>
+            </div>
+
+            <div class="col-6 pl-0">
+                <div data-card-height="200" class="card card-style preload-img" data-src="images/pictures/13w.jpg">
+                    <div class="card-top mt-3 ml-3 mr-3">
+                        <h3 class="color-white">Setup</h3>
+                        <p class="color-white opacity-80">Profile is almost setup.<br> One thing left.</p>
+                    </div>
+                    <div class="card-bottom ml-3 mr-3 mb-3">
+                        <div class="progress" style="height:8px;">
+                            <div class="progress-bar border-0 bg-green2-dark text-left pl-2" 
+                                 role="progressbar" style="width: 50%" 
+                                 aria-valuenow="10" aria-valuemin="0" 
+                                 aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-overlay bg-green1-dark opacity-85"></div>
+                </div>
+            </div>
+        </div>
+
+       
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>  
+    </div>    
+    <!-- end of page content-->
+    
+    
+    <div id="menu-share" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-share.html"
+         data-menu-height="420" 
+         data-menu-effect="menu-over">
+    </div>    
+    
+    <div id="menu-highlights" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-colors.html"
+         data-menu-height="510" 
+         data-menu-effect="menu-over">        
+    </div>
+    
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-pages"
+         data-menu-effect="menu-over">  
+    </div>
+    
+
+    
+</div>    
+
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>

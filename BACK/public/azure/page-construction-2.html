@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">    
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+    
+<body class="theme-light" data-highlight="blue2">
+    
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+    
+<div id="page">
+    
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Pages</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red2-dark" data-feather-bg="red2-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green1-dark" data-feather-bg="green1-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html" class="active-nav"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown1-dark" data-feather-bg="brown1-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="gray2-dark" data-feather-bg="gray2-fade-light"></i><span>Settings</span></a>
+    </div>
+    
+    <div class="page-content">
+        
+        <div class="page-title page-title-small">
+            <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Soon - App Style</h2>
+            <a href="#" data-menu="menu-main" class="bg-fade-gray1-dark shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+
+        <div data-card-height="cover-card" class="card card-style bg-17">
+            <div class="card-center text-center">
+                <i class="fa fa-clock fa-9x color-highlight mb-5"></i>
+                <h1 class="font-36 font-700 color-white mb-2 text-uppercase">Coming Soon</h1>
+                <p class="text-uppercase font-15 color-highlight mt-n2 font-800">WE'RE WORKING ON IT REALLY HARD</p>
+                <p class="boxed-text-xl opacity-70 color-white">
+                    This page is currently under construction. We estimate it will be complete in about:
+                </p>
+
+                <div class="countdown row mb-4 mt-5 ml-2 mr-2">
+                    <div class="disabled">
+                        <h1 class="mb-0 color-white font-30" id="years"></h1>
+                        <p class="mt-n1 color-white font-11 opacity-30">years</p>
+                    </div>
+                    <div class="col-3">
+                        <h1 class="mb-0 color-white font-30" id="days"></h1>
+                        <p class="mt-n1 color-white font-11 opacity-30">days</p>
+                    </div>
+                    <div class="col-3">
+                        <h1 class="mb-0 color-white font-30" id="hours"></h1>
+                        <p class="mt-n1 color-white font-11 opacity-30">hours</p>
+                    </div>				
+                    <div class="col-3">
+                        <h1 class="mb-0 color-white font-30" id="minutes"></h1>
+                        <p class="mt-n1 color-white font-11 opacity-30">minutes</p>
+                    </div>
+                    <div class="col-3">
+                        <h1 class="mb-0 color-white font-30" id="seconds"></h1>
+                        <p class="mt-n1 color-white font-11 opacity-30">seconds</p>
+                    </div>	
+                </div>
+
+                <div class="row mb-0">
+                    <div class="col-6">
+                        <a href="#" class="btn btn-m bg-highlight btn-center-m rounded-sm bg-highlight font-900 text-uppercase float-right">Back Home</a>
+                    </div>
+                    <div class="col-6">
+                        <a href="#" class="btn btn-m bg-highlight btn-center-m rounded-sm bg-highlight font-900 text-uppercase float-left">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-overlay bg-black opacity-90"></div>
+        </div>
+
+       
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>  
+    </div>    
+    <!-- end of page content-->
+    
+    
+    <div id="menu-share" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-share.html"
+         data-menu-height="420" 
+         data-menu-effect="menu-over">
+    </div>    
+    
+    <div id="menu-highlights" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-colors.html"
+         data-menu-height="510" 
+         data-menu-effect="menu-over">        
+    </div>
+    
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-pages"
+         data-menu-effect="menu-over">  
+    </div>
+    
+
+    
+</div>    
+
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>

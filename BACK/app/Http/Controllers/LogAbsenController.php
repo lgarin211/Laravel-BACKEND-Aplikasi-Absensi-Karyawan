@@ -22,11 +22,15 @@ class LogAbsenController extends Controller
 
     public function read()
     {
-        $id = Auth::user()->id;
+        // $id = Auth::user()->id;
+        $id = 1;
         $dam = DB::table('log_absens')->where('id_user', '=', $id)->orderBy('id', 'desc')->get();
+        $user = DB::table('users')->where('id', '=', $id)->orderBy('id', 'desc')->first();
         $data['dam'] = $dam;
+        $data['user'] = $user;
         $data['setting'] = $this->danss;
-        return view('absen/index', \compact('data'));
+        // dd($data);
+        return view('absen/index',['data'=>$data]);
     }
     public function keluar()
     {
@@ -128,7 +132,13 @@ class LogAbsenController extends Controller
     }
     public function capture()
     {
-        return view('absen/capture');
+        $id = 1;
+        $dam = DB::table('log_absens')->where('id_user', '=', $id)->orderBy('id', 'desc')->get();
+        $user = DB::table('users')->where('id', '=', $id)->orderBy('id', 'desc')->first();
+        $data['dam'] = $dam;
+        $data['user'] = $user;
+        $data['setting'] = $this->danss;
+        return view('absen/capture',['data'=>$data]);
     }
 
     public function capturePost(Request $request)

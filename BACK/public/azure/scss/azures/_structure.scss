@@ -1,0 +1,47 @@
+/*Page Stucture Settings*/
+#page {
+	position: relative;
+    overflow-x:hidden!important;
+}
+.page-content {
+	overflow-x: hidden!important;
+	transition: $globalTransitions;
+	z-index: 90;
+	padding-bottom: 80px;
+	padding-bottom: calc(80px + (constant(safe-area-inset-bottom))*1.1);
+	padding-bottom: calc(80px + (env(safe-area-inset-bottom))*1.1);
+}
+
+.ad-scroll-over{
+    background-size: cover;
+    top: 200px;
+    right: 0px;
+    bottom: 200px;
+    left: 0px;
+    position: fixed;
+    z-index:-1; backface-visibility:visible!important;
+}
+.ad-scroll-over-clear{pointer-events: none!important; backface-visibility:visible!important;}
+
+.content-box {
+	background-color: $theme-light-structure;
+	border-radius: $rounded-m;
+	margin-left: $globalMargin/2;
+	margin-right: $globalMargin/2;
+	box-shadow: $shadow-m;
+}
+/*Content Boxes*/
+.content {
+	margin: ($globalMargin/2)+5 $globalMargin/2 ($globalMargin - 10) $globalMargin/2;
+	p {
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+}
+.content-full {
+	margin: 0px;
+}
+.content-boxed {
+	padding: ($globalMargin/2)+5 $globalMargin/2 0px $globalMargin/2;
+}
