@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pegawai extends Model
+class log_absen extends Model
 {
     use HasFactory;
 }

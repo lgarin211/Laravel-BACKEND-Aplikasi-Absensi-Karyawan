@@ -28,14 +28,14 @@ class UserController extends AdminController
 
         $table->column('id', __('Id'));
         $table->column('setting_name', __('Setting name'));
-        $table->column('grup', __('Grup'));
-        $table->column('value', __('Value'));
-        $table->column('value1', __('Value1'));
-        $table->column('value2', __('Value2'));
-        $table->column('value3', __('Value3'));
+        // $table->column('grup', __('Grup'));
+        // $table->column('value', __('Value'));
+        // $table->column('value1', __('Value1'));
+        // $table->column('value2', __('Value2'));
+        // $table->column('value3', __('Value3'));
         $table->column('Keterangan', __('Keterangan'));
-        $table->column('created_at', __('Created at'));
-        $table->column('updated_at', __('Updated at'));
+        // $table->column('created_at', __('Created at'));
+        // $table->column('updated_at', __('Updated at'));
 
         return $table;
     }

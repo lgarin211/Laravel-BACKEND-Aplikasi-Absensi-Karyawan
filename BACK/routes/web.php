@@ -22,6 +22,11 @@ Route::get('/maintance', function () {
 Route::get('/',[homepage::class,'index']);
 Route::get('/absen',[LogAbsenController::class,'read']);
 
+Route::get('/setting', function () {
+    return view('absen/setting');
+    // return view('absen/capture');
+});
+
 Route::get('/dashboard2', function () {
     return view('dashboard');
     // return view('absen/capture');

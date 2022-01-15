@@ -22,8 +22,8 @@ class LogAbsenController extends Controller
 
     public function read()
     {
-        // $id = Auth::user()->id;
-        $id = 1;
+        $id = Auth::user()->id;
+        // $id = 1;
         $dam = DB::table('log_absens')->where('id_user', '=', $id)->orderBy('id', 'desc')->get();
         $user = DB::table('users')->where('id', '=', $id)->orderBy('id', 'desc')->first();
         $data['dam'] = $dam;
@@ -132,7 +132,7 @@ class LogAbsenController extends Controller
     }
     public function capture()
     {
-        $id = 1;
+        $id = Auth::user()->id;
         $dam = DB::table('log_absens')->where('id_user', '=', $id)->orderBy('id', 'desc')->get();
         $user = DB::table('users')->where('id', '=', $id)->orderBy('id', 'desc')->first();
         $data['dam'] = $dam;

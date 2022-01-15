@@ -127,8 +127,11 @@
         var video = document.getElementById('video');
         var doc = document.getElementById('foto');
         // Trigger photo take
+        var hex=document.querySelectorAll('video')[0].clientHeight
+        var wit=document.querySelectorAll('video')[0].clientWidth
         document.getElementById("snap").addEventListener("click", function() {
-            context.drawImage(video, 0, 0, 640, 480);
+
+            context.drawImage(video, 0, 0,wit ,hex);
             var canvas = document.querySelector('#canvas');
             var dataURL = canvas.toDataURL("image/jpeg", 1.0);
             // 	downloadImage(dataURL,""

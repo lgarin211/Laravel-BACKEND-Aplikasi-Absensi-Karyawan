@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -22,21 +23,14 @@
     
     <!-- header and footer bar go here-->
     <div class="header header-fixed header-auto-show header-logo-app">
-        <!-- <a href="#" data-back-button class="header-title header-subtitle">Back to Pages</a>
-        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <!-- <a href="#" data-back-button class="header-title header-subtitle">Back to Pages</a> -->
+        <a href="#" data-back-button class="header-icon header-icon-1 ml-1">Presensi</i></a>
         <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
         <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
-        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
-        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a> -->
+        <!-- <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a> -->
+        <!-- <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a> -->
     </div>
-    <div id="footer-bar" class="footer-bar-5">
-        <a href="index-components.html"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red2-dark" data-feather-bg="red2-fade-light"></i><span>Features</span></a>
-        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green1-dark" data-feather-bg="green1-fade-light"></i><span>Media</span></a>
-        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i><span>Home</span></a>
-        <a href="index-pages.html" class="active-nav"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown1-dark" data-feather-bg="brown1-fade-light"></i><span>Pages</span></a>
-        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="gray2-dark" data-feather-bg="gray2-fade-light"></i><span>Settings</span></a>
-    </div>
-    
+    @include('assetabsen/navbar')
     <div class="page-content">
         
         <div class="page-title page-title-small">
@@ -80,7 +74,7 @@
             </style>
             <div class="content">
                 <div class="row mb-0">
-                    <div class="col-12 " id="tmasuk">
+                    <div class="col-12 hie" id="tmasuk">
                         <button href="#" class="btn btn-full btn-sm rounded-s text-uppercase font-900 bg-blue2-dark"  onclick="window.location.replace('{{url("/dam")}}');">Presensi Masuk</button>
                     </div>
                     <div class="col-12 hie" id="tpulang">
@@ -88,35 +82,39 @@
                     </div>
                 </div>
             </div>
-            <div class="divider mb-3 mt-1">aass</div>
+            <!-- <div class="alert alert-primary" role="alert">
+                Absen DI Buka {{$data['setting']['jam-absen-masuk-open']->value}}.00
+            </div> -->
+            <div class="divider mb-3 mt-1"></div>
             <script>
                 function los(params) {
                             Tanggal = new Date().getDate();
                             Bulan = new Date().getMonth()+1;
                             Tahun = new Date().getFullYear();
-                            cadi='0'+Bulan+'-0'+Tanggal+'-'+Tahun
+                            cadi=Bulan+'-'+Tanggal+'-'+Tahun
                             fetch("{{url('/req/sen3?vas=')}}"+cadi, {
                                 method: 'GET',
                             }).then((response) => response.json())
                             .then((data) => {
                                 if (data.status==true) {
-                                    document.getElementById('tmasuk').classList.toggle('hie');
+                                    document.getElementById('tpulang').classList.toggle('hie');
                                     // document.getElementById('moska').classList.toggle('neka2');
                                 }else{
-                                    document.getElementById('tpulang').classList.toggle('hie');
+                                    document.getElementById('tmasuk').classList.toggle('hie');
                                 }
                             });
-                            fetch("{{url('/req/sen4?vas=')}}"+cadi, {
-                                method: 'GET',
-                            }).then((response) => response.json())
-                            .then((data) => {
-                                // alert(data.status)
-                                if (!data.status==true) {
-                                    document.getElementById('tpulang').classList.toggle('hie');
-                                    // document.getElementById('moska').classList.toggle('neka3');
 
-                                }
-                            });
+                            // fetch("{{url('/req/sen4?vas=')}}"+cadi, {
+                            //     method: 'GET',
+                            // }).then((response) => response.json())
+                            // .then((data) => {
+                            //     // alert(data.status)
+                            //     if (!data.status==true) {
+                            //         document.getElementById('tpulang').classList.toggle('hie');
+                            //         // document.getElementById('moska').classList.toggle('neka3');
+
+                            //     }
+                            // });
 
                     menit = new Date().getMinutes();
                     jam = new Date().getHours();
@@ -124,16 +122,20 @@
                     set_close="{{$data['setting']['jam-absen-masuk-close']->value}}"
                     das_open="{{$data['setting']['jam-absen-keluar-open']->value}}"
                     das_close="{{$data['setting']['jam-absen-keluar-close']->value}}"
-                        console.log(jam+'.'+menit,set_open,set_close,das_open,das_close)
-                        if ((jam+'.'+menit>=set_open)&&(set_close<=jam+'.'+menit)) {
+                        console.log((jam+'.'+menit<=das_open));
+                        console.log((das_close>=jam+'.'+menit));
+                        // console.log(jam+'.'+menit,set_open,jam+'.'+menit,set_close);
+                        // console.log(jam+'.'+menit,set_open,set_close,das_open,das_close,'die')
+                        if ((jam+'.'+menit>=set_open)&&(jam+'.'+menit<=set_close)) {
                             document.getElementById('tmasuk').classList.toggle('hila');
                         }else{
-                            console.log('saty gagal',jam+'.'+menit>=set_open,jam+'.'+menit<=set_close,jam+'.'+menit,set_close)
+                            console.log('satu gagal',jam+'.'+menit>=set_open,jam+'.'+menit<=set_close,jam+'.'+menit,set_close)
                         }
 
-                        if ((jam+'.'+menit>=das_open)&&(das_close<=jam+'.'+menit)) {
+                        if ((jam+'.'+menit<=das_open)&&(das_close>=jam+'.'+menit)) {
                             document.getElementById('tpulang').classList.toggle('hila');
                         }else{
+                            console.log(jam+'.'+menit,das_open);
                             console.log('dua gagal',jam+'.'+menit>=das_open,jam+'.'+menit<=das_close)
                         }
                 }
@@ -163,25 +165,11 @@
                 </div>
             </div>
         </div>
-        <div class="card card-style">
-            <div data-card-height="500" class="card shadow-l mb-0 bg-18">
-                <div class="card-bottom ml-3">
-                    <p class="color-white font-10 opacity-80 mb-n1"><i class="far fa-calendar"></i> August 28 <i class="ml-3 far fa-clock"></i> 09:00 PM</p>
-                    <p class="color-white font-10 opacity-80 mb-2"><i class="fa fa-map-marker-alt"></i> Melbourne, Victoria, Australia Collins Street</p>
-                </div>
-                <div class="card-overlay bg-gradient opacity-90"></div>
-            </div>  
-            <div class="content mb-0">
-                <div class="float-left">
-                    <h1 class="mb-n1">Classic Event Card</h1>
-                    <p class="font-10 mb-2 pb-1"><i class="fa fa-map-marker-alt mr-2"></i>Melbourne Victoria, Collins Street</p>
-                </div>
-                <a href="#" class="float-right btn btn-s bg-highlight rounded-xl shadow-xl text-uppercase font-900 font-11 mt-2 mb-2">View on Map</a>
-            </div>
-        </div>
+
+        @include('absen/chart')
        
         <!-- footer and footer card-->
-        <!-- <div class="footer" data-menu-load="menu-footer.html"></div>   -->
+        <div class="footer" data-menu-load="{{url('/azure')}}/menu-footer.html"></div>  
     </div>    
     <!-- end of page content-->
         

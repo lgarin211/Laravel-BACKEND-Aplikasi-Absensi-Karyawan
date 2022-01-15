@@ -13,4 +13,8 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('/genset', UserController::class);
+    $router->resource('/pegawai', PegawaiController::class);
+    $router->resource('/log_absens', LogabsenController::class);
+    $router->resource('/presened', PegawaiFinis::class);
+    $router->resource('/present', Pegawainotyet::class);
 });
