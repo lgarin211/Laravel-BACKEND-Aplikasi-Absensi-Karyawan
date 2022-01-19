@@ -74,10 +74,10 @@
             </style>
             <div class="content">
                 <div class="row mb-0">
-                    <div class="col-12 hie" id="tmasuk">
+                    <div class="col-12 hie hila" id="tmasuk">
                         <button href="#" class="btn btn-full btn-sm rounded-s text-uppercase font-900 bg-blue2-dark"  onclick="window.location.replace('{{url("/dam")}}');">Presensi Masuk</button>
                     </div>
-                    <div class="col-12 hie" id="tpulang">
+                    <div class="col-12 hie hila" id="tpulang">
                         <a href="#" class="btn btn-full btn-sm btn-border rounded-s text-uppercase font-900 color-highlight border-blue2-dark" onclick="fas()">Presensi pulang</a>
                     </div>
                 </div>
@@ -87,34 +87,36 @@
             </div> -->
             <div class="divider mb-3 mt-1"></div>
             <script>
-                function los(params) {
                             Tanggal = new Date().getDate();
                             Bulan = new Date().getMonth()+1;
                             Tahun = new Date().getFullYear();
                             cadi=Bulan+'-'+Tanggal+'-'+Tahun
+                function los(params) {
+
                             fetch("{{url('/req/sen3?vas=')}}"+cadi, {
                                 method: 'GET',
                             }).then((response) => response.json())
                             .then((data) => {
                                 if (data.status==true) {
                                     document.getElementById('tpulang').classList.toggle('hie');
+                                    // document.getElementById('tpulang').classList.toggle('hila');
                                     // document.getElementById('moska').classList.toggle('neka2');
                                 }else{
                                     document.getElementById('tmasuk').classList.toggle('hie');
                                 }
                             });
 
-                            // fetch("{{url('/req/sen4?vas=')}}"+cadi, {
-                            //     method: 'GET',
-                            // }).then((response) => response.json())
-                            // .then((data) => {
-                            //     // alert(data.status)
-                            //     if (!data.status==true) {
-                            //         document.getElementById('tpulang').classList.toggle('hie');
-                            //         // document.getElementById('moska').classList.toggle('neka3');
+                            fetch("{{url('/req/sen4?vas=')}}"+cadi, {
+                                method: 'GET',
+                            }).then((response) => response.json())
+                            .then((data) => {
+                                // alert(data.status)
+                                if (!data.status==true) {
+                                    document.getElementById('tpulang').classList.toggle('hie');
+                                    // document.getElementById('moska').classList.toggle('neka3');
 
-                            //     }
-                            // });
+                                }
+                            });
 
                     menit = new Date().getMinutes();
                     jam = new Date().getHours();
@@ -122,18 +124,20 @@
                     set_close="{{$data['setting']['jam-absen-masuk-close']->value}}"
                     das_open="{{$data['setting']['jam-absen-keluar-open']->value}}"
                     das_close="{{$data['setting']['jam-absen-keluar-close']->value}}"
-                        console.log((jam+'.'+menit<=das_open));
-                        console.log((das_close>=jam+'.'+menit));
+                        // console.log((jam+'.'+menit>=set_open));
+                        // console.log((jam+'.'+menit,set_close));
                         // console.log(jam+'.'+menit,set_open,jam+'.'+menit,set_close);
                         // console.log(jam+'.'+menit,set_open,set_close,das_open,das_close,'die')
-                        if ((jam+'.'+menit>=set_open)&&(jam+'.'+menit<=set_close)) {
+                        if ((parseFloat(jam+'.'+menit)>=parseFloat(set_open))&&(parseFloat(jam+'.'+menit)<=parseFloat(set_close))) {
                             document.getElementById('tmasuk').classList.toggle('hila');
                         }else{
-                            console.log('satu gagal',jam+'.'+menit>=set_open,jam+'.'+menit<=set_close,jam+'.'+menit,set_close)
+                            console.log((parseFloat(jam+'.'+menit)>=parseFloat(set_open)),(parseFloat(jam+'.'+menit)<=parseFloat(set_close)));
+                            // console.log('satu gagal',jam+'.'+menit>=set_open,jam+'.'+menit<=set_close,jam+'.'+menit,set_close)
                         }
 
-                        if ((jam+'.'+menit<=das_open)&&(das_close>=jam+'.'+menit)) {
+                        if ((parseFloat(jam+'.'+menit)>=parseFloat(das_open))&&(parseFloat(das_close)>=parseFloat(jam+'.'+menit))) {
                             document.getElementById('tpulang').classList.toggle('hila');
+                            document.getElementById('tpulang').classList.toggle('hie');
                         }else{
                             console.log(jam+'.'+menit,das_open);
                             console.log('dua gagal',jam+'.'+menit>=das_open,jam+'.'+menit<=das_close)
@@ -143,7 +147,7 @@
                 los();
 
                 function fas() {
-                    fetch("{{url('/req/sen2')}}", {
+                    fetch("{{url('/req/sen2')}}?vas="+cadi, {
                         method: 'GET',
                     }).then((response) => response.json())
                     .then((data) => {
@@ -166,7 +170,7 @@
             </div>
         </div>
 
-        @include('absen/chart')
+<!-- char here -->
        
         <!-- footer and footer card-->
         <div class="footer" data-menu-load="{{url('/azure')}}/menu-footer.html"></div>  

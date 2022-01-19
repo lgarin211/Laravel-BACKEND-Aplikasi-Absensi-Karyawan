@@ -36,18 +36,37 @@ class LogAbsenController extends Controller
     {
         date_default_timezone_set('Asia/Jakarta');
         $info = Auth::user();
+        // dd($info->id);
         $date = date('m-d-Y H:i:s');
-        DB::table('log_absens')
+        $in=DB::table('log_absens')
             ->where('id_user', $info->id)
+            ->where('jam_masuk', 'like', '%' . date('m-d-Y'). '%')
             ->update(['jam_keluar' => $date]);
-        $dam = DB::table('log_absens')->where('id_user', '=', $info->id)->orderBy('id', 'desc')->first();
+        $dam = DB::table('log_absens')->where('id_user', '=', $info->id)->orderBy('id', 'desc')
+        ->where('jam_keluar', 'like', '%' . date('m-d-Y'). '%')->first();
         $val = strtotime($date) - strtotime($dam->jam_masuk);
-        $menit = ($val / 60);
-        $jam = floor($menit / 60);
-        $das = $info->jumlah_jam_kerja + $jam;
+        // dd($val,$date ,$dam->jam_masuk);
+
+
+
+        $time_masuk = $dam->jam_masuk;
+        $time_keluar = $dam->jam_keluar;
+        $time_masuk =explode(" ",$time_masuk);
+        $time_keluar =explode(" ",$time_keluar);
+        $time_masuk = strtotime($time_masuk[1]);
+        $time_keluar =strtotime($time_keluar[1]);
+        
+        $diff=$time_keluar-$time_masuk;
+                $jam    =floor($diff / (60 * 60));
+                $menit    =$diff - $jam * (60 * 60);
+                $mi=90;
+                $mi=$mi+floor($menit/60);
+                $mi;
+        // dd($mi);
         DB::table('users')
             ->where('id', $info->id)
-            ->update(['jumlah_jam_kerja' => $das]);
+            ->update(['jumlah_jam_kerja' => $mi]);
+
         return \response(['status' => $info->name . ' Telah Melakukan Absensi Keluar']);
     }
     public function cekon()
@@ -65,6 +84,65 @@ class LogAbsenController extends Controller
         }
         return response(['status' => $la, 'data' => $ban]);
     }
+    public function presb()
+    {
+        $data=DB::table('log_absens')
+        ->where('id_user', '=', Auth::user()->id)
+        ->where('jam_masuk', 'like', '%' .date('m-'). '%')
+        ->where('jam_masuk', 'like', '%' .date('-Y'). '%')
+        ->get();
+
+        $bas=[];
+        $mas=[];
+        foreach ($data as $key => $value) {
+            if (empty($bas[$value->keterangan])) {
+                $bas[$value->keterangan]['label']=$value->keterangan;
+                $bas[$value->keterangan]['data']=1;
+            }else{
+                $bas[$value->keterangan]['data']+=1;
+            }
+        }
+
+        foreach ($bas as $key => $value) {    
+            $blim[]=array('x'=>$value['label'],'y'=>$value['data']);
+        }
+
+        // dd(Auth::user()->id,$bas);
+
+        if (empty($_GET['pin'])) {
+            return view('absen/chart',['data'=>$bas]);
+        }else{
+        // dd($clin);
+        return response()->json($blim, 200);
+        // dd($bas);
+        // dd($data);
+        }
+
+    }
+    public function cekupuser()
+    {
+        $masuk=DB::table('log_absens')->
+        where('jam_masuk','like','%'.date('m-d-Y').'%')
+        ->join('users', 'users.id', '=', 'log_absens.id_user')
+        ->get('users.id');
+        // dd($masuk);
+        $hadir=[];
+        foreach ($masuk as $key => $value) {
+            // dd($value->id);
+            $hadir[]=$value->id;
+        }
+        $masuk=DB::table('users')->whereNotIn('id',$hadir)->get();
+        
+
+        foreach ($masuk as $key => $value) {
+            // dd($value->id);
+            $cres[]=array('id_user'=>$value->id,'jam_masuk' => date('m-d-Y'),'jam_keluar' => date('m-d-Y'),'bukti_masuk'=>'https://kaltimtuntas.id/wp-content/uploads/2021/11/foto-profil-wa-retak.jpg','keterangan'=>'Absen');
+        }
+
+        DB::table('log_absens')->insert($cres);
+        
+    }
+    
     public function retable()
     {
         $ban = DB::table('log_absens')
@@ -93,10 +171,13 @@ class LogAbsenController extends Controller
     public function cekon2()
     {
         $la = false;
+        // dd($_GET['vas']);
         $ban = DB::table('log_absens')
             ->where('id_user', '=', Auth::user()->id)
             ->where('jam_keluar', 'like', '%' . $_GET['vas'] . '%')
             ->get();
+        //     die;
+        // dd($ban);
         if (\count($ban) > 0) {
             $la = true;
         } else {

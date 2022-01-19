@@ -25,9 +25,9 @@
     }
     .t{
     max-width: 100vw;
-    max-height: 80vh;
+    max-height: 75vh;
     min-width: 10vh;
-    min-height: 80vh;
+    min-height: 75vh;
     }
 
     .c2{

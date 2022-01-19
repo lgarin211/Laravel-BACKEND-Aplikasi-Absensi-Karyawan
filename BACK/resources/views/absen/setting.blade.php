@@ -28,7 +28,7 @@
         
         <div class="page-title page-title-small">
             <h2><a href="{{url('/absen')}}" data-back-button><i class="fa fa-arrow-left"></i></a>Settings</h2>
-            <a href="{{url('/absen')}}" data-menu="menu-main" class="bg-fade-gray1-dark shadow-xl preload-img" data-src="{{url('/azure')}}/images/avatars/5s.png"></a>
+            <!-- <a href="{{url('/absen')}}" data-menu="menu-main" class="bg-fade-gray1-dark shadow-xl preload-img" data-src="{{url('/azure')}}/images/avatars/5s.png"></a> -->
         </div>
         <div class="card header-card shape-rounded" data-card-height="210">
             <div class="card-overlay bg-highlight opacity-95"></div>
@@ -39,10 +39,16 @@
         <div class="card card-style">
             <div class="content mt-0 mb-2">
                 <div class="list-group list-custom-large mb-4">     
-                    <a href="{{url('/')}}/user/profile">
+                    <a href="#">
                         <i class="fa font-14 fa-share-alt bg-red2-dark rounded-sm"></i>
                         <span>Profile</span>
-                        <strong>Cukup Tekan</strong>
+                        <strong>Fiture Dalam Pengembangan</strong>
+                        <i class="fa fa-angle-right mr-2"></i>
+                    </a>
+                    <a href="https://presinsi-notification-smkn4.web.app?id={{Auth::user()->id}}" onclick="alert('Pada Halaman Berikutnya Harap memilih setuju (allow) ')">
+                        <i class="fa font-14 fa-bell bg-red1-dark rounded-sm"></i>
+                        <span>Notifikasi</span>
+                        <strong>Pada Halaman Berikutnya Harap memilih <b> setuju (allow) </b></strong>
                         <i class="fa fa-angle-right mr-2"></i>
                     </a>
                     <a href="{{url('/azure')}}/#" data-toggle-theme class="show-on-theme-light">

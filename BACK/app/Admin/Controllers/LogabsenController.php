@@ -7,6 +7,8 @@ use Encore\Admin\Form;
 use Encore\Admin\Http\Controllers\AdminController;
 use Encore\Admin\Show;
 use Encore\Admin\Table;
+use Illuminate\Support\Facades\DB;
+
 
 class LogabsenController extends AdminController
 {
@@ -25,14 +27,15 @@ class LogabsenController extends AdminController
     protected function table()
     {
         $table = new Table(new log_absen());
-
+        $table->model()->join('users', 'users.id', '=', 'log_absens.id_user')
+        ->select('log_absens.*', 'users.name', 'users.nip');
         $table->column('id', __('Id'));
-        // $table->column('id_user', __('Id user'));
+        $table->column('name', __('Nama'));
         $table->column('jam_masuk', __('Jam masuk'));
         $table->column('jam_keluar', __('Jam keluar'));
         // $table->column('bukti_masuk', __('Bukti masuk'));
         $table->column('keterangan', __('Keterangan'));
-        // $table->column('created_at', __('Created at'));
+        $table->column('created_at', __('Created at'));
         // $table->column('updated_at', __('Updated at'));
 
         return $table;
@@ -44,17 +47,19 @@ class LogabsenController extends AdminController
      * @param mixed $id
      * @return Show
      */
+
+
     protected function detail($id)
     {
         $show = new Show(log_absen::findOrFail($id));
-
+        
         $show->field('id', __('Id'));
         $show->field('id_user', __('Id user'));
         $show->field('jam_masuk', __('Jam masuk'));
         $show->field('jam_keluar', __('Jam keluar'));
         $show->field('bukti_masuk', __('Bukti masuk'));
         $show->field('keterangan', __('Keterangan'));
-        $show->field('created_at', __('Created at'));
+        $show->field('NIP', __('NIP'));
         $show->field('updated_at', __('Updated at'));
 
         return $show;

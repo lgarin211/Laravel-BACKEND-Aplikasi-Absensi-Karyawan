@@ -1,45 +1,56 @@
-        <div class="card card-style">
-            <div class="content mb-4">
-                <h3>
-                    <i class="fa fa-exclamation-triangle mr-3 mt-1 font-17 color-yellow1-dark"></i>Staff Meeting
-                </h3>
-                <p>
-                    Event aims to discuss and improve company workflow, brainstorming and customer aquisition.
-                    Attendence is mandatory.
-                </p>
-                <div class="row mb-0 pt-3 bg-highlight">
-                    <div class="col-4">
-                        <p class="text-left color-white mb-0 pb-3"><i class="fa fa-map-marker color-white mr-2"></i>Room 401</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="text-center color-white mb-0 pb-3"><i class="fa fa-calendar-alt mr-2 color-white"></i>15 May</p>
-                    </div>
-                    <div class="col-4">
-                        <p class="text-right color-white mb-0 pb-3"><i class="fa fa-clock mr-2 color-white"></i>09:00 AM</p>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="d-flex">
-                    <div class="w-35 border-right pr-3 border-highlight">
-                        <img src="images/avatars/4s.png" data-src="images/avatars/4s.png" class="rounded-circle bg-highlight preload-img" width="80">
-                        <h6 class="font-14 font-600 mt-2 text-center">Vincent M.</h6>
-                        <p class="color-highlight mt-n2 font-9 font-400 text-center mb-0 pb-0">Group Manager</p>
-                    </div>
-                    <div class="w-65 pt-2 pl-3">
-                        <h3>Attending Staff</h3>
-                        <p class="color-highlight mt-n2 font-10 mb-3">Meeting Presence Mandatory</p>
-                        <a href="#"><img src="images/avatars/1s.png" data-src="images/avatars/1s.png" class="rounded-circle bg-green1-dark preload-img" width="40"></a>
-                        <a href="#"><img src="images/avatars/2s.png" data-src="images/avatars/2s.png" class="rounded-circle bg-red2-dark preload-img" width="40"></a>
-                        <a href="#"><img src="images/avatars/3s.png" data-src="images/avatars/3s.png" class="rounded-circle bg-brown1-dark preload-img" width="40"></a>
-                        <a href="#"><img src="images/avatars/4s.png" data-src="images/avatars/4s.png" class="rounded-circle bg-yellow1-dark preload-img" width="40"></a>
-                    </div>
-                </div>
 
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="chart"></div>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+var options = {
+  chart: {
+    width: 300,
+    type: "pie"
+  },
+  dataLabels: {
+    enabled: false
+  },
+  <?php
+        $series='';
+        $label='';
+    foreach ($data as $key => $value) {
+        $series=$series.$value['data'].',';
+        $label=$label."'".$value['label']."'".',';
+    }
+    // dump($series,$label);
+  ?>
+  series: [{{$series}}],
+  labels: [<?php echo $label ?>],
+};
 
-        
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-        <script>
-            
-        </script>
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+chart.render();
+
+
+var url = '{{url('/tesc')}}?pin=true';
+
+// axios({
+//   method: 'GET',
+//   url: url,
+// }).then(function(response) {
+//   chart.updateSeries([{
+//     name: 'Hari',
+//     data: response.data
+//   }])
+// })
+</script>
+</body>
+</html>

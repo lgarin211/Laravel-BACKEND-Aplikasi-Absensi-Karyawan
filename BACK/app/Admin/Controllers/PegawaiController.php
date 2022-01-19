@@ -32,13 +32,13 @@ class PegawaiController extends AdminController
         $table->column('jabatan', __('Jabatan'));
         // $table->column('jenis_kelamin', __('Jenis kelamin'));
         // $table->column('tempat_l', __('Tempat l'));
-        $table->column('tgl_l', __('Tgl l'));
-        $table->column('notel', __('Notel'));
+        // $table->column('tgl_l', __('Tgl l'));
+        // $table->column('notel', __('Notel'));
         $table->column('email', __('Email'));
         // $table->column('password', __('Password'));
         // $table->column('two_factor_secret', __('Two factor secret'));
         // $table->column('two_factor_recovery_codes', __('Two factor recovery codes'));
-        $table->column('jumlah_jam_kerja', __('Jumlah jam kerja'));
+        $table->column('jumlah_jam_kerja', __('Jumlah jam kerja (menit)'));
         // $table->column('profile_photo_path', __('Profile photo path'));
         // $table->column('email_verified_at', __('Email verified at'));
         // $table->column('remember_token', __('Remember token'));
