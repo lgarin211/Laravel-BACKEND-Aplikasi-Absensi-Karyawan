@@ -39,19 +39,17 @@ Route::get('/vas', function () {
     $in=DB::table('users')
     ->where('id', $_GET['id'])
     ->update(['FCB' => $_GET['token']]);
-
-    return response()->json(DB::table('users')
-    ->where('id', $_GET['id'])->first(), 200);
+    echo '<h1>Anda Sudah Terdaftar untuk menerima notifikasi dan anda bisa menutup Halaman ini</h1>';
 });
 
-Route::get('/vas', function () {
-  $in=DB::table('users')
-  ->where('id', $_GET['id'])
-  ->update(['FCB' => $_GET['token']]);
+// Route::get('/vas', function () {
+//   $in=DB::table('users')
+//   ->where('id', $_GET['id'])
+//   ->update(['FCB' => $_GET['token']]);
 
-  return response()->json(DB::table('users')
-  ->where('id', $_GET['id'])->first(), 200);
-});
+//   return response()->json(DB::table('users')
+//   ->where('id', $_GET['id'])->first(), 200);
+// });
 
 Route::get('/setupnotif', function () {
   return view('presend');

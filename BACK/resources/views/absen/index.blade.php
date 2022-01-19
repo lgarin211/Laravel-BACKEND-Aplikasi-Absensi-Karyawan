@@ -61,7 +61,13 @@
                     </p>
                 </div>
                 <!-- right side of profile. increase image width to increase column size-->
+
+                @if (!empty($data['dam'][0]->bukti_masuk))
+                <img src="{{$data['dam'][0]->bukti_masuk}}" data-src="{{$data['dam'][0]->bukti_masuk}}" width="115" class="bg-highlight rounded-circle mt-3 shadow-xl preload-img">
+                @else
                 <img src="{{$data['user']->profile_photo_path}}" data-src="{{$data['user']->profile_photo_path}}" width="115" class="bg-highlight rounded-circle mt-3 shadow-xl preload-img">
+                @endif                
+
             </div>
             <!-- follow buttons-->
             <style>
