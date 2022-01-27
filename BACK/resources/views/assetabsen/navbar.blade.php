@@ -14,10 +14,10 @@
   <i data-feather="calendar" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i>
   <span>Not Present</span>
   </a>
-  <a href="#" onclick="alert('Halaman Dalam Tahap Pengembangan')">
+  {{-- <a href="#" onclick="alert('Halaman Dalam Tahap Pengembangan')">
   <i data-feather="calendar" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i>
   <span>Pengajuan</span>
-  </a>
+  </a> --}}
   <a href="#" onclick="alert('Halaman Dalam Tahap Pengembangan')">
   <i data-feather="calendar" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i>
   <span>Laporan</span>
