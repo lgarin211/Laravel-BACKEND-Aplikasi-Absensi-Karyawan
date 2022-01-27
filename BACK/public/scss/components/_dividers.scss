@@ -1,0 +1,40 @@
+$dividerColor: rgba(0,0,0,0.05);
+$dividerIconBackground: #f0f0f0;
+
+/*Dividers*/
+.divider {
+	height: 1px;
+	display: block;
+	background-color: $dividerColor;
+	margin-bottom: $globalMargin;
+}
+.divider-margins {
+	margin: 0px 17px $globalMargin 17px;
+}
+.divider-icon {
+	height: 1px;
+	display: block;
+	background-color: $dividerColor;
+	margin-bottom: 50px;
+	i {
+		position: absolute;
+		width: 50px;
+		background-color: $dividerIconBackground;
+		text-align: center;
+		margin-top: -8px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+.content-boxed {
+	.divider-icon {
+		i {
+			background-color: $dividerIconBackground;
+		}
+	}
+}
+.divider-small {
+	height: 2px;
+	width: 80px;
+	margin: auto;
+}

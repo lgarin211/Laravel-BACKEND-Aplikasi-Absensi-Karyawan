@@ -1,0 +1,85 @@
+/*Ads*/
+.ad-300x50 {
+	margin: 0 auto;
+	width: 300px;
+	height: 50px;
+}
+.ad-300x250 {
+	margin: 0 auto;
+	width: 300px;
+	height: 250px;
+}
+.ad-300x50-fixed {
+	left: 50%;
+	margin-left: -150px;
+	bottom: 60px;
+    bottom:calc(65px + (constant(safe-area-inset-bottom))*1.1)!important;
+    bottom:calc(65px + (env(safe-area-inset-bottom))*1.1)!important;
+	position: fixed;
+	z-index: 90;
+}
+.ad-time-close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 30px;
+	height: 30px;
+	line-height: 27px;
+	text-align: center;
+	border: solid 2px;
+	border-radius: 30px;
+}
+/*Scroll Fixed Ads*/
+.scroll-ad-visible {
+	transform: translateY(0%) !important;
+}
+.is-on-homescreen {
+	.scroll-ad {
+		bottom: 110px;
+	}
+}
+.scroll-ad {
+	position: fixed;
+	bottom: 75px;
+	left: 10px;
+	right: 10px;
+	background-color: $color-white;
+	z-index: 93;
+	height: 80px;
+	box-shadow: $shadow-xs;
+	border-radius: $rounded-sm;
+	transform: translateY(150%);
+	transition: $globalTransitions;
+	img {
+		width: 60px;
+		position: absolute;
+		margin: 10px;
+		border-radius: 10px;
+	}
+	h1 {
+		display: block;
+		font-size: 18px;
+		padding: 7px 0px 0px 80px;
+		margin-bottom: -3px;
+	}
+	em {
+		padding: 0px 85px 0px 80px;
+		font-style: normal;
+		font-size: 11px;
+		opacity: 0.7;
+		display: block;
+		line-height: 15px;
+	}
+	a {
+		width: 60px;
+		font-size: 9px;
+		right: 15px;
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: 700;
+		position: absolute;
+		top: 50%;
+		border-radius: 5px;
+		transform: translateY(-50%);
+	}
+}

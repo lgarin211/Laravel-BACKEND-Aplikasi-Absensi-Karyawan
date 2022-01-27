@@ -1,0 +1,122 @@
+/* Owl Custom Settings*/
+.task-slider {
+	.owl-stage-outer {
+		overflow: visible !important;
+	}
+	transform: translateX(-35px);
+}
+.single-slider {
+	z-index: 50 !important;
+	img {
+		width: 100% !important;
+	}
+}
+.under-slider-btn {
+	z-index: 90;
+	margin-top: -53px;
+	margin-bottom: 0px;
+}
+.double-slider {
+	.owl-stage-outer {
+		overflow: visible !important;
+	}
+	padding-left: 15px !important;
+	padding-right: 15px;
+	.under-slider-button {
+		margin-bottom: -50px;
+	}
+}
+.cta-buttons {
+	display: block;
+	width: 280px;
+	margin: 0px auto -1px auto;
+	z-index: 10;
+	a {
+		display: inline-block;
+	}
+}
+.owl-has-controls {
+	.owl-nav {
+		display: block !important;
+	}
+	.owl-prev {
+		margin-left: 15px;
+	}
+	.owl-next {
+		margin-right: 15px;
+	}
+}
+.slider-boxed {
+	* {
+		overflow: visible !important;
+	}
+	padding: 0px 15px;
+	.owl-nav {
+		margin-top: -25px !important;
+	}
+	.owl-dots {
+		transform: translateX(0px) !important;
+	}
+}
+.carousel-boxed {
+	padding: 0px 15px;
+}
+.card-slider {
+	* {
+		overflow: visible !important;
+	}
+}
+.card-carousel {
+	* {
+		overflow: visible !important;
+	}
+}
+.cover-slider {
+	.owl-dots {
+		transform: translateY(-70px) !important;
+	}
+}
+.walkthrough-slider {
+	.owl-dots {
+		transform: translateY(-22px) !important;
+	}
+}
+.cover-button-bottom {
+	position: absolute;
+	left: 50px;
+	right: 50px;
+	bottom: 70px;
+	z-index: 99;
+	font-size: 12px;
+}
+.cover-button-top {
+	position: absolute;
+	width: 170px;
+	left: 50%;
+	margin-left: -85px;
+	top: 20px;
+	top: calc(20px + (constant(safe-area-inset-top))*1.1) !important;
+	top: calc(20px + (env(safe-area-inset-top))*1.1) !important;
+	z-index: 99;
+	font-size: 12px;
+}
+.cover-next {
+	position: absolute;
+	z-index: 99;
+	bottom: 20px;
+	right: 0px;
+}
+.cover-prev {
+	position: absolute;
+	z-index: 99;
+	bottom: 20px;
+	left: 0px;
+}
+
+.cover-slider{
+    touch-action: pan-x;
+}
+
+.cover-slider .content{
+    margin-bottom:0px!important;
+}

@@ -1,0 +1,68 @@
+/*Tabs*/
+.tab-content {
+	display: none;
+	overflow: hidden;
+	position: relative;
+	-webkit-transform: translate3d(0,0,0);
+}
+.tab-controls {
+	a {
+		border: solid 1px rgba(0,0,0,0.07);
+		border-right: none;
+		text-align: center;
+		float: left;
+		font-size: 12px;
+		margin-right: -1px;
+		color: $color_dark;
+		transition: all 250ms ease;
+		&:last-child {
+			border: solid 1px rgba(0,0,0,0.07);
+			border-right: none !important;
+		}
+	}
+}
+.tabs-large {
+	a {
+		height: 45px;
+		line-height: 45px;
+		font-size: 14px;
+	}
+}
+.tabs-medium {
+	a {
+		height: 40px;
+		line-height: 40px;
+		font-size: 13px;
+	}
+}
+.tabs-small {
+	a {
+		height: 33px;
+		line-height: 33px;
+		font-size: 12px;
+	}
+}
+.tabs-rounded {
+	a {
+		&:first-child {
+			border-top-left-radius: 8px !important;
+			border-bottom-left-radius: 8px !important;
+		}
+		&:last-child {
+			border-top-right-radius: 8px !important;
+			border-bottom-right-radius: 8px !important;
+		}
+	}
+}
+.tabs-circled {
+	a {
+		&:first-child {
+			border-top-left-radius: 30px !important;
+			border-bottom-left-radius: 30px !important;
+		}
+		&:last-child {
+			border-top-right-radius: 30px !important;
+			border-bottom-right-radius: 30px !important;
+		}
+	}
+}

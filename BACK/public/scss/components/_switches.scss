@@ -1,0 +1,185 @@
+$switch_green: #8CC152;
+$switch_blue: #458be3;
+$switch_red : #DA4453;
+$switch_gray_ios: #e8e9ea;
+$switch_gray_android: #AAB2BD;
+
+/*Custom Switches*/
+.custom-control {
+	* {
+		cursor: pointer;
+		user-select: none !important;
+	}
+}
+.switch-is-unchecked {
+	display: none;
+}
+.switch-is-checked {
+	display: block;
+}
+.scale-switch {
+	transform: scale(0.9, 0.9);
+}
+/*iOS Switcher*/
+.ios-switch {
+	padding-left: 10px;
+	label {
+		&::before {
+			background-color: $switch_gray_ios;
+			pointer-events: all;
+			margin-top: -5px;
+			margin-left: -1px;
+			width: 58px !important;
+			height: 32px !important;
+			border-radius: 50px !important;
+		}
+		&::after {
+			margin-top: -4px;
+			z-index: 6;
+			width: 30px !important;
+			height: 30px !important;
+			transition: all 250ms ease;
+			border-radius: 50px !important;
+			background-color: $color_white;
+			border: solid 1px rgba(152, 152, 152, 0.4);
+			transition: all 250ms ease;
+		}
+	}
+}
+.ios-input {
+	&:checked {
+		&~.custom-control-label {
+			&::after {
+				-webkit-transform: translateX(26px) !important;
+			}
+			&::before {
+				background-color: $switch_green !important;
+			}
+		}
+	}
+}
+.ios-switch-icon {
+	label {
+		&::before {
+			background-color: $switch_red !important;
+		}
+	}
+	i {
+		line-height: 32px;
+		pointer-events: none;
+		z-index: 5;
+		position: absolute;
+		left: 10px;
+		&:last-child {
+			z-index: 5;
+			position: absolute;
+			margin-left: 29px;
+		}
+	}
+	span {
+		font-size: 9px;
+		font-weight: 700;
+		color: $color_white;
+		line-height: 32px;
+		pointer-events: none;
+		z-index: 5;
+		position: absolute;
+		left: 10px;
+		&:last-child {
+			z-index: 5;
+			position: absolute;
+			margin-left: 24px;
+		}
+	}
+}
+/*Android Switcher*/
+.android-switch {
+	padding-left: 10px;
+	label {
+		&::before {
+			pointer-events: all;
+			margin-top: 0px;
+			margin-left: -2px;
+			width: 53px !important;
+			height: 17px !important;
+			border-radius: 50px !important;
+			background-color: $switch_gray_android;
+		}
+		&::after {
+			border: solid 1px rgba(0,0,0,0.1) !important;
+			margin-top: -6px;
+			margin-left: -3px;
+			width: 28px !important;
+			height: 28px !important;
+            background-color: $color_white !important;
+			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.20) !important;
+			border-radius: 50px !important;
+			transition: all 250ms ease;
+		}
+	}
+}
+.android-input {
+    transform:translateY(1px)!important;
+	&:checked {
+		&~.custom-control-label {
+			&::after {
+				background-color: $switch_blue !important;
+				border: none !important;
+				-webkit-transform: translateX(30px) !important;
+			}
+			&::before {
+				background-color: $switch_blue !important;
+			}
+		}
+	}
+}
+[data-activate] {
+	cursor: pointer;
+	display: block;
+	width: 100%;
+}
+/*Classic Switcher*/
+.classic-switch {
+	input {
+		display: none;
+	}
+	label {
+		&::before {
+			pointer-events: all;
+			width: 40px !important;
+			height: 40px !important;
+			transform: translateX(11px);
+			margin-top: -10px;
+			border: none;
+			background-color: $color_transparent !important;
+		}
+	}
+	i {
+		pointer-events: none;
+		transition: all 250ms ease;
+	}
+}
+.classic-input {
+	&:checked {
+		&~.custom-control-label {
+			&::after {
+				-webkit-transform: translateX(26px) !important;
+			}
+		}
+		&~.fa-plus {
+			color: $switch_red !important;
+			transform: rotate(45deg);
+			transition: all 250ms ease;
+		}
+		&~.fa-angle-down {
+			color: $switch_red !important;
+			transform: rotate(180deg);
+			transition: all 250ms ease;
+		}
+		&~.fa-circle {
+			color: $switch_red !important;
+			transform: scale(1.3, 1.3);
+			transition: all 250ms ease;
+		}
+	}
+}

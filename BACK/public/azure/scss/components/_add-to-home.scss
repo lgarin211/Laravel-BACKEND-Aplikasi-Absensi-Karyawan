@@ -1,0 +1,82 @@
+/*---Added to Home---*/
+.add-to-home-visible {
+	opacity: 1 !important;
+	pointer-events: all !important;
+}
+.add-to-home {
+	.close-add-to-home {
+		pointer-events: none;
+	}
+	position: fixed;
+	background-color: $color_black;
+	z-index: 99;
+	left: 15px;
+	right: 15px;
+	border-radius: 10px;
+	height: 80px;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 250ms ease;
+	h1 {
+		position: absolute;
+		padding-left: 75px;
+		padding-top: 8px;
+		color: $color_white;
+		font-size: 13px;
+	}
+	p {
+		color: $gray-400;
+		position: absolute;
+		font-size: 11px;
+		padding-right: 20px;
+		padding-left: 75px;
+		padding-top: 35px;
+		line-height: 14px;
+	}
+	img {
+		width: 45px;
+		margin-top: 17px;
+		margin-left: 15px;
+	}
+}
+.add-to-home-ios {
+	bottom: 25px;
+	i {
+		width: 40px;
+		text-align: center;
+		position: absolute;
+		font-size: 30px;
+		left: 50%;
+		bottom: -18px !important;
+		margin-left: -21px;
+		transform: rotate(180deg);
+		color: $color_black;
+		display: block;
+	}
+	.close-add-to-home {
+		position: absolute;
+		right: 13px;
+		top: 13px;
+		transform: scale(0.5, 0.5);
+	}
+}
+.add-to-home-android {
+	top: 20px;
+	i {
+		width: 40px;
+		text-align: center;
+		position: absolute;
+		top: -18px;
+		right: 15px;
+		font-size: 30px;
+		margin-left: -20px;
+		color: $color_black;
+		display: block;
+	}
+	.close-add-to-home {
+		position: absolute;
+		right: 5px;
+		top: 20px;
+		transform: scale(0.5, 0.5);
+	}
+}

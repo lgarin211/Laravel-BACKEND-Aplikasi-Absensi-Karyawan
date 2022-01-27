@@ -1,0 +1,101 @@
+/*Azures Specific Shapes*/
+.card-bg{
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    z-index:0;
+}
+
+.header-card{
+    z-index:-1;
+    top:0px;
+    position:absolute;
+    left:-8px;
+    right:-8px;
+    overflow: hidden;
+}
+
+.footer-card{
+    z-index:-1;
+    bottom:-60px;
+    margin-bottom:0px!important;
+    position:absolute;
+    left:-8px;
+    right:-8px;
+    overflow: hidden;
+}
+
+.header-card.shape-rounded{
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+
+.footer-card.shape-rounded{
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+}
+
+.header-card.shape-cut-left{
+    width:200%;
+    transform: skew(0deg, 7deg)!important;
+}
+
+.header-card.shape-cut-right{
+    margin-top:-40px;
+    width:110%;
+    transform: skew(0deg, -7deg)!important;
+}
+.footer-card.shape-cut-left{
+    width:180%;
+    transform: skew(0deg, 3deg)!important;
+}
+
+.footer-card.shape-cut-right{
+    margin-top:-40px;
+    width:180%;
+    transform: skew(0deg, -3deg)!important;
+}
+
+.page-title{
+    margin:$globalMargin/1.5 $globalMargin/1.5 $globalMargin $globalMargin/1.5;
+}
+.page-title-large .greeting-text{
+    font-size:22px!important;
+    line-height:30px;
+    color:$color-white;
+    font-weight:600!important;
+}
+
+.page-title-small [data-menu]{
+    font-weight:600!important;
+    background-size: cover;
+    border-radius:40px;
+    position: absolute;
+    width:40px; 
+    height:40px;
+    right: 20px;
+    margin-top: -40px;
+    z-index: 98;
+
+}
+
+.page-title-small h2{color:$color-white; font-weight:600!important; padding-top:10px; font-size:24px!important;}
+.page-title-small h2 a{color:$color-white; font-weight:600!important; padding-right:20px; font-size:19px;}
+
+.page-title-large [data-menu]{
+    background-size: cover;
+    border-radius: 50px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    margin-top: -60px;
+    z-index: 98;
+}
+
+

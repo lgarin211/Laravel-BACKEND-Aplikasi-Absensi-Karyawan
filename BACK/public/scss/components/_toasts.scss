@@ -1,0 +1,32 @@
+/*Toasts*/
+.toast-tiny {
+	z-index: 90;
+	position: fixed;
+	left: 50%;
+	line-height: 35px;
+	padding: 0px 20px;
+	color: $color_white;
+	transition: all 200ms ease;
+	max-width: auto !important;
+	font-size: 12px;
+	border-radius: 60px;
+	border: 0px !important;
+}
+.toast-bottom {
+	bottom: 60px;
+	bottom: calc(65px + (constant(safe-area-inset-bottom))*1.1) !important;
+	bottom: calc(65px + (env(safe-area-inset-bottom))*1.1) !important;
+	transform: translate(-50%, 60px);
+}
+.toast-bottom.toast-tiny.show {
+	transform: translate(-50%, 0px);
+}
+.toast-top {
+	top: 60px;
+	top: calc(65px + (constant(safe-area-inset-bottom))*1.1) !important;
+	top: calc(65px + (env(safe-area-inset-bottom))*1.1) !important;
+	transform: translate(-50%, -60px);
+}
+.toast-top.toast-tiny.show {
+	transform: translate(-50%, 0px);
+}

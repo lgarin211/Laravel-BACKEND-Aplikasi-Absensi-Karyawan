@@ -1,0 +1,48 @@
+$alertBtnColor: transparent;
+$alertBtnColor2: rgba(255,255,255,0.2);
+
+.alert {
+	h4 {
+		padding-left: 47px;
+		margin-bottom: -5px;
+	}
+	button {
+		position: absolute;
+		right: 0px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 50px;
+		text-align: center;
+		span {
+			background-color: $alertBtnColor;
+		}
+		&:active {
+			box-shadow: none !important;
+			border: none !important;
+			outline: none !important;
+		}
+		&:focus {
+			box-shadow: none !important;
+			border: none !important;
+			outline: none !important;
+		}
+	}
+	span {
+		background-color: $alertBtnColor2;
+		position: absolute;
+		left: -1px;
+		top: -1px;
+		bottom: -1px;
+		width: 47px;
+		i {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+	strong {
+		padding-left: 47px;
+		font-weight: 400;
+	}
+}

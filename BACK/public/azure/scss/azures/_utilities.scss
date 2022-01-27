@@ -1,0 +1,63 @@
+/*Sticky Utility / Secondary Classes*/
+/*Rounded Borders*/
+.rounded-0{border-radius:$rounded-0!important;}
+.rounded-xs{border-radius:$rounded-xs!important;}
+.rounded-s{border-radius:$rounded-s!important;}
+.rounded-sm{border-radius:$rounded-sm!important;}
+.rounded-m{border-radius:$rounded-m!important;}
+.rounded-l{border-radius:$rounded-l!important;}
+.rounded-xl{border-radius:$rounded-xl!important;}
+
+/*Shadows*/
+.shadow-none{box-shadow: $shadow-0!important;}
+.shadow-0{box-shadow: $shadow-0!important;}
+.shadow-xs{box-shadow: $shadow-xs!important;}
+.shadow-s{box-shadow: $shadow-s!important;}
+.shadow-m{box-shadow:$shadow-m!important;}
+.shadow-l{box-shadow:$shadow-l!important;}
+.shadow-xl{box-shadow:$shadow-xl!important;}
+
+/*Line Height Control*/
+.line-height-xs{line-height:$line-height-xs!important;}
+.line-height-s{line-height:$line-height-s!important;}
+.line-height-m{line-height:$line-height-m!important;}
+.line-height-l{line-height:$line-height-l!important;}
+.line-height-xl{line-height:$line-height-xl!important;}
+
+/*Text Shadow*/
+.text-shadow-s{text-shadow:0px 1px 0px rgba(0,0,0,0.4);}
+.text-shadow-l{text-shadow:0px 1px 2px rgba(0,0,0,0.4);}
+
+/*Boxed Text*/
+.boxed-text-xl, .boxed-text-l, .boxed-text-m, .boxed-text-s{display:block; text-align:center; margin-left:auto; margin-right:auto;}
+.boxed-text-xl{width:$box-text-xl; max-width:340px;}
+.boxed-text-l{width:$box-text-l; max-width:300px;}
+.boxed-text-m{width:$box-text-m; max-width:300px;}
+.boxed-text-s{width:$box-text-s; max-width:260px;}
+
+/*Font Weights*/
+$fontWeight: 200, 300, 400, 500, 600, 700, 800, 900;
+@each $fontWeight in $fontWeight{.font-#{$fontWeight}{font-weight:$fontWeight;}}
+
+/*Opacity Values - Used for Contrasting Text, example opacity-30 will make the opacity 0.3*/
+$opacity: 10, 20, 30, 40, 50, 60, 70, 80, 85, 90, 95;
+@each $opacity in $opacity{.opacity-#{$opacity}{opacity:$opacity/100;}}
+
+/*Font Array - Better Typography Control, example font-30 class will make the font size 30px*/
+$fontSizes: 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40;
+@each $fontSizes in $fontSizes{.font-#{$fontSizes}{font-size:$fontSizes+px!important;}}
+
+
+/*Scaling Animation*/
+@keyframes scale-animation {0% {transform:scale(1, 1)} 50% {transform:scale(1.05, 1.05)} 0% {transform:scale(1, 1)}}
+.scale-box{animation:scale-animation 1.5s; animation-iteration-count: infinite;}
+
+@keyframes scale-icon {0% {transform:scale(1, 1)} 50% {transform:scale(1.3, 1.3)} 0% {transform:scale(1, 1)}}
+.scale-icon{animation:scale-icon 1.5s; animation-iteration-count: infinite;}
+
+/*Control Classes*/
+::-webkit-scrollbar{display: none;}
+img.mx-auto{display:block;}
+.disabled{display:none!important}
+.no-click{pointer-events: none!important;}
+.no-outline{outline:none!important;}

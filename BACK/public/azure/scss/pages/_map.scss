@@ -1,0 +1,25 @@
+/*Map Full*/
+.map-full{position: relative; overflow: hidden;}
+.map-full .caption, .map-full .card-overlay{transition:all 350ms ease}
+.hide-map{
+	position:absolute;
+	width:200px;
+	left:50%;
+    bottom:50px;
+	margin-left:-100px;
+    text-align:center;
+	opacity:0;
+    z-index:2;
+}
+.map-full .card{
+    z-index:2;
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+}
+.map-full iframe{position:absolute; width:100vw; height:100vh; z-index:1;}
+.activate-map{opacity:1!important; transition:all 250ms ease; transition:all 350ms ease;}
+.deactivate-map{opacity:0!important; pointer-events: none; transition:all 350ms ease;}
+

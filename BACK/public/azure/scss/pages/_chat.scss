@@ -1,0 +1,67 @@
+/*-Pageapp Chat-*/
+.speech-left {
+	max-width: 240px;
+	float: right;
+	border-bottom-right-radius: 0px !important;
+	color: $color_white;
+}
+.speech-right {
+	max-width: 240px;
+	float: left;
+	border-bottom-left-radius: 0px !important;
+}
+.speach-image {
+	padding: 0px !important;
+	img {
+		margin: 0px;
+	}
+}
+.speech-last {
+	margin-bottom: 0px !important;
+}
+.speech-bubble {
+	position: relative;
+	border-radius: 17px;
+	padding: 10px 15px;
+	margin-bottom: 15px;
+	line-height: 22px;
+	font-size: 13px;
+	background-color: $gray-300;
+	overflow: hidden;
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+.speech-read {
+	font-size: 10px;
+	font-style: normal;
+	display: block;
+	text-align: right;
+	font-weight: 500;
+	color: $gray-500;
+	margin-bottom: 80px;
+}
+.speach-input {
+	input {
+		width: 100%;
+		display: block;
+		line-height: 45px;
+		height: 45px;
+		margin-top: 8px;
+		border-radius: 45px;
+	}
+}
+.speach-icon {
+	a {
+		padding-top: 0px !important;
+		display: block;
+		border-radius: 35px;
+		width: 35px;
+		height: 35px;
+		line-height: 38px;
+		margin-top: 3px;
+		transform: translateY(10px);
+	}
+}

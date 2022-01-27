@@ -1,0 +1,70 @@
+/*Back to Top*/
+.content {
+	.back-to-top-badge {
+		transform: translate(0,0) !important;
+		width: 130px;
+		margin: 10px auto 20px auto !important;
+		left: auto;
+		bottom: auto;
+		display: block;
+		position: relative !important;
+	}
+	.back-to-top-icon {
+		transform: scale(1,1) translate(0,0px) !important;
+		margin: 0px auto 30px auto;
+		right: auto;
+		bottom: auto;
+		display: block;
+		position: relative !important;
+	}
+}
+.back-to-top-badge {
+	position: fixed;
+	z-index: 90;
+	bottom: 80px;
+	left: 50%;
+	transform: translate(-50%, 70px);
+	display: inline-block;
+	padding: 5px 20px;
+	border-radius: 35px;
+	color: $color-white;
+	text-align: center;
+	font-size: 12px;
+	transition: $globalTransitions;
+	i {
+		padding: 0px 10px 0px 0px;
+	}
+}
+.back-to-top-icon {
+	position: fixed;
+	z-index: 9999;
+	bottom: 70px;
+	right: 15px;
+	display: inline-block;
+	width: 35px;
+	line-height: 35px;
+	border-radius: 35px;
+	color: $color-white;
+	text-align: center;
+	font-size: 12px;
+	transform: scale(0,0);
+	transition: $globalTransitions;
+	span {
+		display: none;
+	}
+}
+.back-to-top-badge.back-to-top-visible {
+	transform: translate(-50%, 0px);
+}
+.back-to-top-icon.back-to-top-visible {
+	transform: scale(1, 1);
+}
+.back-to-top-icon-square {
+	border-radius: 0px;
+}
+.back-to-top-icon-round {
+	border-radius: 5px;
+}
+.back-to-top-icon-circle {
+	border-radius: 40px;
+}

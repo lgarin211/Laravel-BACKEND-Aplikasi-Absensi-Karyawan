@@ -1,0 +1,68 @@
+// Importing Bootstrap Variables to Reuse
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+
+//Importing Sticky Utility Classes
+@import "azures/variables"; 
+
+//Importing Sturctural Elements
+@import "azures/typography";
+@import "azures/structure";
+@import "azures/logos";
+@import "azures/header-bar";
+@import "azures/footer-bar";
+@import "azures/menu";
+@import "azures/sidebar";
+@import "azures/shapes";
+@import "azures/utilities";
+
+//Importing Components
+@import "components/preloader";
+@import "components/buttons";
+@import "components/icons";
+@import "components/accordion";
+@import "components/offline"; 
+@import "components/add-to-home"; 
+@import "components/ads";
+@import "components/alerts";
+@import "components/notifications";
+@import "components/back-to-top";
+@import "components/cards";
+@import "components/chips";
+@import "components/dividers";
+@import "components/switches";  
+@import "components/checkradio";
+@import "components/inputs";
+@import "components/range";
+@import "components/list-group";
+@import "components/pricing";
+@import "components/toasts";
+@import "components/snackbars"; 
+@import "components/pagination";
+@import "components/search";
+@import "components/tabs.scss";
+@import "components/working-hours";
+@import "components/iframes";
+@import "components/footer"; 
+
+//Importing Pages
+@import "pages/calendar";
+@import "pages/chat";
+@import "pages/contact"; 
+@import "pages/map";
+@import "pages/media";
+@import "pages/timeline";
+@import "pages/vcard";
+
+//Importing Dark Mode
+@import "azures/_dark";
+
+//Demo Aligns for Icons and Background Demo Images
+//Can be deleted to save space
+@import "components/zdemo.scss";
+
+//Importing Plugins
+@import "plugins/lightbox";
+@import "components/_sliders_carousels";
+@import "plugins/owl-carousel";
+

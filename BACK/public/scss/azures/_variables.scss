@@ -1,0 +1,99 @@
+//General Font Settings*/
+$font-main-size:13px;
+$font-main-line: 26px!important;
+$font-main-color:#6c6c6c;
+$font-main-family:'Roboto', sans-serif;
+
+$font-h1-size: 24px!important; $font-h1-line: 30px;
+$font-h2-size: 22px!important; $font-h2-line: 25px;
+$font-h3-size: 20px!important; $font-h3-line: 24px;
+$font-h4-size: 18px!important; $font-h4-line: 23px;
+$font-h5-size: 16px!important; $font-h5-line: 22px;
+$font-h6-size: 14px!important; $font-h6-line: 20px;
+$font-heading-color:#1f1f1f;
+$font-heading-weight:700;
+$font-heading-family:'Poppins', sans-serif;
+
+//Line Heights*/
+$line-height-xs:14px;
+$line-height-s:17px;
+$line-height-m:24px;
+$line-height-l:26px;
+$line-height-xl:37px;
+
+//Boxed Text Sizes*/
+$box-text-xl:90%;
+$box-text-l:85%;
+$box-text-m:80%;
+$box-text-s:70%;
+
+//Element Rounded Borders*/
+$rounded-0:0px;
+$rounded-xs:5px;
+$rounded-s:8px;
+$rounded-sm:10px;
+$rounded-m:15px;
+$rounded-l:30px;
+$rounded-xl:50px;
+$rounded-card-style:15px;
+
+//Buttons Sizes*/
+$btn-xxs:6px 10px;
+$btn-xs:7px 14px;
+$btn-s:8px 18px;
+$btn-sm:10px 18px;
+$btn-m:12px 20px;
+$btn-l:14px 26px;
+$btn-xl:15px 30px;
+$btn-xxl:17px 34px;
+
+//Center Button Sizes*/
+$btn-center-xs:100px;
+$btn-center-s:120px;
+$btn-center-m:160px;
+$btn-center-l:220px;
+$btn-center-xl:250px; 
+
+//Icons*/
+$icon-xxs:32px;
+$icon-xs:38px;
+$icon-s:40px;
+$icon-m:45px;
+$icon-l:51px;
+$icon-xl:55px;
+$icon-xxl:60px;
+
+//Shadows*/
+$shadow-0:0px 0px 0px 0px rgba(0,0,0,0);
+$shadow-xs:0px 0px 5px 2px rgba(0,0,0,0.04);
+$shadow-s:0 4px 10px 0 rgba(0,0,0,0.10);
+$shadow-m:0 2px 14px 0 rgba(0,0,0,0.08); 
+$shadow-l:0 5px 15px 0 rgba(0,0,0,0.09); 
+$shadow-xl:0 5px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
+
+//Dark Mode Main Colors*/
+$color_transparent: rgba(0,0,0,0);
+$color_white: #FFF;
+$color_black: #000;
+$color_dark: #1f1f1f;
+
+$theme-light-text: #666666; 
+$theme-light-structure:#FFFFFF;
+$theme-light-background:#f0f0f0;
+$theme-dark-structure: #21252a; 
+$theme-dark-background: #0f1117;
+$theme-dark-lighter:rgba(255,255,255,0.05);
+
+$theme-dark-text: #898989;
+$theme-dark-headings: #FFF;
+$theme-dark-switch: #1b1d21;
+
+//Global Spacing Settings*/
+//$globalShadow: 0 4px 10px 0 rgba(0,0,0,0.05);
+$globalShadow: 0 4px 10px 0 rgba(0,0,0,0.10)!important;
+$globalMargin: 30px;
+
+//Transitions for Menus, Action Sheets, Modals etc*/
+$disabledTransitions: all 0ms ease;
+$globalTransitions: all 300ms ease;
+

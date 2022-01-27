@@ -1,0 +1,211 @@
+//This page is not in SCSS structure 
+//Everything is arranged in compacted CSS code
+
+/*Gradient Adjustments*/
+.bg-gradient{background:linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.0) 20%,rgba(0,0,0,0.1) 30%,rgba(0,0,0,0.8) 70%,rgba(0,0,0,1) 100%);}
+.bg-gradient-fade{bottom:0px!important;}
+.theme-light .bg-gradient-fade{background:linear-gradient(to bottom, rgba(240,240,240,0.0) 0%, rgba(240,240,240,0) 30%,rgba(240,240,240,0.3) 40%,rgba(240,240,240,0.5) 50%,rgba(240,240,240,1) 80%,rgba(247,247,247,0.95) 100%);}
+.theme-dark .bg-gradient-fade{background:linear-gradient(to bottom, rgba(27, 29, 33,0.0) 0%, rgba(27, 29, 33,0.1) 20%,rgba(27, 29, 33,0.05) 40%,rgba(27, 29, 33,0.6) 60%,rgba(27, 29, 33,0.8) 80%,rgba(27, 29, 33,1) 100%);}
+
+
+/*Basic Colors*/
+.color-white{color:$color_white!important;}
+.color-black{color:$color_black!important;}
+.bg-white{background-color:$color_white!important;}
+.bg-black{background-color:$color_black!important;}
+
+/*Main Color Settings*/
+.theme-dark .bg-theme{background-color:$theme-dark-background!important;}
+.theme-light .bg-theme{background-color:$color_white!important;}
+.theme-light .color-theme{color:$theme-dark-background!important;}
+.theme-dark .color-theme{color:$color_white!important;}
+
+/*Hide Show Based on Color Scheme*/
+.theme-dark .show-on-theme-dark{display:block;}
+.theme-dark .show-on-theme-light{display:none;}
+.theme-light .show-on-theme-light{display:block;}
+.theme-light .show-on-theme-dark{display:none;}
+
+/*Card Tint*/
+.theme-dark .dark-mode-tint{background-color:rgba(0,0,0,0.5);}
+
+
+/*Dark Theme Settings*/
+.theme-dark p{color:$theme-dark-text;}
+.theme-dark h1, 
+.theme-dark h2, 
+.theme-dark h3, 
+.theme-dark h4, 
+.theme-dark h5, 
+.theme-dark h6,
+.theme-dark #footer-bar a i,
+.theme-dark #footer-bar a span
+.theme-dark p strong{
+    color:$theme-dark-headings;
+}
+
+.theme-dark .accordion-btn,
+.theme-dark .menu .nav-title,
+.theme-dark .menu .nav a i,
+.theme-dark .menu .nav a span,
+.theme-dark .menu .nav .active-nav i,
+.theme-dark .menu .nav .active-nav span,
+.theme-dark .header .header-icon,
+.theme-dark .header .header-title,
+.theme-dark .search-header .fa-search,
+.theme-dark .color-theme,
+.theme-dark .countdown div,
+.theme-dark .list-group i:last-child,
+.theme-dark .search-icon-list a,
+.theme-dark .fac label,
+.theme-dark .pagination a,
+.theme-dark .accordion-style-2 a,
+.theme-dark .input-style-1 .input-icon,
+.theme-dark .input-style-2 .input-icon,
+.theme-dark .input-style-1 span,
+.theme-dark .input-style-2 span,
+.theme-dark .input-style-1 input,
+.theme-dark .input-style-2 input,
+.theme-dark input,
+.theme-dark .contact-form i,
+.theme-dark .demo-icon-font article,
+.theme-dark [data-tab],
+.theme-dark span:not(.badge),
+.theme-dark .profile-2 .profile-stats a,
+.theme-dark .vcard-field *,
+.theme-dark .search-header input,
+.theme-dark .search-header input::placeholder,
+.theme-dark .footer .footer-title{
+    color:$color_white!important;
+}
+
+.theme-dark,
+.theme-dark .page-bg, 
+.theme-dark body,
+.theme-dark .loader-main,
+.theme-dark .instant-article,
+.theme-dark .divider-icon i,
+.theme-dark .table tr.even td,
+.theme-dark .timeline-body,
+.theme-dark table,
+.theme-dark td{
+    background-color:$theme-dark-switch!important;
+}
+
+.theme-dark .ios-switch label::before,
+.theme-dark .android-switch label::before{
+    background-color:$theme-dark-switch;
+    border:solid 1px $theme-dark-lighter!important;
+}
+
+.theme-dark .footer,
+.theme-dark .card,
+.theme-dark #preloader{
+    background-color:$theme-dark-background;
+}
+
+.theme-dark .input-style-2 span{background-color:$color_black;}
+.theme-dark .card .input-style-2 span,
+.theme-dark .menu .input-style-2 span,
+.theme-dark .card.input-style span,
+.theme-dark .bg-theme{
+    background-color:$theme-dark-background!important;
+}
+
+.theme-dark .link-list-3 a,
+.theme-dark .pricing-1,
+.theme-dark .pricing-2,
+.theme-dark .pricing-3,
+.theme-dark .pricing-4,
+.theme-dark .search-box,
+.theme-dark .link-list-2 a,
+.theme-dark .vcard-field,
+.theme-dark table{
+    border:solid 1px $theme-dark-lighter;
+}
+
+.theme-dark input::placeholder,
+.theme-dark textarea::placeholder,
+.theme-dark select::placeholder,
+.theme-dark select,
+.theme-dark .form-field input,
+.theme-dark .form-field textarea{
+    color:$color_white!important; 
+    border-color:$theme-dark-lighter!important;
+}
+
+.theme-dark .input-style-1 input,
+.theme-dark .input-style-1 select,
+.theme-dark .input-style-1 textarea,
+.theme-dark input,
+.theme-dark textarea,
+.theme-dark select{
+    border-color:$theme-dark-lighter;
+}
+
+.theme-dark .input-style-1 input:focus,
+.theme-dark .input-style-1 select:focus,
+.theme-dark .input-style-1 textarea:focus,
+.theme-dark input:focus,
+.theme-dark textarea:focus,
+.theme-dark select:focus{
+    border-color:$gray-700!important;
+}
+
+.theme-dark .list-custom-large a,
+.theme-dark .list-custom-small a{
+    border-color:$theme-dark-lighter!important;
+}
+
+.theme-dark .input-style-1 em,
+.theme-dark .input-style-2 em{
+    color:$theme-dark-text;
+}
+ 
+.theme-dark .timeline-deco{
+    background-color:$theme-dark-lighter!important;
+}
+
+.theme-dark .footer-links,
+.theme-dark #footer-bar,
+.theme-dark .footer-copyright{
+    border-top:solid 1px $theme-dark-lighter!important;
+}
+
+.theme-dark .border-bottom{border-bottom:1px solid $theme-dark-lighter!important;}
+.theme-dark .border-top{border-top:1px solid $theme-dark-lighter!important;}
+.theme-dark .border-left{border-left:1px solid $theme-dark-lighter!important;}
+.theme-dark .border-right{border-right:1px solid $theme-dark-lighter!important;}
+
+.theme-dark th,
+.theme-dark .menu,
+.theme-dark .header,
+.theme-dark .polaroid-effect,
+.theme-dark .timeline-item-content,
+.theme-dark .tab-controls,
+.theme-dark #footer-bar,
+.theme-dark .menu .input-style span,
+.theme-dark .timeline-item-content-full{
+    background-color:$theme-dark-structure!important;
+    color:$color_white;
+}
+
+.theme-dark .divider,
+.theme-dark .menu .nav a:hover,
+.theme-dark .menu .nav .active-subnav,
+.theme-dark .menu .nav .divider{
+    background-color:$theme-dark-lighter;
+}
+
+.theme-dark .menu-hider{background-color:$theme-dark-menu-hider;}
+.theme-dark .gallery-filter-controls li{color:$color_white;}
+.theme-dark .gallery-view-controls a{color:$color_white;}
+.theme-dark .gallery-view-controls{border-bottom:solid 1px $theme-dark-lighter;}
+.theme-dark .tab-controls a{border:solid 1px $theme-dark-lighter;}
+.theme-dark .form-control:focus,
+.theme-dark .form-control{background-color:transparent!important;}
+
+.theme-dark .menu-header a,
+.theme-dark .menu-items a{
+    border-color:rgba(255,255,255,0.04);
+}

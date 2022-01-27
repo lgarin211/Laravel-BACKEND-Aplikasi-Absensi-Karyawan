@@ -1,0 +1,330 @@
+/*Input Style 1*/
+.input-style-1 {
+	position: relative;
+	input {
+		font-size: 13px;
+		display: block;
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		margin-bottom: 10px;
+		border: none;
+		background-color: $color_transparent;
+		border-bottom: solid 1px rgba(0,0,0,0.08);
+		transition: all 250ms ease;
+		&:focus {
+			border-bottom: solid 1px rgba(0,0,0,1);
+		}
+	}
+	textarea {
+		font-size: 13px;
+		display: block;
+		width: 100%;
+		height: 50px;
+		line-height: 28px;
+		padding-right: 15px;
+		padding-top: 14px;
+		margin-top: -5px;
+		margin-bottom: 15px;
+		background-color: $color_transparent;
+		margin-left: 0px !important;
+		padding-left: 0px !important;
+		text-indent: 0px !important;
+		border: none;
+		border-bottom: solid 1px rgba(0,0,0,0.08);
+		transition: all 250ms ease;
+		&:focus {
+			line-height: 24px;
+			height: 150px;
+			transition: all 250ms ease;
+		}
+	}
+	span {
+		color: $blue;
+		font-weight: 500;
+		position: absolute;
+		font-size: 10px;
+		margin-top: -3px;
+		opacity: 0;
+		transition: all 250ms ease;
+	}
+	em {
+		position: absolute;
+		top: 14px;
+		font-size: 10px;
+		font-style: normal;
+		right: 0px;
+		color: $gray-300;
+		i {
+			font-size: 12px;
+			width: 15px;
+			text-align: center;
+			margin-top: 7px;
+			display: block;
+		}
+	}
+	input[type="date"] {
+		font-size: 13px;
+		display: block;
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		margin-bottom: 15px;
+		background-color: $color_transparent;
+		border-bottom: solid 1px rgba(0,0,0,0.08);
+		transition: all 250ms ease;
+		color: $gray-600;
+		&::-webkit-inner-spin-button {
+			opacity: 0;
+		}
+		&::-webkit-calendar-picker-indicator {
+			opacity: 0;
+		}
+		&::-webkit-clear-button {
+			opacity: 0;
+		}
+	}
+	select {
+		&:focus {
+			border-bottom: solid 1px rgba(0,0,0,1);
+		}
+		color: $gray-600;
+		border: none;
+		border-bottom: solid 1px rgba(0,0,0,0.08);
+		box-sizing: border-box;
+		margin-bottom: 15px;
+		height: 50px;
+		line-height: 50px;
+		border-radius: 0px;
+		width: 100%;
+		box-shadow: none;
+		-webkit-appearance: none;
+		background-color: $color_transparent;
+		font-size: 14px;
+	}
+}
+.input-style-1-active {
+	opacity: 1 !important;
+}
+.input-style-1-inactive {
+	color: $gray-300 !important;
+}
+.input-style-1.has-icon {
+	.input-icon {
+		position: absolute;
+		z-index: 10;
+		margin-top: 20px;
+		margin-left: 0px;
+	}
+	input {
+		padding-left: 30px;
+	}
+	span {
+		margin-left: 25px;
+	}
+	.input-style-1-active {
+		color: $blue !important;
+		transform: translateX(-25px);
+		transition: all 150ms ease;
+	}
+}
+input[type="range"] {
+	-webkit-appearance: none;
+	height: 20px;
+	width: 100%;
+	outline: none;
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		width: 20px;
+		height: 20px;
+		background: #F26B5E;
+		position: relative;
+		z-index: 3;
+		&:after {
+			content: " ";
+			height: 10px;
+			position: absolute;
+			z-index: 1;
+			right: 20px;
+			top: 5px;
+			background: #ff5b32;
+			background: linear-gradient(to right, #f088fc 1%, #AC6CFF 70%);
+		}
+	}
+}
+/*Input Style 2*/
+.input-style-2 {
+	margin-bottom: 15px;
+	position: relative;
+	span {
+		pointer-events: none;
+		color: $black !important;
+		position: absolute;
+		font-size: 13px;
+		z-index: 1;
+		height: 22px;
+		line-height: 20px;
+		padding: 2px 5px 2px 5px;
+		top: 14px;
+		left: 10px;
+		right: 10px;
+		background-color: $color_white;
+		transition: all 150ms ease;
+	}
+	.input-style-1-active {
+		color: $blue !important;
+		transform: translateY(-25px);
+		transition: all 150ms ease;
+	}
+	em {
+		position: absolute;
+		right: 10px;
+		z-index: 2;
+		font-size: 10px;
+		font-style: normal;
+		color: $gray-300;
+		line-height: 53px;
+		i {
+			font-size: 12px !important;
+			margin-top: 5px !important;
+		}
+	}
+	input {
+		background-color: $color_transparent;
+		border-radius: 10px !important;
+        border-color:rgba(0,0,0,0.1);
+		display: block;
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		padding: 0px 14px;
+		font-size: 13px;
+		-webkit-appearance: none;
+	}
+	textarea {
+		background-color: $color_transparent;
+		border-radius: 10px !important;
+		display: block;
+        border-color:rgba(0,0,0,0.1);
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		padding: 0px 14px;
+		font-size: 13px;
+		-webkit-appearance: none;
+	}
+	select {
+		background-color: $color_transparent;
+		border-radius: 10px !important;
+		display: block;
+        border-color:rgba(0,0,0,0.1);
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		padding: 0px 14px;
+		font-size: 13px;
+		-webkit-appearance: none;
+	}
+	input[type="date"] {
+		&::-webkit-inner-spin-button {
+			opacity: 0;
+		}
+		&::-webkit-calendar-picker-indicator {
+			opacity: 0;
+		}
+		&::-webkit-clear-button {
+			opacity: 0;
+		}
+	}
+}
+span.input-style-1-active {
+	opacity: 1;
+	padding-right: 10px !important;
+	right: auto !important;
+}
+.input-style-2.has-icon {
+	.input-icon {
+		position: absolute;
+		z-index: 10;
+		margin-top: 20px;
+		margin-left: 15px;
+	}
+	input {
+		padding-left: 40px;
+	}
+	span {
+		margin-left: 25px;
+	}
+	.input-style-1-active {
+		color: $blue !important;
+		transform: translate(-25px, -25px);
+		transition: all 150ms ease;
+	}
+}
+.input-light {
+	i {
+		color: $color_white;
+	}
+	span {
+		color: $color_white !important;
+	}
+	em {
+		color: $gray-600 !important;
+	}
+	input {
+		color: $color_white !important;
+		border-bottom: solid 1px rgba(255,255,255,0.1) !important;
+		&::placeholder {
+			color: $color_white;
+		}
+	}
+}
+/*File Upload*/
+.upload-file {
+	text-indent: -999px;
+	outline: none;
+	width: 100%;
+	height: 45px;
+	color: $color_transparent !important;
+}
+.upload-file-text {
+	pointer-events: none;
+	margin-top: -36px !important;
+	text-align: center;
+	color: $color_white;
+	height: 10px;
+	text-transform: uppercase;
+	font-weight: 900;
+}
+.file-data {
+	input[type='file'] {
+		font-size: 0px !important;
+	}
+}
+input {
+	font-size: 12px !important;
+	&::placeholder {
+		font-size: 12px !important;
+	}
+	&:focus {
+		outline: none;
+	}
+}
+select {
+	&:focus {
+		outline: none;
+	}
+}
+textarea {
+	&:focus {
+		outline: none;
+	}
+}
+button {
+	&:focus {
+		outline: none;
+	}
+}
+
+.tooltip{font-size:13px;}
+code{font-size:11px; line-height:22px;}

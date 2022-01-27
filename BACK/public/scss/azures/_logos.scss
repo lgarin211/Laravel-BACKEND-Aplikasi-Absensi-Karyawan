@@ -1,0 +1,16 @@
+/*Logos*/
+$header-light-logo-location:url(../images/preload-logo.png);
+$header-dark-logo-location:url(../images/preload-logo.png);
+
+$footer-light-logo-location:url(../images/preload-logo.png);
+$footer-dark-logo-location:url(../images/preload-logo.png);
+
+.header-logo{background-size:28px 28px; width:50px;}
+.footer .footer-logo{background-size:80px 80px;	height:80px!important; margin-bottom:20px!important;}
+
+.theme-light .header .header-logo{background-image:$header-light-logo-location}
+.theme-dark .header .header-logo{background-image:$header-light-logo-location}
+
+.theme-light .footer .footer-logo{background-image:$footer-light-logo-location}
+.theme-dark .footer .footer-logo{background-image:$footer-dark-logo-location}
+

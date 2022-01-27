@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">    
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+    
+<body class="theme-light" data-highlight="blue2">
+    
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+    
+<div id="page">
+    
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Components</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html" class="active-nav"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red2-dark" data-feather-bg="red2-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green1-dark" data-feather-bg="green1-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown1-dark" data-feather-bg="brown1-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="gray2-dark" data-feather-bg="gray2-fade-light"></i><span>Settings</span></a>
+    </div>
+    
+    <div class="page-content">
+        <div class="page-title page-title-small">
+            <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Auto Dark Mode</h2>
+            <a href="#" data-menu="menu-main" class="bg-fade-gray1-dark shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+        
+
+        <div class="card card-style">
+            <div class="card-body">
+                <p class="mb-1">
+                    Actions Sheets are elements that appear from the bottom of the page. These can be triggerd by any element, buttons, text, images, and can be used as menus as well.
+                </p>
+            </div>
+        </div>
+
+        
+        <div class="card card-style">
+            <div class="content mb-0">
+                <h4>What is Auto Dark Mode?</h4>
+                <p>
+                    Just by adding the class <strong>detect-theme</strong> to your body class, the page will detect if your device is in dark mode and switch theme automatically.
+                </p>
+
+                <h4>What about older devices?</h4>
+                <p>
+                    Older devices will show the default page theme you select. In our case, it is light mode, but you can set dark mode by default.
+                </p>
+
+                <h4>Auto Dark Prompt</h4>
+                <p>
+                    You can enable this menu to automatically notify users that automatic dark mode has been detected and to suggest switching to dark mode
+                </p>
+                <a href="#" class="detect-dark-mode btn btn-full btn-m rounded-s bg-highlight text-uppercase font-900 mb-4">Detect Dark/Light Mode</a>
+            </div>            
+        </div>        
+
+        <div id="dark-mode-detected" class="card card-style mb-3 disabled">
+            <div class="content pb-4">
+                <h4>Your Device is in Dark Mode</h4>
+                <p>
+                    We detected your device is in dark mode, so we set the entire page to dark for you. You can disable this automatic feature or switch to light mode from the header icon <i class="fa fa-lightbulb color-yellow1-dark"></i>
+                </p>
+
+                <a href="#" data-toggle-theme class="btn btn-full btn-m font-11 rounded-s bg-highlight text-uppercase font-900 mb-1">Detect Dark/Light Mode</a>
+                <a href="#" class="disable-auto-dark-mode btn btn-full btn-m font-11 rounded-s bg-highlight text-uppercase font-900">Disable Auto Detection</a>
+            </div>            
+        </div>    
+
+
+        <div id="light-mode-detected" class="card card-style mb-3 disabled">
+            <div class="content pb-4">
+                <h4>Your Device is in Light Mode Mode</h4>
+                <p>
+                    We detected your device is in dark mode, so we set the entire page to dark for you. You can disable this automatic feature or switch to light mode from the header icon <i class="fa fa-lightbulb color-yellow1-dark"></i>
+                </p>
+
+                <a href="#" data-toggle-theme class="btn btn-full btn-m font-11 rounded-s bg-highlight text-uppercase font-900 mb-1">Detect Dark/Light Mode</a>
+                <a href="#" class="disable-auto-dark-mode btn btn-full btn-m font-11 rounded-s bg-highlight text-uppercase font-900">Disable Auto Detection</a>
+            </div>            
+        </div>    
+
+        <div id="manual-mode-detected" class="card card-style mb-3 disabled">
+            <div class="content pb-4">
+                <h4>Auto Light & Dark Modes Unsupported</h4>
+                <p>
+                    Your device doesn't support auto dark and light modes, but you can still toggle them using a button or the icon in the top right corner of the header.
+                </p>
+
+                <a href="#" data-toggle-theme class="btn btn-full btn-m font-11 rounded-s bg-highlight text-uppercase font-900">Detect Dark/Light Mode Manually</a>
+            </div>            
+        </div>   
+
+        <div id="manual-mode-detected" class="card card-style">
+            <div class="content mb-4">
+                <h4>Dark Mode Toggle</h4>
+                <p>
+                    This toggle will remember and always activate depending on your dark mode preferences. 
+                </p>
+
+                <div class="divider "></div>
+
+                <div class="d-flex">
+                    <div class="pt-1">
+                        <h5 data-activate="toggle-dark" class="font-600">Activate Dark Mode</h5>
+                    </div>
+                    <div class="ml-auto mr-4 pr-2">
+                        <div class="custom-control ios-switch">
+                            <input data-toast="switched-color-scheme" data-toggle-theme-switch type="checkbox" class="ios-input" id="toggle-dark">
+                            <label class="custom-control-label" for="toggle-dark"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card card-style">
+            <div class="content">
+                <h4>Show content based on Theme Mode</h4>
+                <p>
+                    You can show content based on the weather your page is set in light o dark mode! For example, let's take an image!
+                </p>
+                <div class="show-on-theme-dark">
+                    <div class="d-flex">
+                        <div class="text-center">
+                            <i class="fa-4x mb-3 mr-4 mt-3 pt-1 fa fa-moon color-gray2-dark"></i>
+                        </div>
+                        <div>
+                            <h4>The lights are off!</h4>
+                            <p>
+                                This can be applied to images, texts and every other element you wish. Just add the class 
+                                show-on-theme-light and our code will do the rest.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-on-theme-light">
+                    <div class="d-flex">
+                        <div class="text-center">
+                            <i class="fa-4x mb-3 mr-4 mt-3 pt-1 fa fa-sun color-yellow1-dark"></i>
+                        </div>
+                        <div>
+                            <h4>The lights are on!</h4>
+                            <p>
+                                This can be applied to images, texts and every other element you wish. Just add the class 
+                                show-on-theme-dark and our code will do the rest.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>    
+
+            
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>  
+    </div>    
+    <!-- end of page content-->
+    
+    <div id="menu-share" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-share.html"
+         data-menu-height="420" 
+         data-menu-effect="menu-over">
+    </div>    
+    
+    <div id="menu-highlights" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-colors.html"
+         data-menu-height="510" 
+         data-menu-effect="menu-over">        
+    </div>
+    
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-features"
+         data-menu-effect="menu-over">  
+    </div>
+    
+    
+    
+</div>    
+
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>

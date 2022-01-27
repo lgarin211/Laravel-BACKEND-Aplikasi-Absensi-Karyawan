@@ -1,0 +1,259 @@
+$fontAwesome: "Font Awesome 5 Free";
+
+/*---Checkboxes & Radios---*/
+.fac {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	font-size: 14px;
+	label {
+		margin: 0em 1em 0em 0em;
+		padding-left: 1.5em;
+		cursor: pointer;
+		font-weight: inherit;
+	}
+	>input {
+		&+label {
+			&:before {
+				font-family: $fontAwesome;
+				font-weight: 900;
+				position: absolute;
+				left: 0;
+				margin-top: 0.5px;
+				transition: opacity 150ms ease-in-out;
+			}
+		}
+		&:checked {
+			&+label {
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	>span {
+		&::after {
+			font-family: $fontAwesome;
+			font-weight: 900;
+			position: absolute;
+			left: 0;
+			margin-top: 0.5px;
+		}
+	}
+	input {
+		display: none;
+	}
+}
+.checkboxes-demo {
+	.fac {
+		display: block;
+	}
+}
+.fac-checkbox {
+	>input {
+		&+label {
+			&:before {
+				opacity: 0;
+			}
+		}
+		&:checked {
+			&+label {
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	>span {
+		&::after {
+			content: "\f45c";
+			opacity: 1;
+		}
+	}
+	>input[type=checkbox] {
+		&+label {
+			&:before {
+				content: "\f00c";
+				color: $color_white !important;
+				font-size: 10px !important;
+				padding-left: 2px;
+			}
+		}
+	}
+}
+.fac-checkbox-round {
+	>input {
+		&+label {
+			&:before {
+				opacity: 0;
+			}
+		}
+	}
+	>span {
+		&::after {
+			content: "\f111";
+		}
+	}
+	>input[type=checkbox] {
+		&+label {
+			&:before {
+				content: "\f00c";
+				color: $color_white !important;
+				font-size: 8px !important;
+				padding-left: 3px;
+			}
+		}
+	}
+}
+.fac-radio {
+	>input {
+		&+label {
+			&:before {
+				opacity: 0;
+			}
+		}
+		&:checked {
+			&+label {
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	>span {
+		&::after {
+			content: "\f111";
+		}
+	}
+	>input[type=radio] {
+		&+label {
+			&:before {
+				content: "\f00c";
+				color: $color_white !important;
+				font-size: 10px !important;
+				padding-left: 2px;
+			}
+		}
+	}
+}
+.fac-checkbox-o {
+	>input {
+		&+label {
+			&:before {
+				opacity: 0;
+			}
+		}
+		&:checked {
+			&+label {
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+.fac-checkbox-round-o {
+	>input {
+		&+label {
+			&:before {
+				opacity: 0;
+			}
+		}
+		&:checked {
+			&+label {
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+.fac-default {
+	>input {
+		&+label {
+			&:before {
+				color: $gray-500;
+			}
+		}
+	}
+	>span {
+		&::after {
+			color: $gray-500;
+		}
+	}
+}
+.fac-blue {
+	>input {
+		&+label {
+			&:before {
+				color: $blue;
+			}
+		}
+	}
+	>span {
+		&::after {
+			color: $blue;
+		}
+	}
+}
+.fac-green {
+	>input {
+		&+label {
+			&:before {
+				color: $green;
+			}
+		}
+	}
+	>span {
+		&::after {
+			color: $green;
+		}
+	}
+}
+.fac-orange {
+	>input {
+		&+label {
+			&:before {
+				color: $yellow;
+			}
+		}
+	}
+	>span {
+		&::after {
+			color: $yellow;
+		}
+	}
+}
+.fac-red {
+	>input {
+		&+label {
+			&:before {
+				color: $red;
+			}
+		}
+	}
+	>span {
+		&::after {
+			color: $red;
+		}
+	}
+}
+.fac-radio-full {
+	>span {
+		&::after {
+			content: "\f111";
+			font-size: 12px !important;
+		}
+	}
+	>input[type=radio] {
+		&+label {
+			&:before {
+				content: "\00c";
+			}
+		}
+	}
+}
