@@ -30,8 +30,8 @@
                 <div class="row text-center row-cols-3 mb-n4">
                             @foreach ($data['dam'] as $key=>$vel )
                             
-                            <a class="col mb-4" data-lightbox="gallery-1" href="{{$vel->bukti_masuk}}" title="{{$vel->keterangan}},{{$vel->jam_masuk}}">
-                                <img data-src="{{$vel->bukti_masuk}}" class="img-fluid rounded-xs preload-img" alt="{{$vel->keterangan}},{{$vel->jam_masuk}}">
+                            <a class="col mb-4" data-lightbox="gallery-1" href="{{url('/').'/'.$vel->bukti_masuk}}" title="{{$vel->keterangan}},{{$vel->jam_masuk}}">
+                                <img data-src="{{url('/').'/'.$vel->bukti_masuk}}" class="img-fluid rounded-xs preload-img" alt="{{$vel->keterangan}},{{$vel->jam_masuk}}">
                             </a>
            
                             @endforeach

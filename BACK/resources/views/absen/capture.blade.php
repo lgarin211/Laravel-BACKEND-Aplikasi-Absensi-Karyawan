@@ -36,6 +36,10 @@
         min-width: 10vh;
         min-height: 10vh;
     }
+
+    .hilang{
+        display: none;
+    }
     </style>
 </head>
 
@@ -57,9 +61,18 @@
                     <button class="btn btn-outline-success w-80" style="display: none;" type="submit" id="paladinmas">Kirim</button>
                 </form>
                 <video id="video" class="card t" autoplay></video>
-                <button type="button" class="col-md-12 btn btn-lg btn-primary c2" id="snap">Kirim Data</button>
+                <h3 class="col-md-12 btn btn-lg btn-primary c2 hilang" id="snap2">
+                Harap Pertahankan Posisi Anda
+                </h3>
+                <button type="button" class="col-md-12 btn btn-lg btn-primary c2" id="snap" onclick="linkar()">Kirim Data</button>
     <!-- Optional JavaScript; choose one of the two! -->
-
+                <script>
+                        function linkar() {
+                            document.getElementById('snap').classList.toggle('hilang')
+                            document.getElementById('snap2').classList.toggle('hilang')
+                            
+                        }
+                </script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
