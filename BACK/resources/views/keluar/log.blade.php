@@ -1,6 +1,6 @@
 <?php 
 
-$a=cal_days_in_month(CAL_GREGORIAN,date('m'),date('Y'));
+$a=cal_days_in_month(CAL_GREGORIAN,date('m'),date('Y'))+1;
 // dd($a);
 ?>
 
@@ -30,9 +30,8 @@ $a=cal_days_in_month(CAL_GREGORIAN,date('m'),date('Y'));
     @foreach($data as $key=>$pin)
         <tr>
             <td>{{ $pin->name }}</td>
-            @for ($i=1; $i < $a; $i++)
+            @for ($i=0; $i < $a; $i++)
             @php
-
                 $d=strlen($i);
                 // dump($d);
                 if ($d==1) {

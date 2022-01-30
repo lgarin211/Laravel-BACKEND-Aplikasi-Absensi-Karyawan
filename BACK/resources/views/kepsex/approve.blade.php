@@ -54,14 +54,17 @@
         <div class="card card-style">
             <div class="content">
 
-                @foreach ($users as $user)
+                @foreach ($wfh as $w)
+                @if ($w->appv == 0)
+    
                 <div class="user-slider owl-carousel">
                     <div class="user-left">
                         <div class="d-flex">
-                            <div><img src="{{url('/azure')}}/images/avatars/1s.png" class="mr-3 rounded-circle shadow-l bg-red2-dark" width="50"></div>
+                            <div><img src="{{$w->profile_photo_path}}" class="mr-3 rounded-circle shadow-l bg-red2-dark" width="50"></div>
                             <div>
-                                <h5 class="mt-1 mb-0">{{$user->name}}</h5>
-                                <p class="font-10 mt-n1 color-red2-dark">Executive Officer</p>
+                                <h5 class="mt-1 mb-0">{{$w->name}}</h5>
+                                <p class="font-10 mt-n1 color-red2-dark">{{$w->jabatan}}</p>
+                                
                             </div>
                             <div class="ml-auto"><span class="next-slide-user badge bg-red2-dark mt-2 p-2 font-8">TAP FOR MORE</span></div>
                         </div>
@@ -69,23 +72,31 @@
                     <div class="user-right">
                         <div class="d-flex">
                             <div>
-                                <h5 class="mt-1 mb-0">Johnatan Doe</h5>
-                                <p class="font-10 mt-n1 color-red2-dark">Executive Officer</p>
+                                <h5 class="mt-1 mb-0">Pengajuan WFH</h5>
+                                <p class="font-10 mt-n1 color-dark">{{$w->deskripsi}}</p>
+                                <h5 class="mt-0 mb-0">({{$w->mulai ." s.d ".$w->akhir}})</h5>
+                                
+
                             </div>
                             <div class="ml-auto">
-                                <a href="#" class="icon icon-xs rounded-circle shadow-l bg-phone"><i class="fa fa-phone"></i></a>
-                                <a href="#" class="icon icon-xs rounded-circle shadow-l bg-facebook mr-2 ml-2"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="icon icon-xs rounded-circle shadow-l bg-twitter"><i class="fab fa-twitter"></i></a>
+                                {{-- {!! Form::open(['method' => 'GET', 'route' => 'yes2', {{$w->id_user}}]) !!}
+                                <button name="f1" type="submit"><i class="fas fa-check">Delete</i></button>
+                                {!! Form::close() !!} --}}
+                                
+                                <a href="{{route('aksi') . '?id=' . $w->id_user}}" class="icon icon-xs rounded-circle shadow-l bg-facebook"><i class="fas fa-check"></i></a>
+                                <a href="{{route('aksi2') . '?id=' . $w->id_user}}" class="icon icon-xs rounded-circle shadow-l bg-twitter mr-2 ml-2"><i class="fas fa-times"></i></a>
+                                <a href="https://wa.me/{{$w->notel}}" class="icon icon-xs rounded-circle shadow-l bg-phone"><i class="fa fa-phone"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>              
                 
                 <div class="divider mt-3"></div>
-              
-                    @endforeach
                 
-              
+                @endif
+                @endforeach
+                
+                
             </div>
         </div>
 

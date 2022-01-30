@@ -256,15 +256,30 @@ class LogAbsenController extends Controller
             return \redirect('/absen');
         }
     }
+    
+    public function cekpengajuan()
+    {
+        // dump(Auth::user()->id);
+        // dump(date('Y-m-d'));
+        $dataPegawai=DB::table('wfh')->where('id_user',Auth::user()->id)
+        ->where('mulai','<=',date('Y-m-d'))
+        ->where('akhir','>=',date('Y-m-d'))
+        ->first();
+        // dump($dataPegawai);
+        // dd();
+        return $dataPegawai;
+    }
     public function capture()
     {
+        $pengajuan=$this->cekpengajuan();
+        // dd($pengajuan);
         $id = Auth::user()->id;
         $dam = DB::table('log_absens')->where('id_user', '=', $id)->orderBy('id', 'desc')->get();
         $user = DB::table('users')->where('id', '=', $id)->orderBy('id', 'desc')->first();
         $data['dam'] = $dam;
         $data['user'] = $user;
         $data['setting'] = $this->danss;
-        return view('absen/capture',['data'=>$data]);
+        return view('absen/capture',['data'=>$data,'pengajuan'=>$pengajuan]);
     }
     public function capture2()
     {

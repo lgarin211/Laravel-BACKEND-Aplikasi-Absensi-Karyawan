@@ -50,18 +50,19 @@
                         <div class="mb-3 bt-2">
                             <label for="Status" class="form-label">Status</label><br>
                             <select name="keterangan" class="custom-select col-md-12 " style="font-size: 50px;" id="Status" required>
-                                <option value="ONSITE">Onsite</option>
-                                <option value="WFH">WFH</option>
-                                <option value="Dinas">Dinas</option>
-                                <option value="Sakit">Sakit</option>
-                                <option value="Izin">Izin</option>
+                                
+                                @if (!empty($pengajuan->deskripsi)))
+                                <option value="{{$pengajuan->deskripsi}}">{{$pengajuan->deskripsi}}</option>                                    
+                                @endif
+
+                                <option value="Kantor">KANTOR</option>
                             </select>
                         </div>
                     <input type="file" class="form-control" name="foto" id="foto" style="display: none;">
                     <button class="btn btn-outline-success w-80" style="display: none;" type="submit" id="paladinmas">Kirim</button>
                 </form>
                 <video id="video" class="card t" autoplay></video>
-                <h3 class="col-md-12 btn btn-lg btn-primary c2 hilang" id="snap2">
+                <h3 class="col-md-12 alert alert-lg alert-primary c2 hilang" id="snap2">
                 Harap Pertahankan Posisi Anda
                 </h3>
                 <button type="button" class="col-md-12 btn btn-lg btn-primary c2" id="snap" onclick="linkar()">Kirim Data</button>

@@ -106,7 +106,10 @@ Route::post('/wfhprocess', [WfhController::class, 'add']);
 Route::get('/create', [PostController::class, 'create']);
 Route::post('/make', [PostController::class, 'store']);
 Route::get('/posts', [PostController::class, 'index']);
-Route::get('/approval', [WfhController::class, 'show']);
+Route::get('/approval', [KepsekController::class, 'show'])->name('approval');
+Route::get('/yes2', [KepsekController::class, 'actionKepsexApprove'])->name('aksi');
+Route::get('/no', [KepsekController::class, 'actionKepsexDelete'])->name('aksi2');
+
 
 // Route::get('/approval', function(){
 //     return view('kepsex.approve');

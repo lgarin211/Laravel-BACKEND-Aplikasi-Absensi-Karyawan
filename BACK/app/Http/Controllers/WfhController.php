@@ -18,8 +18,8 @@ class WfhController extends Controller
         $date1 = $request->input('date1');
         $date2 = $request->input('date2');
         $keterangan = $request->input('keterangan');
-        $date1_conv = date('m/d/Y', strtotime($date1));
-        $date2_conv = date('m/d/Y', strtotime($date2));
+        $date1_conv = date('Y-m-d', strtotime($date1));
+        $date2_conv = date('Y-m-d', strtotime($date2));
 
         if($date2 == $date1){
             $data=array('id_user'=>$id,'mulai'=>$date1_conv,"akhir"=>$date2_conv,"deskripsi"=>$keterangan);
@@ -36,31 +36,20 @@ class WfhController extends Controller
             // var_dump($bencongs);
             // die();
 
-                foreach($bencongs as $hasil){
-                    $start_date = $date1;  
-                    $date = strtotime($start_date);
-                    $date = strtotime("+". $hasil ." day", $date);
-                    $res = date('m/d/Y', $date);
+                // foreach($bencongs as $hasil){
+                    // $start_date = $date1;  
+                    // $date = strtotime($start_date);
+                    // $date = strtotime("+". $hasil ." day", $date);
+                    // $res = date('m/d/Y', $date);
 
-                    $data=array('id_user'=>$id,'mulai'=>$res,"akhir"=>$date2_conv,"deskripsi"=>$keterangan);
+                    $data=array('id_user'=>$id,'mulai'=>$date1_conv,"akhir"=>$date2_conv,"deskripsi"=>$keterangan);
                      DB::table('wfh')->insert($data);
 
-            }
-            return redirect(route('dashboard'));
+            // }
+            return redirect(route('approval'));
 
         }
        
-    }
-
-    public function show()
-    {
-        // $wfh = DB::table('wfh')->select('id_user','mulai','akhir','deskripsi','appv')->get();
-
-        // return view('kepsex.approve')->with('wfh', $wfh);
-
-        $users = DB::table('users')->select('name','email')->get();
-
-        return view('kepsex.approve')->with('users', $users);
     }
 
 

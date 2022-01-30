@@ -49,4 +49,43 @@ class KepsekController extends Controller
         $data=DB::table('users')->whereNotIn('id',$hadir)->get(); 
         return view('kepsek/blas',['data'=>$data,'listener'=>'Belum Absen']);
     }
+
+    public function show()
+    {
+        $wfh = DB::table('wfh')->join('users', 'wfh.id_user', '=', 'users.id')
+        ->select('users.name', 'users.nip', 'users.jabatan', 'users.notel', 'users.profile_photo_path', 'wfh.*')
+        ->get();
+
+        return view('kepsex.approve')->with('wfh', $wfh);
+    }
+
+
+    //Firewall here
+    public function actionKepsexApprove(Request $request){
+        // DB::table('wfh')->insert([
+        //     'email' => 'kayla@example.com',
+        //     'votes' => 0
+        // ]); 
+
+        $val = $_GET['id'];
+        // DB::table('wfh')->insert([
+        //     'appv' => '1',            
+        // ])->where('id_user', $val);
+
+        $response = DB::table('wfh')
+->where('id_user', $val)
+->update(array('appv' => 1));
+return redirect(route('dashboard'));
+        
+    }
+    public function actionKepsexDelete(Request $request){
+        $val = $_GET['id'];
+
+        $response = DB::table('wfh')
+->where('id_user', $val)
+->update(array('appv' => 2));
+return redirect(route('dashboard'));
+        
+    }
+
 }
