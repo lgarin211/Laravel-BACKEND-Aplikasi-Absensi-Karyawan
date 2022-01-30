@@ -10,7 +10,7 @@
     <div class="page-content">
         
         <div class="page-title page-title-small">
-            <h2><a href="#" data-back-button></a>SIK-K4</h2>
+            <h2 style="font-size: 40px !important;"><a href="#" data-back-button></a>SIK-K4</h2>
             <a href="#" data-menu="menu-main" class="bg-fade-gray1-dark shadow-xl preload-img" data-src="https://i.ibb.co/2qrYpQL/Whats-App-Image-2022-01-26-at-10-56-08-removebg-preview.png"></a>
         </div>
         <div class="card header-card shape-rounded" data-card-height="210">

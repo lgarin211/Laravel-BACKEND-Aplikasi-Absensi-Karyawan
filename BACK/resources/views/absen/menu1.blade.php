@@ -1,4 +1,3 @@
-
     @extends('assetabsen/master')
     @section('conten1')
 <div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
@@ -30,9 +29,10 @@
         <?php
         $loop=[
             "WFH"=>['fas fa-home','red','Work Form Home'],
-            "CUTI"=>['fas fa-briefcase','red','CUTI'],
-            "Dinas"=>['fas fa-couch','red','Dinas'],
-            "Sakit"=>['fas fa-ambulance','red','Sakit'],
+            "CUTI"=>['fas fa-couch','red','CUTI'],
+            "DINAS LUAR"=>['fas fa-briefcase','red','Dinas'],
+            "SAKIT"=>['fas fa-ambulance','red','Sakit'],
+            "IZIN"=>['fas fa-business-time','red','Izin'],
         ];
 
         ?>
