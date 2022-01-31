@@ -13,7 +13,7 @@
             <div class="card-bg preload-img" data-src="https://i.ibb.co/2qrYpQL/Whats-App-Image-2012-01-26-at-10-56-08-removebg-preview.png"></div>
         </div>
         
-
+        @if (!empty($artikels))
         @foreach($artikels as $art)
         <div class="card card-style">
             <div data-card-height="300" class="card shadow-l mb-0 bg-18" style="background-image: url({{$art->image}});">
@@ -36,6 +36,7 @@
             </div>
         </div>
         @endforeach
+        @endif
 
         <!-- footer and footer card-->
         <div class="footer" data-menu-load="{{url('/foot')}}"></div>  
