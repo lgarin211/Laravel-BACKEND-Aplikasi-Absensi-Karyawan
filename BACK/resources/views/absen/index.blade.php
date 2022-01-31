@@ -40,13 +40,13 @@
             </div>
             <!-- follow buttons-->
             <style>
-              .hie {
+              /* .hie {
                 display: none !important;
               }
       
               .hila {
                 display: none !important;
-              }
+              } */
             </style> 
             @if (date('H.i')>=$data['setting']['jam-absen-masuk-close']->value)
             <div class="alert alert-primary" role="alert"> Presensi Pulang di Buka Pada {{$data['setting']['jam-absen-keluar-open']->value}}
