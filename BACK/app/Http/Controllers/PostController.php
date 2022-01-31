@@ -72,6 +72,7 @@ class PostController extends Controller
             // 'times' => $request->date,
             'location' => $request->location,
             'date' => date('d-m-Y'),
+            'id_users'=>Auth::user()->id
         );
             DB::table('artikels')->insert($pin);
             return redirect()->back()->with(['alert'=>'Data Berhasil dimasukan']);
