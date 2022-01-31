@@ -29,7 +29,7 @@
 
         <?php
         $loop=[
-            "Laporan Aktivitas"=>['fas fa-address-book fa-5x','red',url("/artikel"),'Laporan Aktivitas SMKN 4 Bogor'],
+            "Laporan Aktivitas"=>['fas fa-address-book fa-5x','red',url("/create"),'Laporan Aktivitas SMKN 4 Bogor'],
             "Galery Bulan ini"=>['fas fa-camera fa-5x','red',url("/galery"),'Bukti Presensi Saya Bulan ini'],
         ];
 

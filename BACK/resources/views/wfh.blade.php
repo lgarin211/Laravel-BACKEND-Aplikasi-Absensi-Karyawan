@@ -68,10 +68,9 @@
 
                 </div>
 
-                <button class="btn btn-primary" type="submit" name="proses">AJUKAN</button>
-                <a class="btn btn-primary" href="#" onclick="alert('Mohon Maaf Saat Ini Pengajuan Sedang Dalam Pengembangan Harap Ajukan Beberapa Hari Berikutnya')">Ajukan</a>
+                <button class="btn btn-primary" type="submit" name="proses" onclick="alert('Pengajuan Anda Telah Di Proses')">AJUKAN</button>
+                {{-- <a class="btn btn-primary" href="#" onclick="alert('Mohon Maaf Saat Ini Pengajuan Sedang Dalam Pengembangan Harap Ajukan Beberapa Hari Berikutnya')">Ajukan</a> --}}
                 <br><br>
-
               </form>
 
 

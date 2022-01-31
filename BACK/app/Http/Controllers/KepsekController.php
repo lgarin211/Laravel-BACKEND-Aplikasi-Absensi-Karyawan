@@ -55,6 +55,7 @@ class KepsekController extends Controller
         $wfh = DB::table('wfh')->join('users', 'wfh.id_user', '=', 'users.id')
         ->select('users.name', 'users.nip', 'users.jabatan', 'users.notel', 'users.profile_photo_path', 'wfh.*')
         ->get();
+        // dd($wfh);
 
         return view('kepsex.approve')->with('wfh', $wfh);
     }

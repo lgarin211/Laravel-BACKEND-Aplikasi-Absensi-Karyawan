@@ -18,9 +18,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        $data=DB::table('artikels')->orderBy('id', 'desc')->limit(5)->get();
-        
-        
+        // var_dump($_SESSION);
+        $data=DB::table('artikels')->orderBy('id', 'desc');
+        // $data->where('id',$_SESSION['auth']->id)->get();
+        $data=$data;       
         // Artikel::orderBy('times', 'DESC')->get();
         // dd($data);
         return view('artikel/index',['artikels'=>$data]);

@@ -42,11 +42,11 @@ class WfhController extends Controller
                     // $date = strtotime("+". $hasil ." day", $date);
                     // $res = date('m/d/Y', $date);
 
-                    $data=array('id_user'=>$id,'mulai'=>$date1_conv,"akhir"=>$date2_conv,"deskripsi"=>$keterangan);
+                    $data=array('id_user'=>$id,'mulai'=>$date1_conv,"akhir"=>$date2_conv,"deskripsi"=>'Untuk Malakukan '.$request->input('to').' terkait '.$keterangan);
                      DB::table('wfh')->insert($data);
 
             // }
-            return redirect(route('approval'));
+            return redirect('/absen');
 
         }
        

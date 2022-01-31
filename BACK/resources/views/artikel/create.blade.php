@@ -36,31 +36,38 @@
         
         <div class="card card-style">
             <p class="content">
-               Tambah Artikel
+               Pada Halaman ini Anda Di Harap Mempotret terlebih dahulu sebelum membuat Laporan
             </p>
         </div>
 
         <div class="card card-style">
+            <div class="content mb-2">
+                <a href="{{url('/posts')}}" class="col-md-12 btn btn-warning">Laporanku</a>
+            </div>
             <div class="content mb-0">        
-                <h3>Tambah Artikel</h3>
+                <h3>Tambah Laporan</h3>
               <br>
               <form action="{{url('/make')}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="input-style input-style-2 input-required">
-                    <span>Judul</span>
+                    {{-- <span>Judul</span>
                     <em>(Wajib)</em>
-                    <input class="form-control" required type="text" name="title" placeholder="">
+                    <input class="form-control" required type="text" name="title" placeholder=""> --}}
+                    <select name="title" id="" class="form-select">
+                        <option value="Rapat">Rapat</option>
+                        <option value="Upacara">Upacara</option>
+                    </select>
                 </div>
 
                 <div class="input-style input-style-2 input-required">
-                    <span>Isi Artikel</span>
+                    <span>Isi Laporan</span>
                     <em>(Wajib)</em>
                     <input class="form-control" required type="textarea" name="description" placeholder="">
                 </div>
 
                 <div class="input-style mb-3 input-required">
-                    <span>Pilih Gambar</span>
+                    <span>Gambar Laporan</span>
                     <em>(Wajib)</em>
                     <input class="form-control" required type="file" name="image" placeholder="">
                 </div>
