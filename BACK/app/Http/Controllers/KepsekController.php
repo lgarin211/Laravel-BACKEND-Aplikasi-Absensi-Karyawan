@@ -74,18 +74,19 @@ class KepsekController extends Controller
         // ])->where('id_user', $val);
 
         $response = DB::table('wfh')
-->where('id_user', $val)
-->update(array('appv' => 1));
-return redirect(route('dashboard'));
+        ->where('id_user', $val)
+        ->update(array('appv' => 1));
+        return redirect(route('dashboard'));
         
     }
+    
     public function actionKepsexDelete(Request $request){
         $val = $_GET['id'];
 
         $response = DB::table('wfh')
-->where('id_user', $val)
-->update(array('appv' => 2));
-return redirect(route('dashboard'));
+        ->where('id_user', $val)
+        ->update(array('appv' => 2));
+        return redirect(route('dashboard'));
         
     }
 
