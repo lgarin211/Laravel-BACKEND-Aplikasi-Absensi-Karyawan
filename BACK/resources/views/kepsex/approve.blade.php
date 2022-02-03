@@ -27,7 +27,8 @@
                 <div class="user-slider owl-carousel">
                     <div class="user-left">
                         <div class="d-flex">
-                            <div><img src="{{url('/storage')}}/{{$w->profile_photo_path}}" class="mr-3 rounded-circle shadow-l bg-red2-dark" width="50"></div>
+                            <div><img src="{{url('/storage')}}/{{$w->profile_photo_path}}" class="mr-3 rounded-circle shadow-l bg-red2-dark" style="height: 100px;
+                                width: 100px;object-fit:cover;"></div>
                             <div>
                                 <h5 class="mt-1 mb-0">{{$w->name}}</h5>
                                 <p class="font-10 mt-n1 color-red2-dark">{{$w->jabatan}}</p>
@@ -77,4 +78,10 @@
     
     
 </div>    
-@endsectiong
+@endsection
+
+<script>
+    function Nope() {
+      confirm("Apakah Anda yakin?");
+    }
+    </script>
