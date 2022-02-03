@@ -20,7 +20,7 @@
             <div class="content">
                 <div class="d-flex">
                     <div>
-                        <img src="{{url('/storage')}}/{{Auth::user()->profile_photo_path}}" width="50" class="mr-3 bg-highlight rounded-xl">
+                        <img src="{{url('/storage')}}/{{Auth::user()->profile_photo_path}}" width="50" class="mr-3 bg-highlight rounded-xl" style="object-fit: cover;">
                     </div>
                     <div>
                         <h2 class="mb-0 pt-1">{{Auth::user()->name}}</h2>
@@ -40,7 +40,8 @@
                 <div class="user-slider owl-carousel">
                     <div class="user-left">
                         <div class="d-flex">
-                            <div><img src="{{url('/storage')}}/{{$item->profile_photo_path}}" class="mr-3 rounded-circle shadow-l bg-red2-dark" width="50"></div>
+                            <div><img src="{{url('/storage')}}/{{$item->profile_photo_path}}" class="mr-3 rounded-circle shadow-l bg-red2-dark" style="height: 100px;
+                                width: 100px;object-fit:cover;"></div>
                             <div>
                                 <h5 class="mt-1 mb-0">{{$item->name}}</h5>
                                 <p class="font-10 mt-n1 color-red2-dark">{{$item->jabatan}} SMKN4 Kota Bogor</p>

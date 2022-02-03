@@ -36,17 +36,17 @@
               </div>
               <!-- right side of profile. increase image width to increase column size-->
               <img src="{{url('/storage')}}/{{$data['user']->profile_photo_path}}" data-src="{{url('/storage')}}/{{$data['user']->profile_photo_path}}" style="height: 100px;
-                      width: 200px;" class="bg-highlight rounded-circle mt-3 shadow-xl preload-img">
+                      width: 200px;object-fit:cover;" class="bg-highlight rounded-circle mt-3 shadow-xl preload-img">
             </div>
             <!-- follow buttons-->
             <style>
-              /* .hie {
+              .hie {
                 display: none !important;
               }
       
               .hila {
                 display: none !important;
-              } */
+              }
             </style> 
             @if (date('H.i')>=$data['setting']['jam-absen-masuk-close']->value)
             <div class="alert alert-primary" role="alert"> Presensi Pulang di Buka Pada {{$data['setting']['jam-absen-keluar-open']->value}}

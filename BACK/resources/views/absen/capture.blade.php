@@ -51,10 +51,10 @@
                     @csrf
                         <div class="mb-3 bt-2">
                             <label for="Status" class="form-label">Status</label><br>
-                            <select name="keterangan" class="custom-select col-md-12 " style="font-size: 50px;" id="Status" required>
+                            <select name="keterangan" class="custom-select col-md-12 " style="font-size: 50px;" id="Status" onchange="cekLokasi()" required>
                                 
                                 @if (!empty($pengajuan->deskripsi)))
-                                <option value="{{$pengajuan->deskripsi}}">{{$pengajuan->deskripsi}}</option>                                    
+                                <option value="{{$pengajuan->cren}}">{{$pengajuan->cren}}</option>                                    
                                 @endif
 
                                 <option value="Kantor">KANTOR</option>
@@ -67,7 +67,7 @@
                 <h3 class="col-md-12 alert alert-lg alert-primary c2 hilang" id="snap2">
                 Harap Pertahankan Posisi Anda
                 </h3>
-                <button type="button" class="col-md-12 btn btn-lg btn-primary c2" id="snap" onclick="linkar()">Kirim Data</button>
+                <button type="button" style="display: block" class="col-md-12 btn btn-lg btn-primary c2" id="snap" onclick="linkar()">Kirim Data</button>
     <!-- Optional JavaScript; choose one of the two! -->
                 <script>
                         function linkar() {
@@ -80,6 +80,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
+    function cekLokasi() {
+    console.log("cekLokasi");
+        if(document.getElementById("Status").value == "Kantor"){
+
             if(navigator.geolocation){
 
             navigator.geolocation.getCurrentPosition(async (position) => {
@@ -96,8 +100,22 @@
             const data = await response.json();
 
             console.log(data, "$$$$");
+
+            if (data.address.Match_addr == "SMK Negeri 4 Bogor"){
+              
+                document.getElementById("snap").style.display="block";
+            }
+            else{
+            
+                document.getElementById("snap").style.display="none";
+            }
             });
             }
+           
+    } else{
+                document.getElementById("snap").style.display="block";
+            }
+        }
     </script>
     <script>
         // Grab elements, create settings, etc.
@@ -217,6 +235,7 @@
             document.body.appendChild(a);
             a.click();
         }
+        cekLokasi()
     </script>
 
 </body>

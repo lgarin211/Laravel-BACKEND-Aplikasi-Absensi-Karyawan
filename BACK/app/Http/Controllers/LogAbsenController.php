@@ -245,13 +245,25 @@ class LogAbsenController extends Controller
                 $request->foto->move(public_path('img/' . Auth::user()->nip . '/'), $imageName);
                 $bukti = 'img/' . Auth::user()->nip . '/' . $imageName;
             }
-            $data = [
+            $as=DB::table('wfh')->where('id_user', $info->id)->where('cren',$_POST['keterangan'])->first();
+            if (!empty($as)) {
+                $data=[
+                    'keterangan' => $as->cren,
+                    'pengajuan' => $as->deskripsi,
+                ];
+            }else{
+                $data=[
+                    'keterangan' => $_POST['keterangan'],
+                    'pengajuan' => "none",
+                ];   
+            }
+            $data += [
                 'id_user' => $info->id,
                 'jam_masuk' => $date,
                 'jam_keluar' => 0,
                 'bukti_masuk' => $bukti,
-                'keterangan' => $_POST['keterangan'],
             ];
+            // dd($data);
             DB::table('log_absens')->insert($data);
             return \redirect('/absen');
         }
