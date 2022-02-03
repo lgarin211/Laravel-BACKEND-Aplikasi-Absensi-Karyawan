@@ -63,7 +63,7 @@
                 <div class="content">
                   <div class="row mb-0">
                     <div class="col-12 hie hila" id="tmasuk">
-                      <button style="height: 100px;width: 300px;" href="#" class="btn rounded-s text-uppercase font-900 bg-blue1-light" onclick="window.location.replace('{{url("/dam")}}');">
+                      <button style="height: 100px;width: 300px;" href="#" class="btn rounded-s text-uppercase font-900 btn-warning" onclick="window.location.replace('{{url("/dam")}}');">
                         <i class="fas fa-bell animate__animated animate__swing swing " style="font-size: 90px;"></i>
                       </button>
                     </div>
@@ -92,7 +92,7 @@
             Tanggal = new Date().getDate();
             Bulan = new Date().getMonth() + 1;
             Tahun = new Date().getFullYear();
-            cadi = Bulan + '-' + Tanggal + '-' + Tahun
+            cadi = '0'+Bulan + '-0' + Tanggal + '-' + Tahun
       
             function los(params) {
               fetch("{{url('/req/sen3?vas=')}}" + cadi, {
