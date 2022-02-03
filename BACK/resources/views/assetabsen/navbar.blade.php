@@ -23,7 +23,10 @@
   <span>Laporan</span>
   </a>
   @else
-
+  <a href="{{url('/dam')}}">
+    <i data-feather="calendar" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i>
+    <span>tes</span>
+    </a>
   <a href="{{url('/menu2')}}">
   <i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="blue2-dark" data-feather-bg="blue2-fade-light"></i>
   <span>informasi</span>

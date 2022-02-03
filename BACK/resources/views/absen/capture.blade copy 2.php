@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
 
     <!-- Bootstrap CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -59,16 +59,15 @@
 
                                 <option value="Kantor">KANTOR</option>
                             </select>
-                            <div id="me"></div>
                         </div>
                     <input type="file" class="form-control" name="foto" id="foto" style="display: none;">
-                    <button class="btn btn-outline-success w-80" style="display: none; width: 100vw;" type="submit" id="paladinmas">Kirim</button>
+                    <button class="btn btn-outline-success w-80" style="display: none;" type="submit" id="paladinmas">Kirim</button>
                 </form>
                 <video id="video" class="card t" autoplay></video>
                 <h3 class="col-md-12 alert alert-lg alert-primary c2 hilang" id="snap2">
                 Harap Pertahankan Posisi Anda
                 </h3>
-                <button type="button" style="display: block;width: 100vw;" class="col-md-12 btn btn-lg btn-primary c2" id="snap" onclick="linkar()"><i class="fas fa-camera fa-3x"></i></button>
+                <button type="button" style="display: block" class="col-md-12 btn btn-lg btn-primary c2" id="snap" onclick="linkar()">Kirim Data</button>
     <!-- Optional JavaScript; choose one of the two! -->
                 <script>
                         function linkar() {
@@ -83,6 +82,7 @@
     <script>
     function cekLokasi() {
     console.log("cekLokasi");
+
         if(document.getElementById("Status").value == "Kantor"){
 
             if(navigator.geolocation){
@@ -97,24 +97,17 @@
             const response = await fetch(`https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&featureTypes=&location=${longitude},${latitude}`);
 
             //SMKN 4 lat long
-            // const response = await fetch(`https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&featureTypes=&location=106.824705215847,-6.640719063919977`);
+            // const response = await fetch(`https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&featureTypes=&location=106.82495915539648,-6.640523646800744`);
             const data = await response.json();
 
             console.log(data, "$$$$");
-
-            // if (data.address.Match_addr == "SMK Negeri 4 Bogor" || data.address.Match_addr == "Jalan Royal Boulevard 2-8, Bogor Selatan, Bogor Kota, Jawa Barat, 16134"){
-            //     alert(data.address.Match_addr)
-            //     document.getElementById("snap").style.display="block";
-            // }
-            var asd=JSON.stringify(data.address);
-            // document.write(asd);
-            if (data.address.Postal == "16137"){
-                // alert(data.address.Neighborhood)
+            
+            if (data.address.Match_addr == "SMK Negeri 4 Bogor"){
+                alert(data.address.Match_addr)
                 document.getElementById("snap").style.display="block";
             }
             else{
-                // alert(data.address)
-                alert("Anda Belum Berada Di Area SMKN 4 Kota Bogor");            
+                alert(data.address.Match_addr)
                 document.getElementById("snap").style.display="none";
             }
             });

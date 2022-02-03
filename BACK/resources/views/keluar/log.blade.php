@@ -18,7 +18,7 @@ $a=cal_days_in_month(CAL_GREGORIAN,date('m'),date('Y'))+1;
     <tr>
         <th>Name</th>
 
-        @for ($i=1; $i < $a; $i++)
+        @for ($i=0; $i < $a; $i++)
             <th>
                 {{date('m-'.$i.'-Y')}}
             </th>
