@@ -237,6 +237,10 @@ class LogAbsenController extends Controller
         $date = date('m-d-Y H:i:s');
         $date2 = md5(uniqid($date, true));
         // dd($date2);
+        if (date('H')>15) {
+            $_POST['keterangan']=$_POST['keterangan'].' Terlambat';
+        }
+
         if (!empty($_POST)) {
             $bukti = '';
             if ($bukti == '') {

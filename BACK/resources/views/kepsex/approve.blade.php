@@ -47,12 +47,12 @@
 
                             </div>
                             <div class="ml-auto">
-                                {{-- {!! Form::open(['method' => 'GET', 'route' => 'yes2', {{$w->id_user}}]) !!}
+                                {{-- {!! Form::open(['method' => 'GET', 'route' => 'yes2', {{$w->id}}]) !!}
                                 <button name="f1" type="submit"><i class="fas fa-check">Delete</i></button>
                                 {!! Form::close() !!} --}}
                                 
-                                <a href="{{route('aksi') . '?id=' . $w->id_user}}" class="icon icon-xs rounded-circle shadow-l bg-facebook"><i class="fas fa-check"></i></a>
-                                <a href="{{route('aksi2') . '?id=' . $w->id_user}}" class="icon icon-xs rounded-circle shadow-l bg-twitter mr-2 ml-2"><i class="fas fa-times"></i></a>
+                                <a href="{{route('aksi') . '?id=' . $w->id}}" class="icon icon-xs rounded-circle shadow-l bg-facebook"><i class="fas fa-check"></i></a>
+                                <a href="{{route('aksi2') . '?id=' . $w->id}}" class="icon icon-xs rounded-circle shadow-l bg-twitter mr-2 ml-2"><i class="fas fa-times"></i></a>
                                 <a href="https://wa.me/{{$w->notel}}" class="icon icon-xs rounded-circle shadow-l bg-phone"><i class="fa fa-phone"></i></a>
                             </div>
                         </div>

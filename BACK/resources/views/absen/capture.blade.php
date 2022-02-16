@@ -84,7 +84,7 @@
     function cekLokasi() {
     console.log("cekLokasi");
         if(document.getElementById("Status").value == "Kantor"){
-
+            console.log('masuk');
             if(navigator.geolocation){
 
             navigator.geolocation.getCurrentPosition(async (position) => {

@@ -1,7 +1,7 @@
 <?php 
 
 $a=cal_days_in_month(CAL_GREGORIAN,date('m'),date('Y'))+1;
-// dd($a);
+// dump($a);
 ?>
 
 
@@ -46,16 +46,16 @@ $a=cal_days_in_month(CAL_GREGORIAN,date('m'),date('Y'))+1;
                 ->where('jam_masuk','like','%'.date('m-').'%')
                 ->where('jam_masuk','like','%'.date('-Y').'%')
                 ->where('jam_masuk','like','%'.'-'.$si.'-'.'%');
-                // dd($li); 
+                $tr=$li->first(); 
             @endphp
             <th>
                 @if ($li->count()==0)
                 {{'~'}}
                 @else
                     @if ($li->first()->jam_keluar==0)
-                    {{'TAP'}}                
+                    {{$tr->keterangan.' ~TAP'}}                
                     @else
-                    {{'hadir'}}                                        
+                    {{$tr->keterangan}}                                        
                     @endif    
 
                 @endif

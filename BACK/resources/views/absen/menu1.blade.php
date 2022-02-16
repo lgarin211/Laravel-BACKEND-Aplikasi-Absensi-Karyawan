@@ -30,9 +30,9 @@
         $loop=[
             "WFH"=>['fas fa-home','red','Work Form Home'],
             "CUTI"=>['fas fa-couch','red','CUTI'],
-            "DINAS LUAR"=>['fas fa-briefcase','red','Dinas'],
-            "SAKIT"=>['fas fa-ambulance','red','Sakit'],
-            "IZIN"=>['fas fa-business-time','red','Izin'],
+            "DINAS LUAR"=>['fas fa-briefcase','red','DINAS'],
+            "SAKIT"=>['fas fa-ambulance','red','SAKIT'],
+            "IZIN"=>['fas fa-business-time','red','IZIN'],
         ];
 
         ?>
