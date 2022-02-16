@@ -12,6 +12,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
+    $router->get('/export', 'HomeController@export')->name('home');
     $router->resource('/genset', UserController::class);
     $router->resource('/pegawai', PegawaiController::class);
     $router->resource('/log_absens', LogabsenController::class);
